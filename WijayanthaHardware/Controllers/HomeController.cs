@@ -14,20 +14,6 @@ namespace WijayanthaHardware.Controllers
         public ActionResult Index()
         {
 
-
-            //var paintCategory = new PaintCategoryDef()
-            //{
-            //    Description="Paint Premium",
-            //    Value= "Premium"
-            //};
-
-            //var wijayanathaDb = new WijayanathaDb();
-            //wijayanathaDb.PaintCategory.Add(paintCategory);
-
-            //wijayanathaDb.SaveChanges();
-
-
-            
             return View();
         }
     }
