@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,59 +173,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806191445085_category_lookup.cs" />
-    <Compile Include="Migrations\201806191445085_category_lookup.Designer.cs">
-      <DependentUpon>201806191445085_category_lookup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191458091_volume_lookup.cs" />
-    <Compile Include="Migrations\201806191458091_volume_lookup.Designer.cs">
-      <DependentUpon>201806191458091_volume_lookup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191514174_powertoolcategoryadded.cs" />
-    <Compile Include="Migrations\201806191514174_powertoolcategoryadded.Designer.cs">
-      <DependentUpon>201806191514174_powertoolcategoryadded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191547499_productLooku_added.cs" />
-    <Compile Include="Migrations\201806191547499_productLooku_added.Designer.cs">
-      <DependentUpon>201806191547499_productLooku_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191615242_colourlookup.cs" />
-    <Compile Include="Migrations\201806191615242_colourlookup.Designer.cs">
-      <DependentUpon>201806191615242_colourlookup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191621172_tableEdited.cs" />
-    <Compile Include="Migrations\201806191621172_tableEdited.Designer.cs">
-      <DependentUpon>201806191621172_tableEdited.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806191816440_created_powerToolsCategory.cs" />
-    <Compile Include="Migrations\201806191816440_created_powerToolsCategory.Designer.cs">
-      <DependentUpon>201806191816440_created_powerToolsCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806201320013_PowerToolSubCategory.cs" />
-    <Compile Include="Migrations\201806201320013_PowerToolSubCategory.Designer.cs">
-      <DependentUpon>201806201320013_PowerToolSubCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806201400212_PowerToolMaster.cs" />
-    <Compile Include="Migrations\201806201400212_PowerToolMaster.Designer.cs">
-      <DependentUpon>201806201400212_PowerToolMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806201433298_PowerToolMaster-force.cs" />
-    <Compile Include="Migrations\201806201433298_PowerToolMaster-force.Designer.cs">
-      <DependentUpon>201806201433298_PowerToolMaster-force.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806210510205_PaintCategoryDef.cs" />
-    <Compile Include="Migrations\201806210510205_PaintCategoryDef.Designer.cs">
-      <DependentUpon>201806210510205_PaintCategoryDef.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806210726388_PaintCategory-force.cs" />
-    <Compile Include="Migrations\201806210726388_PaintCategory-force.Designer.cs">
-      <DependentUpon>201806210726388_PaintCategory-force.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806210733473_PaintColour-force.cs" />
-    <Compile Include="Migrations\201806210733473_PaintColour-force.Designer.cs">
-      <DependentUpon>201806210733473_PaintColour-force.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PaintCategoryViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -270,6 +218,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -278,47 +227,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806191445085_category_lookup.resx">
-      <DependentUpon>201806191445085_category_lookup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191458091_volume_lookup.resx">
-      <DependentUpon>201806191458091_volume_lookup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191514174_powertoolcategoryadded.resx">
-      <DependentUpon>201806191514174_powertoolcategoryadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191547499_productLooku_added.resx">
-      <DependentUpon>201806191547499_productLooku_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191615242_colourlookup.resx">
-      <DependentUpon>201806191615242_colourlookup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191621172_tableEdited.resx">
-      <DependentUpon>201806191621172_tableEdited.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806191816440_created_powerToolsCategory.resx">
-      <DependentUpon>201806191816440_created_powerToolsCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806201320013_PowerToolSubCategory.resx">
-      <DependentUpon>201806201320013_PowerToolSubCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806201400212_PowerToolMaster.resx">
-      <DependentUpon>201806201400212_PowerToolMaster.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806201433298_PowerToolMaster-force.resx">
-      <DependentUpon>201806201433298_PowerToolMaster-force.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210510205_PaintCategoryDef.resx">
-      <DependentUpon>201806210510205_PaintCategoryDef.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210726388_PaintCategory-force.resx">
-      <DependentUpon>201806210726388_PaintCategory-force.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210733473_PaintColour-force.resx">
-      <DependentUpon>201806210733473_PaintColour-force.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
