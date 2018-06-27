@@ -12,12 +12,9 @@ namespace WijayanthaHardware.Entities
     {
         [Key]
         public int PaintColourId { get; set; }
-        public PaintCategoryDef PaintCategoryDef { get; set; }
-      
-       
         public string Colour { get; set; }
         public string ColourCode { get; set; }
 
-       
+
     }
 }

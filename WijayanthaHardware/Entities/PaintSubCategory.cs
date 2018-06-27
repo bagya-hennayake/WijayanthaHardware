@@ -7,12 +7,13 @@ using System.Web;
 
 namespace WijayanthaHardware.Entities
 {
-    [Table("PaintCategoryDef", Schema = "LookUp")]//LookUp.Category
-    public class PaintCategoryDef
+    [Table("PaintSubCategory", Schema = "LookUp")]
+    public class PaintSubCategory
     {
         [Key]
-        public int PaintDefLevel { get; set; }
-        public string PaintDefName { get; set; }
-        
+        public int PaintSubCategoryId { get; set; }
+        public string Value { get; set; }
+        public string Description { get; set; }
+
     }
 }

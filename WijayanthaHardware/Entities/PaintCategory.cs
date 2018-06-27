@@ -10,12 +10,9 @@ namespace WijayanthaHardware.Entities
     public class PaintCategory
     {
         [key]
-        public int PaintCategryId { get; set; }
-        public string PaintCategoryName { get; set; }
-
-        public PaintCategoryDef PaintCategoryDef
-        { get; set; }
-        public int PaintDefLevel { get; set; }
+        public int PaintCategoryId { get; set; }
+        public string Value { get; set; }
+        public string Description { get; set; }
 
     }
 }

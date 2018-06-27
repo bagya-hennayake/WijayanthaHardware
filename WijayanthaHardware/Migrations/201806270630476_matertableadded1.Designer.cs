@@ -7,13 +7,13 @@ namespace WijayanthaHardware.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class PowerToolSubCategory : IMigrationMetadata
+    public sealed partial class matertableadded1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PowerToolSubCategory));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(matertableadded1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806201320013_PowerToolSubCategory"; }
+            get { return "201806270630476_matertableadded1"; }
         }
         
         string IMigrationMetadata.Source
