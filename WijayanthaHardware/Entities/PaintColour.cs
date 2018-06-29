@@ -14,7 +14,7 @@ namespace WijayanthaHardware.Entities
         public int PaintColourId { get; set; }
         public string Colour { get; set; }
         public string ColourCode { get; set; }
-
+        public int Status { get; set; }
 
     }
 }

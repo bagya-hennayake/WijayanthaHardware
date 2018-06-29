@@ -22,7 +22,7 @@ namespace WijayanthaHardware.Entities
         public double Price { get; set; }
         public PaintSubCategory PaintSubCategory { get; set; }
         public int PaintSubCategoryId { get; set; }
-
+        public int Status { get; set; }
 
     }
 }
