@@ -15,6 +15,10 @@ namespace WijayanthaHardware.DBContext
         public DbSet<PaintMaster> PaintMaster { get; set; }
         public DbSet<PaintColour> PaintColour { get; set; }
         public DbSet<PaintVolume> PaintVolume { get; set; }
+        public DbSet<PowerToolCategory> PowerToolCategory { get; set; }
+        public DbSet <PowerToolSubCatogery> PowerToolSubCatogery { get; set; }
+        public DbSet <PowerToolMaster> PowerToolMaster { get; set; }
+
 
 
     }
