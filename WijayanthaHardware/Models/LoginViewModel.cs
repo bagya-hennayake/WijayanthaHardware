@@ -8,9 +8,11 @@ namespace WijayanthaHardware.Models
 {
     public class LoginViewModel
     {
+        [Display(Name = "Username")]
         [Required(ErrorMessage = "Please enter your username")]
         public string Username { get; set; }
 
+        [Display(Name = "Password")]
         [Required(ErrorMessage = "Please enter your password")]
         [DataType(DataType.Password)]
         public string UserPassword { get; set; }
