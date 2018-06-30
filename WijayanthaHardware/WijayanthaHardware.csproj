@@ -183,7 +183,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
-    <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
@@ -196,26 +195,6 @@
     <Compile Include="Entities\PowerToolSubCatogery.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806270906150_updatedTables.cs" />
-    <Compile Include="Migrations\201806270906150_updatedTables.Designer.cs">
-      <DependentUpon>201806270906150_updatedTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806291629554_PowertoolTables.cs" />
-    <Compile Include="Migrations\201806291629554_PowertoolTables.Designer.cs">
-      <DependentUpon>201806291629554_PowertoolTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806291635170_PowerToolMaster.cs" />
-    <Compile Include="Migrations\201806291635170_PowerToolMaster.Designer.cs">
-      <DependentUpon>201806291635170_PowerToolMaster.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806291541080_added status to tables.cs" />
-    <Compile Include="Migrations\201806291541080_added status to tables.Designer.cs">
-      <DependentUpon>201806291541080_added status to tables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806291652504_powertools master tables added.cs" />
-    <Compile Include="Migrations\201806291652504_powertools master tables added.Designer.cs">
-      <DependentUpon>201806291652504_powertools master tables added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
@@ -263,8 +242,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\" />
-    <Folder Include="Models\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
@@ -274,20 +251,6 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806270626354_matertableadded.resx">
-      <DependentUpon>201806270626354_matertableadded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806270630476_matertableadded1.resx">
-      <DependentUpon>201806270630476_matertableadded1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806291541080_added status to tables.resx">
-      <DependentUpon>201806291541080_added status to tables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806291652504_powertools master tables added.resx">
-      <DependentUpon>201806291652504_powertools master tables added.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
