@@ -182,6 +182,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\RecordStatusEnum.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
@@ -195,13 +197,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806270626354_matertableadded.cs" />
-    <Compile Include="Migrations\201806270626354_matertableadded.Designer.cs">
-      <DependentUpon>201806270626354_matertableadded.cs</DependentUpon>
+    <Compile Include="Migrations\201806270906150_updatedTables.cs" />
+    <Compile Include="Migrations\201806270906150_updatedTables.Designer.cs">
+      <DependentUpon>201806270906150_updatedTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806270630476_matertableadded1.cs" />
-    <Compile Include="Migrations\201806270630476_matertableadded1.Designer.cs">
-      <DependentUpon>201806270630476_matertableadded1.cs</DependentUpon>
+    <Compile Include="Migrations\201806291629554_PowertoolTables.cs" />
+    <Compile Include="Migrations\201806291629554_PowertoolTables.Designer.cs">
+      <DependentUpon>201806291629554_PowertoolTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806291635170_PowerToolMaster.cs" />
+    <Compile Include="Migrations\201806291635170_PowerToolMaster.Designer.cs">
+      <DependentUpon>201806291635170_PowerToolMaster.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201806291541080_added status to tables.cs" />
     <Compile Include="Migrations\201806291541080_added status to tables.Designer.cs">
@@ -252,10 +258,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Security\Loging.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\" />
+    <Folder Include="Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Services\" />
   </ItemGroup>
