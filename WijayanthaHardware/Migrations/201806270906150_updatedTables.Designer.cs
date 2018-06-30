@@ -7,13 +7,13 @@ namespace WijayanthaHardware.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class matertableadded : IMigrationMetadata
+    public sealed partial class updatedTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(matertableadded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806270626354_matertableadded"; }
+            get { return "201806270906150_updatedTables"; }
         }
         
         string IMigrationMetadata.Source
