@@ -17,7 +17,7 @@
                 @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
             </div>
             <div class="tbox">
-                @Html.TextBoxFor(x => x.UserPassword, new { placeholder = "Password" })
+                @Html.PasswordFor(x => x.UserPassword, new { placeholder = "Password" })
                 @Html.ValidationMessageFor(m => m.UserPassword, null, new { @class = "text-danger" })
             </div>
             <input class="submit-btn" type="submit" name="submit" value="login">
