@@ -1,4 +1,8 @@
-﻿@{
+﻿@model WijayanthaHardware.Models.LoginViewModel
+
+
+
+@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LoginLayout.cshtml ";
 }
@@ -9,15 +13,15 @@
         <h1>login</h1>
         <form action="">
             <div class="tbox">
-                <input type="text" placeholder="username" value="">
+                @Html.TextBoxFor(x => x.Username, new { placeholder = "Username" })
+                @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
             </div>
             <div class="tbox">
-                <input type="password" placeholder="password" value="">
+                @Html.TextBoxFor(x => x.UserPassword, new { placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.UserPassword, null, new { @class = "text-danger" })
             </div>
             <input class="submit-btn" type="submit" name="submit" value="login">
         </form>
         <a href="#0">forgot password?</a>
     </div>
 </div>
-
-
