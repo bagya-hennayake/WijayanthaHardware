@@ -368,3 +368,23 @@ body {
         transform: rotate(0deg) translate3d(0,0,0);
     }
 }
+
+.logout {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: $gradient-end;
+    border-radius: 40px;
+    padding: 10px;
+    a {
+        color: #fff;
+        font-size: 25px;
+        text-transform: uppercase;
+        &:hover{
+            text-decoration: none;
+        }
+        i{
+            margin:0 5px;
+        }
+    }
+}
