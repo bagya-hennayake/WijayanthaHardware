@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
+using WijayanthaHardware.BusinessObjects;
 
 namespace WijayanthaHardware.Models
 {
@@ -17,5 +19,16 @@ namespace WijayanthaHardware.Models
         [DataType(DataType.Password)]
         public string UserPassword { get; set; }
 
+
+
+        public LoginBO Mapper(LoginViewModel loginViewModel)
+        {
+            loginViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(loginViewModel.UserPassword, "SHA1");
+            return new LoginBO
+            {
+                Username = loginViewModel.Username,
+                UserPassword = loginViewModel.UserPassword
+            };
+        }
     }
 }
