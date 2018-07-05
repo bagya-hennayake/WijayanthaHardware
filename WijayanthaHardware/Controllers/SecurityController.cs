@@ -24,6 +24,9 @@ namespace WijayanthaHardware.Controllers
             ViewBag.returnURL = ReturnUrl;
             return View(new LoginViewModel());
         }
+        public ActionResult Register() {
+            return View(new RegisterViewModel());
+        }
 
 
         [HttpPost]
