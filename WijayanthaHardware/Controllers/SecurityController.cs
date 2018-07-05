@@ -46,5 +46,12 @@ namespace WijayanthaHardware.Controllers
             }
             return View("Login", loginViewModel);
         }
+
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
     }
 }
