@@ -9,7 +9,7 @@ using WijayanthaHardware.Services;
 
 namespace WijayanthaHardware.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class SecurityController : Controller
     {
         private readonly LoginService _loginService;
@@ -18,17 +18,29 @@ namespace WijayanthaHardware.Controllers
         {
             _loginService = loginService;
         }
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Login(string ReturnUrl)
         {
             ViewBag.returnURL = ReturnUrl;
             return View(new LoginViewModel());
         }
-        public ActionResult Register() {
+
+
+        public ActionResult Register()
+        {
             return View(new RegisterViewModel());
         }
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterViewModel registerViewModel)
+        {
+            return Content("user regsitered");
+        }
+
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel loginViewModel, string ReturnUrl)
