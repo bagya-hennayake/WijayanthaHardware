@@ -1,0 +1,30 @@
+﻿@model WijayanthaHardware.Models.RegisterViewModel
+@{
+    ViewBag.Title = "register";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="login-form">
+    <div class="login-form-inner">
+        <div class="lock"><i class="fas fa-user-plus"></i></div>
+        <h1>register</h1>
+        @using (Html.BeginForm("Register", "Security", new { ReturnUrl = ViewBag.returnURL }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="tbox">
+                @Html.TextBoxFor(x => x.Username, new { placeholder = "Username" })
+                @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
+            </div>
+            <div class="tbox">
+                @Html.PasswordFor(x => x.UserPassword, new { placeholder = "Password" })
+                @Html.ValidationMessageFor(m => m.UserPassword, null, new { @class = "text-danger" })
+            </div>
+            <div class="tbox">
+                @Html.PasswordFor(x => x.ConfirmUserPassword, new { placeholder = "confirm Password" })
+                @Html.ValidationMessageFor(m => m.ConfirmUserPassword, null, new { @class = "text-danger" })
+            </div>
+            <input class="submit-btn" type="submit" name="submit" value="register">
+        }
+    </div>
+</div>
+

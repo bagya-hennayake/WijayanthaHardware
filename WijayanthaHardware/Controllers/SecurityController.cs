@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -9,15 +10,18 @@ using WijayanthaHardware.Services;
 
 namespace WijayanthaHardware.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class SecurityController : Controller
     {
         private readonly LoginService _loginService;
+        private readonly RegisterService _registerService;
 
-        public SecurityController(LoginService loginService)
+        public SecurityController(LoginService loginService, RegisterService registerService)
         {
             _loginService = loginService;
+            _registerService = registerService;
         }
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Login(string ReturnUrl)
         {
@@ -26,12 +30,28 @@ namespace WijayanthaHardware.Controllers
         }
 
 
+        public ActionResult Register()
+        {
+            return View(new RegisterViewModel());
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel loginViewModel, string ReturnUrl)
+        public async Task<ActionResult> Register(RegisterViewModel registerViewModel)
+        {
+            registerViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(registerViewModel.UserPassword, "SHA1");
+            await _registerService.RegisterNewUserAsync(registerViewModel);
+            return RedirectToAction("DashBoard", "Home");
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel, string ReturnUrl)
         {
             var loginBo = loginViewModel.Mapper(loginViewModel);
-            var result = _loginService.AuthenticateUser(loginBo);
+            var result = await _loginService.AuthenticateUser(loginBo);
             if (result)
             {
                 FormsAuthentication.SetAuthCookie(loginBo.Username, false);
@@ -42,6 +62,20 @@ namespace WijayanthaHardware.Controllers
                     return RedirectToAction("DashBoard", "Home");
             }
             return View("Login", loginViewModel);
+        }
+
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> DoesUsernameExist(string Username)
+        {
+            var doesUserExist = await _registerService.CheckIfUserNameExists(Username);
+            return Json(!doesUserExist);
         }
     }
 }
