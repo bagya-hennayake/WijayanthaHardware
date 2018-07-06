@@ -48,10 +48,10 @@ namespace WijayanthaHardware.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel loginViewModel, string ReturnUrl)
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel, string ReturnUrl)
         {
             var loginBo = loginViewModel.Mapper(loginViewModel);
-            var result = _loginService.AuthenticateUser(loginBo);
+            var result = await _loginService.AuthenticateUser(loginBo);
             if (result)
             {
                 FormsAuthentication.SetAuthCookie(loginBo.Username, false);
