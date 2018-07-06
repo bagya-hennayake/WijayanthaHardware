@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -13,10 +14,12 @@ namespace WijayanthaHardware.Controllers
     public class SecurityController : Controller
     {
         private readonly LoginService _loginService;
+        private readonly RegisterService _registerService;
 
-        public SecurityController(LoginService loginService)
+        public SecurityController(LoginService loginService, RegisterService registerService)
         {
             _loginService = loginService;
+            _registerService = registerService;
         }
         [AllowAnonymous]
         [HttpGet]
@@ -35,9 +38,11 @@ namespace WijayanthaHardware.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterViewModel registerViewModel)
+        public async Task<ActionResult> Register(RegisterViewModel registerViewModel)
         {
-            return Content("user regsitered");
+            registerViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(registerViewModel.UserPassword, "SHA1");
+            await _registerService.RegisterNewUserAsync(registerViewModel);
+            return RedirectToAction("DashBoard", "Home");
         }
 
         [AllowAnonymous]
@@ -64,6 +69,13 @@ namespace WijayanthaHardware.Controllers
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> DoesUsernameExist(string Username)
+        {
+            var doesUserExist = await _registerService.CheckIfUserNameExists(Username);
+            return Json(!doesUserExist);
         }
     }
 }
