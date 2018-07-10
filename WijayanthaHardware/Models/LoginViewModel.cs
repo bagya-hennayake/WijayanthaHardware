@@ -19,8 +19,6 @@ namespace WijayanthaHardware.Models
         [DataType(DataType.Password)]
         public string UserPassword { get; set; }
 
-
-
         public LoginBO Mapper(LoginViewModel loginViewModel)
         {
             loginViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(loginViewModel.UserPassword, "SHA1");
