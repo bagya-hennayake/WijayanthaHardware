@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201807041703471_added user table.Designer.cs">
       <DependentUpon>201807041703471_added user table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.cs" />
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.Designer.cs">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -268,6 +272,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807041703471_added user table.resx">
       <DependentUpon>201807041703471_added user table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807100700386_volumeTbleUpdate.resx">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
