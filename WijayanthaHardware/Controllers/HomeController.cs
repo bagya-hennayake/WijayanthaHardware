@@ -14,5 +14,10 @@ namespace WijayanthaHardware.Controllers
         {
             return View();
         }
+
+        public ActionResult PowerTools()
+        {
+            return View();
+        }
     }
 }

@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
           crossorigin="anonymous">
     <script src="~/Scripts/scripts.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.dropdown.js"></script>
     <link href="~/Content/css/styles.css" rel="stylesheet" />
     <link rel="icon" href="favicon.png" type="image/png">
 
@@ -26,8 +28,8 @@
         <ul>
             <li class="menu-item"><a href="#0">Dashboard</a></li>
             <li class="menu-item"><a href="#0">sales</a></li>
-            <li class="menu-item"><a href="#0">paint</a></li>
-            <li class="menu-item"><a href="#0">power tools</a></li>
+            <li class="menu-item"><a href="/Home/Paint">paint</a></li>
+            <li class="menu-item"><a href="/Home/PowerTools">power tools</a></li>
             <li class="menu-item"><a href="#0">supplier details</a></li>
             <li class="menu-item"><a href="#0">Reports</a></li>
             <li class="menu-item">
@@ -41,5 +43,6 @@
     </nav>
     @RenderBody()
 
+    <script src="~/Scripts/dropdownfn.js"></script>
 </body>
 </html>
