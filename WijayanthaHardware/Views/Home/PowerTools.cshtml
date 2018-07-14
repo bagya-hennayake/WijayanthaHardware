@@ -1,4 +1,4 @@
-﻿
+﻿@model WijayanthaHardware.Models.PowerToolsViewModel
 @{
     ViewBag.Title = "Power Tools";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -9,34 +9,12 @@
         <h1 class="big-heading">power tools</h1>
         <section class="main clearfix">
             <div class="fleft">
-                <select id="cd-dropdown" name="cd-dropdown" class="cd-select">
-                    <option value="-1" selected>Choose tool category</option>
-                    <option value="1" >Ironman</option>
-                    <option value="2">Ironman</option>
-                    <option value="3">Ironman</option>
-                    <option value="4">Ironman</option>
-                </select>
+                <label>Select category</label>
+                @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, new { @class = "cd-select", id = "cd-dropdown" })
             </div>
             <div class="fleft">
-                <select id="cd" name="cd" class="cd-select">
-                    <option value="-1" selected>Choose tool</option>
-                    <option value="1">Batman</option>
-                    <option value="2">Batman</option>
-                    <option value="3">Batman</option>
-                    <option value="4">Batman</option>
-                    <option value="5">Batman</option>
-                    <option value="6">Batman</option>
-                    <option value="7">Batman</option>
-                    <option value="8">Batman</option>
-                    <option value="9">Batman</option>
-                    <option value="10">Batman</option>
-                    <option value="11">Batman</option>
-                    <option value="12">Batman</option>
-                    <option value="13">Batman</option>
-                    <option value="14">Batman</option>
-                    <option value="15">Batman</option>
-                    <option value="16">Batman</option>
-                </select>
+                <label>Select subcategory</label>
+                @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, new { @class = "cd-select", id = "cd" })
             </div>
 
         </section>
