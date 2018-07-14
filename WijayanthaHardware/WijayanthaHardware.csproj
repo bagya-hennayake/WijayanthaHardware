@@ -193,6 +193,10 @@
     <Compile Include="Migrations\201807041703471_added user table.Designer.cs">
       <DependentUpon>201807041703471_added user table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.cs" />
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.Designer.cs">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -209,6 +213,8 @@
     <Content Include="Content\css\icons.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\styles.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Content\scss\common.css" />
     <Content Include="Content\scss\demo.css" />
     <Content Include="Content\scss\icons.css" />
@@ -228,6 +234,8 @@
     <Content Include="Content\css\styles.css.map" />
     <Content Include="Content\scss\login.scss" />
     <Content Include="Content\css\login.css.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropdownfn.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -243,6 +251,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -280,6 +290,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807041703471_added user table.resx">
       <DependentUpon>201807041703471_added user table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807100700386_volumeTbleUpdate.resx">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
