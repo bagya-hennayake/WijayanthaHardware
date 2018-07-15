@@ -17,8 +17,8 @@ namespace WijayanthaHardware.Services
                 using (var context = CreateContext())
                 {
                     string sqlCommand = $" SELECT [{lookUpTypeEnum.ToString()}ID] AS LookUpId,[Value],[Description],[Status]  FROM [LookUp].[{lookUpTypeEnum.ToString()}] WHERE Status=1";
-                    var result = context.Database.SqlQuery<LookUpBO>(sqlCommand).OrderBy(o => o.Value).ToList();
-                    return result;
+                    return context.Database.SqlQuery<LookUpBO>(sqlCommand).OrderBy(o => o.Value).ToList();
+                    
                 }
             }
             catch (Exception ex)

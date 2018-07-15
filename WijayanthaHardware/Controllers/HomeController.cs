@@ -26,14 +26,11 @@ namespace WijayanthaHardware.Controllers
 
         public ActionResult PowerTools()
         {
-            var lookUpCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory) ;
-            var lookUpSubCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintSubCategory);
+            var lookUpCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
             var powerToolViewModel = new PowerToolsViewModel
             {
                 PowerToolSelectList = new SelectList(lookUpCategory, "LookUpId", "Value"),
                 PowerToolId = lookUpCategory.First().LookUpId,
-                PowerToolSubSelectList = new SelectList(lookUpSubCategory, "LookUpId", "Value"),
-                //PowerToolSubCategoryId = lookUpSubCategory.First().LookUpId,
             };
             return View(powerToolViewModel);
         }
