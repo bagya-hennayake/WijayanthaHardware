@@ -1,6 +1,7 @@
 using System;
 
 using Unity;
+using WijayanthaHardware.DBContext;
 using WijayanthaHardware.Services;
 
 namespace WijayanthaHardware
@@ -43,6 +44,8 @@ namespace WijayanthaHardware
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+            //container.RegisterType<WijayanathaDb, WijayanathaDb>();
+            //container.RegisterType<RepositoryBase, RepositoryBase>();
             container.RegisterType<LoginService, LoginService>();
             container.RegisterType<RegisterService, RegisterService>();
             container.RegisterType<LookUpServices, LookUpServices>();

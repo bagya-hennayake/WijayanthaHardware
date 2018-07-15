@@ -9,16 +9,11 @@ namespace WijayanthaHardware.Services
 {
     public class RegisterService : RepositoryBase
     {
-        public RegisterService(WijayanathaDb wijayanathaDb) : base(wijayanathaDb)
-        {
-        }
         public async Task<bool> CheckIfUserNameExists(string Username)
         {
             using (var context = CreateContext())
             {
-                var userNameExists = await context.User.AsNoTracking().AnyAsync(a => a.Username == Username && a.Status == (int)RecordStatusEnum.Active);
-                return userNameExists;
-
+                return await context.User.AsNoTracking().AnyAsync(a => a.Username == Username && a.Status == (int)RecordStatusEnum.Active);
             }
         }
 

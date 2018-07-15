@@ -2,18 +2,15 @@
 
 namespace WijayanthaHardware
 {
-    public class RepositoryBase
+    public abstract class RepositoryBase
     {
-        private readonly WijayanathaDb _wijayanathaDb;
+        private WijayanathaDb _wijayanathaDb;
 
-        public RepositoryBase(WijayanathaDb wijayanathaDb)
-        {
-            _wijayanathaDb = wijayanathaDb;
-        }
+        public RepositoryBase() { }
 
         public WijayanathaDb CreateContext()
         {
-            return _wijayanathaDb;
+            return _wijayanathaDb ?? new WijayanathaDb();
         }
     }
 }

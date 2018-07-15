@@ -9,8 +9,6 @@ namespace WijayanthaHardware.Services
 {
     public class LoginService : RepositoryBase
     {
-        public LoginService(WijayanathaDb wijayanathaDb) : base(wijayanathaDb) { }
-
         public async Task<bool> AuthenticateUser(LoginBO loginBo)
         {
             using (var context = CreateContext())
