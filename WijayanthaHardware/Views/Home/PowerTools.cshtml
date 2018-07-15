@@ -12,13 +12,10 @@
                 <label>Select category</label>
                 @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, new { @class = "cd-select", id = "cd-dropdown" })
             </div>
-            @if (Model.PowerToolSubSelectList != null)
-            {
-                <div class="fleft">
-                    <label>Select subcategory</label>
-                    @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, new { @class = "cd-select", id = "cd" })
-                </div>
-            }
+            <div class="fleft">
+                <label>Select subcategory</label>
+                @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList,"", new { @class = "cd-select", id = "cd" })
+            </div>
         </section>
     </div>
 </div>

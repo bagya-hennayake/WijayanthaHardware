@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WijayanthaHardware.BusinessObjects;
 using WijayanthaHardware.Common;
 using WijayanthaHardware.Models;
 using WijayanthaHardware.Services;
@@ -27,10 +28,12 @@ namespace WijayanthaHardware.Controllers
         public ActionResult PowerTools()
         {
             var lookUpCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
+            //var lookUpSubCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintSubCategory);
             var powerToolViewModel = new PowerToolsViewModel
             {
                 PowerToolSelectList = new SelectList(lookUpCategory, "LookUpId", "Value"),
                 PowerToolId = lookUpCategory.First().LookUpId,
+                PowerToolSubSelectList = new SelectList(new List<LookUpBO>(), "LookUpId", "Value")
             };
             return View(powerToolViewModel);
         }

@@ -10,7 +10,7 @@ namespace WijayanthaHardware.Models
     {
         public int PowerToolId { get; set; }
         public SelectList PowerToolSelectList { get; set; }
-        public int PowerToolSubCategoryId { get; set; }
+        public int? PowerToolSubCategoryId { get; set; }
         public SelectList PowerToolSubSelectList { get; set; }
     }
 }

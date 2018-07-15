@@ -191,6 +191,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807151021551_paint category key in paint sub car.cs" />
+    <Compile Include="Migrations\201807151021551_paint category key in paint sub car.Designer.cs">
+      <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
@@ -282,6 +286,11 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807151021551_paint category key in paint sub car.resx">
+      <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,5 +15,7 @@ namespace WijayanthaHardware.Entities
         public string Value { get; set; }
         public string Description { get; set; }
         public int Status { get; set; }
+        public int? PaintCategoryId { get; set; }
+        public PaintCategory PaintCategory { get; set; }
     }
 }
