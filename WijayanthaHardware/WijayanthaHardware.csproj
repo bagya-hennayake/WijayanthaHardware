@@ -196,6 +196,10 @@
     <Compile Include="Migrations\201807151021551_paint category key in paint sub car.Designer.cs">
       <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807161352238_powertoolkey.cs" />
+    <Compile Include="Migrations\201807161352238_powertoolkey.Designer.cs">
+      <DependentUpon>201807161352238_powertoolkey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
@@ -292,6 +296,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807151021551_paint category key in paint sub car.resx">
       <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807161352238_powertoolkey.resx">
+      <DependentUpon>201807161352238_powertoolkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
