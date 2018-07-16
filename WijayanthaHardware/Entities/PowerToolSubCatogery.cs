@@ -13,6 +13,7 @@ namespace WijayanthaHardware.Entities
         public int PowerToolSubCatogeryId { get; set; }
         public string Value { get; set; }
         public string Description { get; set; }
-        
+        public int? PowerToolCategoryId { get; set; }
+        public PowerToolCategory PowerToolCategory { get; set; }
     }
 }
