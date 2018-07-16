@@ -193,17 +193,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807151021551_paint category key in paint sub car.cs" />
-    <Compile Include="Migrations\201807151021551_paint category key in paint sub car.Designer.cs">
-      <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
+    <Compile Include="Migrations\201807041703471_added user table.cs" />
+    <Compile Include="Migrations\201807041703471_added user table.Designer.cs">
+      <DependentUpon>201807041703471_added user table.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807161352238_powertoolkey.cs" />
-    <Compile Include="Migrations\201807161352238_powertoolkey.Designer.cs">
-      <DependentUpon>201807161352238_powertoolkey.cs</DependentUpon>
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.cs" />
+    <Compile Include="Migrations\201807100700386_volumeTbleUpdate.Designer.cs">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
-    <Compile Include="Models\PowerToolsViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
@@ -296,11 +295,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807151021551_paint category key in paint sub car.resx">
-      <DependentUpon>201807151021551_paint category key in paint sub car.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807041703471_added user table.resx">
+      <DependentUpon>201807041703471_added user table.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807161352238_powertoolkey.resx">
-      <DependentUpon>201807161352238_powertoolkey.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807100700386_volumeTbleUpdate.resx">
+      <DependentUpon>201807100700386_volumeTbleUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
