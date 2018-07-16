@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
-
-    <script src="http://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
@@ -21,15 +20,15 @@
     <script type="text/javascript" src="~/Scripts/jquery.dropdown.js"></script>
     <link href="~/Content/css/styles.css" rel="stylesheet" />
     <link rel="icon" href="favicon.png" type="image/png">
-
+    <script src="~/Scripts/dropdownfn.js"></script>
 </head>
 <body>
     <nav class="menu">
         <ul>
-            <li class="menu-item"><a href="#0">Dashboard</a></li>
+            <li class="menu-item"><a href="/Home/DashBoard">Dashboard</a></li>
             <li class="menu-item"><a href="#0">sales</a></li>
             <li class="menu-item"><a href="/Home/Paint">paint</a></li>
-            <li class="menu-item"><a href="/Home/PowerTools">power tools</a></li>
+            <li class="menu-item"><a href="/PowerTools/Index">power tools</a></li>
             <li class="menu-item"><a href="#0">supplier details</a></li>
             <li class="menu-item"><a href="#0">Reports</a></li>
             <li class="menu-item">
@@ -43,6 +42,6 @@
     </nav>
     @RenderBody()
 
-    <script src="~/Scripts/dropdownfn.js"></script>
+    
 </body>
 </html>

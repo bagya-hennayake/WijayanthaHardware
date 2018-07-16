@@ -176,6 +176,7 @@
     <Compile Include="Common\LookUpTypeEnum.cs" />
     <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PowerToolsController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
@@ -248,6 +249,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\PowerTools.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\scripts.js" />
@@ -271,7 +273,7 @@
     <Content Include="Views\Home\DashBoard.cshtml" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Security\Register.cshtml" />
-    <Content Include="Views\Home\PowerTools.cshtml" />
+    <Content Include="Views\PowerTools\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
