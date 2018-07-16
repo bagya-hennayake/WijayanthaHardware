@@ -49,6 +49,7 @@ namespace WijayanthaHardware
             container.RegisterType<LoginService, LoginService>();
             container.RegisterType<RegisterService, RegisterService>();
             container.RegisterType<LookUpServices, LookUpServices>();
+            container.RegisterType<PaintService, PaintService>();
         }
     }
 }

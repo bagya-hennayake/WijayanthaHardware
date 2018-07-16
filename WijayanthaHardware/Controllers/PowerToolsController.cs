@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,9 +14,12 @@ namespace WijayanthaHardware.Controllers
     public class PowerToolsController : Controller
     {
         private readonly LookUpServices _lookUpServices;
-        public PowerToolsController(LookUpServices lookUpServices)
+        private readonly PaintService _paintService;
+
+        public PowerToolsController(LookUpServices lookUpServices, PaintService paintService)
         {
             _lookUpServices = lookUpServices;
+            _paintService = paintService;
         }
 
         public ActionResult Index()
@@ -30,9 +33,9 @@ namespace WijayanthaHardware.Controllers
             return View(powerToolViewModel);
         }
 
-        public ActionResult GetPaintSubCategories(int? departmentId)
+        public async Task<ActionResult> GetPaintSubCategories(int? paintCat)
         {
-
+            var result = await _paintService.GetPaintSubCategory(paintCat);
             return Content("hello");
         }
     }

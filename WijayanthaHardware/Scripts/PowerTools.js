@@ -7,7 +7,7 @@
         if (maincat != -1) {
             $.ajax({
                 type: "GET",
-                url: "/PowerTools/GetPaintSubCategories?departmentId=" + $(this).val(),
+                url: "/PowerTools/GetPaintSubCategories?paintCat=" + maincat,
                 success: function (data) {
                     var subDepartment = $('#PowerToolSubCategoryId');
                     subDepartment.empty().append('<option value=""></option>');
