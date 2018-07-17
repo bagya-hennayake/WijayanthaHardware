@@ -7,33 +7,24 @@
 <div class="powertools">
     <div class="container">
         <h1 class="big-heading">power tools</h1>
-        <div class="select-bar">
-            <select id="toolCategory" name="powertools">
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-            </select>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="select-bar">
+                    @Html.LabelFor(x => x.PowerToolId)
+                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category" , new { @class = "wide" })
+
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <div class="select-bar">
+                    @Html.LabelFor(x => x.PowerToolSubCategoryId)
+                    @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select Tool", new { @class = "wide" })
+
+                </div>
+            </div>
         </div>
-        <div class="select-bar">
-            <select id="tools" name="powertools">
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-                <option value="value">Tool category</option>
-            </select>
-        </div>
+        
     </div>
 </div>
+<script src="~/Scripts/dropdownfn.js"></script>
+<script src="~/Scripts/PowerTools.js"></script>
