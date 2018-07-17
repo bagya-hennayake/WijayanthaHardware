@@ -4,23 +4,28 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    @******************************************************Styles*********************************************************@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
           crossorigin="anonymous">
+    <link href="~/Content/css/styles.css" rel="stylesheet" />
+    <link href="~/Content/css/nice-select.css" rel="stylesheet" />
+    @******************************************************Styles*********************************************************@
+
+    @******************************************************Scripts*********************************************************@
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <script src="~/Scripts/scripts.js"></script>
     <script src="~/Scripts/modernizr.custom.js"></script>
+    <script src="~/Scripts/jquery.nice-select.min.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.dropdown.js"></script>
-    <link href="~/Content/css/styles.css" rel="stylesheet" />
-    <link rel="icon" href="favicon.png" type="image/png">
-    <script src="~/Scripts/dropdownfn.js"></script>
+    @******************************************************Scripts*********************************************************@
+
+
 </head>
 <body>
     <nav class="menu">
@@ -42,6 +47,6 @@
     </nav>
     @RenderBody()
 
-    
+  <script src="~/Scripts/dropdownfn.js"></script>
 </body>
 </html>

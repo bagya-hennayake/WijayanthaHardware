@@ -7,17 +7,33 @@
 <div class="powertools">
     <div class="container">
         <h1 class="big-heading">power tools</h1>
-        <section class="main clearfix">
-            <div class="fleft" id="first">
-                <label>Select category</label>
-                @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, new { @class = "cd-select", @id = "cd-dropdown" })
-            </div>
-            <div class="fleft" id="second">
-                <label>Select subcategory</label>
-                @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "", new { @class = "cd-select", @id = "cd" })
-            </div>
-        </section>
+        <div class="select-bar">
+            <select id="toolCategory" name="powertools">
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+            </select>
+        </div>
+        <div class="select-bar">
+            <select id="tools" name="powertools">
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+                <option value="value">Tool category</option>
+            </select>
+        </div>
     </div>
 </div>
-
-<script src="~/Scripts/PowerTools.js"></script>
