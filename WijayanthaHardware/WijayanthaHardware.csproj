@@ -225,13 +225,13 @@
     </Content>
     <Content Include="Content\scss\styles.scss" />
     <Content Include="Content\scss\_variables.scss" />
-    <Content Include="Content\css\styles.css.map" />
     <Content Include="Content\scss\login.scss" />
     <Content Include="Content\css\login.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
     <Content Include="Content\scss\nice-select.scss" />
     <Content Include="Content\css\nice-select.css.map" />
+    <Content Include="Content\css\styles.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropdownfn.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
