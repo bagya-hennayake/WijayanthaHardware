@@ -36,7 +36,7 @@ namespace WijayanthaHardware.Controllers
         public async Task<ActionResult> GetPaintSubCategories(int? paintCat)
         {
             var result = await _paintService.GetPaintSubCategory(paintCat);
-            return Content("hello");
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
