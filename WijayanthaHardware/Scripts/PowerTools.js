@@ -1,24 +1,19 @@
 ﻿$(document).ready(function () {
 
+    $("#PowerToolId").change(function () {
+        $.ajax({
+            type: "GET",
+            url: "/PowerTools/GetPaintSubCategories?paintCat=" + $(this).val(),
+            success: function (data) {
+                $("#PowerToolSubCategoryId").empty();
+                $("#PowerToolSubCategoryId").append("<option>Select Tool</option>");
+                $(data).each(function (i) { 
+                    $("#PowerToolSubCategoryId").append("<option value='" + data[i].PaintSubCategoryId + "'>" + data[i].Value + "</option>")
+                });
+                $('#PowerToolSubCategoryId').niceSelect('update');
+            }
 
-    $('#first').click(function () {
-        var maincat = $('input[name="PowerToolId"]').attr('value');
-
-        if (maincat != -1) {
-            $.ajax({
-                type: "GET",
-                url: "/PowerTools/GetPaintSubCategories?paintCat=" + maincat,
-                success: function (data) {
-                    var subDepartment = $('#PowerToolSubCategoryId');
-                    subDepartment.empty().append('<option value=""></option>');
-                    $.each(data, function () {
-                        subDepartment.append($('<option value="' + this.SubDepartmentId + '">' + this.Value + '</option>'));
-                    });
-
-
-                }
-            });
-        }
+        });
     });
 });
 
