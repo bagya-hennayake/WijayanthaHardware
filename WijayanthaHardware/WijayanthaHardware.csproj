@@ -174,11 +174,14 @@
     <Compile Include="BusinessObjects\LoginBO.cs" />
     <Compile Include="BusinessObjects\LookUpBO.cs" />
     <Compile Include="BusinessObjects\PaintSubCategoryBo.cs" />
+    <Compile Include="BusinessObjects\PowerToolCategoryBo.cs" />
+    <Compile Include="BusinessObjects\PowerToolsubCatergoryBo.cs" />
     <Compile Include="Common\CSS.cs" />
     <Compile Include="Common\LookUpTypeEnum.cs" />
     <Compile Include="Common\Plugin.cs" />
     <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaintsController.cs" />
     <Compile Include="Controllers\PowerToolsController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
@@ -195,8 +198,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.cs" />
+    <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.Designer.cs">
+      <DependentUpon>201807181437259_added status to power tool subcategory table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807181441465_added status to PowerToolCategory.cs" />
+    <Compile Include="Migrations\201807181441465_added status to PowerToolCategory.Designer.cs">
+      <DependentUpon>201807181441465_added status to PowerToolCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\PaintViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +216,7 @@
     <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\LookUpServices.cs" />
     <Compile Include="Services\PaintService.cs" />
+    <Compile Include="Services\PowerToolService.cs" />
     <Compile Include="Services\RegisterService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +259,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\Paint.js" />
     <Content Include="Scripts\PowerTools.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -271,6 +285,7 @@
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Security\Register.cshtml" />
     <Content Include="Views\PowerTools\Index.cshtml" />
+    <Content Include="Views\Paints\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +300,14 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807181437259_added status to power tool subcategory table.resx">
+      <DependentUpon>201807181437259_added status to power tool subcategory table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807181441465_added status to PowerToolCategory.resx">
+      <DependentUpon>201807181441465_added status to PowerToolCategory.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

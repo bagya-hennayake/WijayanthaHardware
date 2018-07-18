@@ -8,6 +8,8 @@ namespace WijayanthaHardware.Common
     public enum LookUpTypeEnum
     {
         PaintCategory = 1,
-        PaintSubCategory = 2
+        PaintSubCategory = 2,
+        PowerToolCategory = 3,
+        PowerToolSubCatogery = 4
     }
 }

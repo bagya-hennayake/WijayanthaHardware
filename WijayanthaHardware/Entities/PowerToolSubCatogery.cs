@@ -6,7 +6,8 @@ using System.Linq;
 using System.Web;
 
 namespace WijayanthaHardware.Entities
-{ [Table("PowerToolSubCatogery",Schema ="LookUp")]
+{
+    [Table("PowerToolSubCatogery", Schema = "LookUp")]
     public class PowerToolSubCatogery
     {
         [Key]
@@ -15,5 +16,6 @@ namespace WijayanthaHardware.Entities
         public string Description { get; set; }
         public int? PowerToolCategoryId { get; set; }
         public PowerToolCategory PowerToolCategory { get; set; }
+        public int Status { get; set; }
     }
 }

@@ -11,22 +11,21 @@ namespace WijayanthaHardware.Services
 {
     public class PaintService : RepositoryBase
     {
-        public async Task<List<PaintSubCategoryBo>> GetPaintSubCategory(int? paintCat)
+        public async Task<List<PaintSubCategoryBo>> GetPaintSubCategories(int? paintCategoryId)
         {
             using (var context = CreateContext())
             {
-                var result = await context.PaintSubCategory.Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == paintCat)
+                var result = await context.PaintSubCategory.Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == paintCategoryId)
                     .Select(s => new PaintSubCategoryBo
                     {
                         PaintSubCategoryId = s.PaintSubCategoryId,
                         Value = s.Value
                     }).OrderBy(o => o.Value).ToListAsync();
+
                 return result;
             }
 
 
-
         }
-
     }
 }

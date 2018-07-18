@@ -9,10 +9,10 @@ namespace WijayanthaHardware.Models
 {
     public class PowerToolsViewModel
     {
-        [Display(Name = "Power Tool Category")]
+        [Display(Name = "Tool Category")]
         public int PowerToolId { get; set; }
         public SelectList PowerToolSelectList { get; set; }
-        [Display(Name = "Power Tool")]
+        [Display(Name = "Tool")]
         public int? PowerToolSubCategoryId { get; set; }
         public SelectList PowerToolSubSelectList { get; set; }
     }

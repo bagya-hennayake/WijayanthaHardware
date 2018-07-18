@@ -25,7 +25,10 @@ namespace WijayanthaHardware
             //          "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/powertool-css").Include(CSS.SingleSelectDropDown));
-            bundles.Add(new ScriptBundle("~/powertool-js").Include(Plugin.SingleSelectDropDown,Plugin.SingleSelectDropDownFn, "~/Scripts/PowerTools.js"));
+            bundles.Add(new ScriptBundle("~/powertool-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, "~/Scripts/PowerTools.js"));
+
+            bundles.Add(new StyleBundle("~/paint-css").Include(CSS.SingleSelectDropDown));
+            bundles.Add(new ScriptBundle("~/paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, "~/Scripts/Paint.js"));
         }
     }
 }

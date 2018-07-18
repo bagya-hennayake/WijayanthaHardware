@@ -14,17 +14,17 @@ namespace WijayanthaHardware.Controllers
     public class PowerToolsController : Controller
     {
         private readonly LookUpServices _lookUpServices;
-        private readonly PaintService _paintService;
+        private readonly PowerToolService _powerToolService;
 
-        public PowerToolsController(LookUpServices lookUpServices, PaintService paintService)
+        public PowerToolsController(LookUpServices lookUpServices, PowerToolService powerToolService)
         {
             _lookUpServices = lookUpServices;
-            _paintService = paintService;
+            _powerToolService = powerToolService;
         }
 
         public ActionResult Index()
         {
-            var lookUpCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
+            var lookUpCategory = _lookUpServices.GetLookUp(LookUpTypeEnum.PowerToolCategory);
             var powerToolViewModel = new PowerToolsViewModel
             {
                 PowerToolSelectList = new SelectList(lookUpCategory, "LookUpId", "Value"),
@@ -33,9 +33,9 @@ namespace WijayanthaHardware.Controllers
             return View(powerToolViewModel);
         }
 
-        public async Task<ActionResult> GetPaintSubCategories(int? paintCat)
+        public async Task<ActionResult> GetPowerToolSubCategories(int? powerToolCategory)
         {
-            var result = await _paintService.GetPaintSubCategory(paintCat);
+            var result = await _powerToolService.GetPowerToolsSubCategory(powerToolCategory);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
