@@ -58,6 +58,7 @@ namespace WijayanthaHardware.Controllers
                     return RedirectToAction("DashBoard", "Home");
             }
             return View("Login", loginViewModel);
+            //return Json(new { status = TransactionStatusEnum.error, message = "Invalid username or password" }, JsonRequestBehavior.AllowGet);
         }
 
 

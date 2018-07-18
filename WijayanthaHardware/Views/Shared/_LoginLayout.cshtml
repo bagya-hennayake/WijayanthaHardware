@@ -17,12 +17,13 @@
           crossorigin="anonymous">
     <link href="~/Content/css/login.css" rel="stylesheet" />
     <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jqueryval")
-
+    <script src="~/Scripts/toastr.min.js"></script>
 </body>
 </html>

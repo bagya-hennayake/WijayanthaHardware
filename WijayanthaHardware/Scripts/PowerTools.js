@@ -12,7 +12,6 @@
                 });
                 $('#PowerToolSubCategoryId').niceSelect('update');
             }
-
         });
     });
 });

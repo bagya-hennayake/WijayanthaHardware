@@ -10,6 +10,7 @@ namespace WijayanthaHardware.Common
         PaintCategory = 1,
         PaintSubCategory = 2,
         PowerToolCategory = 3,
-        PowerToolSubCatogery = 4
+        PowerToolSubCatogery = 4,
+        PaintVolume = 5
     }
 }

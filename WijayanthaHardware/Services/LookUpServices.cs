@@ -18,14 +18,12 @@ namespace WijayanthaHardware.Services
                 {
                     string sqlCommand = $" SELECT [{lookUpTypeEnum.ToString()}ID] AS LookUpId,[Value],[Description],[Status]  FROM [LookUp].[{lookUpTypeEnum.ToString()}] WHERE Status=1";
                     return context.Database.SqlQuery<LookUpBO>(sqlCommand).OrderBy(o => o.Value).ToList();
-                    
                 }
             }
             catch (Exception ex)
             {
                 var errorMessage = ex.StackTrace;
                 return new List<LookUpBO>();
-
             }
         }
     }
