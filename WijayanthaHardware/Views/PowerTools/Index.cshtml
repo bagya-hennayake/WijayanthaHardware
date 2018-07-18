@@ -6,7 +6,7 @@
 @section style{
     @Styles.Render("~/powertool-css")
 }
-<div class="powertools">
+<div class="page-content">
     <div class="container">
         <h1 class="big-heading">power tools</h1>
         <div class="row">
@@ -14,18 +14,15 @@
                 <div class="select-bar">
                     @Html.LabelFor(x => x.PowerToolId)
                     @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category", new { @class = "wide" })
-
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
                     @Html.LabelFor(x => x.PowerToolSubCategoryId)
                     @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select Tool", new { @class = "wide" })
-
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 @section script
