@@ -3,7 +3,9 @@
     ViewBag.Title = "Power Tools";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
-
+@section style{
+    @Styles.Render("~/powertool-css")
+}
 <div class="powertools">
     <div class="container">
         <h1 class="big-heading">power tools</h1>
@@ -11,7 +13,7 @@
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
                     @Html.LabelFor(x => x.PowerToolId)
-                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category" , new { @class = "wide" })
+                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category", new { @class = "wide" })
 
                 </div>
             </div>
@@ -23,8 +25,10 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
-<script src="~/Scripts/dropdownfn.js"></script>
-<script src="~/Scripts/PowerTools.js"></script>
+@section script
+{
+    @Scripts.Render("~/powertool-js")
+}

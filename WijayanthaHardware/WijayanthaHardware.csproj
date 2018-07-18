@@ -174,7 +174,9 @@
     <Compile Include="BusinessObjects\LoginBO.cs" />
     <Compile Include="BusinessObjects\LookUpBO.cs" />
     <Compile Include="BusinessObjects\PaintSubCategoryBo.cs" />
+    <Compile Include="Common\CSS.cs" />
     <Compile Include="Common\LookUpTypeEnum.cs" />
+    <Compile Include="Common\Plugin.cs" />
     <Compile Include="Common\RecordStatusEnum.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PowerToolsController.cs" />

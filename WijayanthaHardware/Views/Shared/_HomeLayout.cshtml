@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
           crossorigin="anonymous">
     <link href="~/Content/css/styles.css" rel="stylesheet" />
-    <link href="~/Content/css/nice-select.css" rel="stylesheet" />
     @******************************************************Styles*********************************************************@
 
     @******************************************************Scripts*********************************************************@
@@ -21,10 +20,9 @@
             crossorigin="anonymous"></script>
     <script src="~/Scripts/scripts.js"></script>
     <script src="~/Scripts/modernizr.custom.js"></script>
-    <script src="~/Scripts/jquery.nice-select.min.js"></script>
     @******************************************************Scripts*********************************************************@
 
-
+    @RenderSection("style", required: false)
 </head>
 <body>
     <nav class="menu">
@@ -46,6 +44,6 @@
     </nav>
     @RenderBody()
 
- 
+    @RenderSection("script", required: false)
 </body>
 </html>

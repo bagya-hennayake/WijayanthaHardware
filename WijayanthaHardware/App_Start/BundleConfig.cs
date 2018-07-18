@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Optimization;
+using WijayanthaHardware.Common;
 
 namespace WijayanthaHardware
 {
@@ -22,6 +23,9 @@ namespace WijayanthaHardware
             //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
             //          "~/Scripts/bootstrap.js",
             //          "~/Scripts/respond.js"));
+
+            bundles.Add(new StyleBundle("~/powertool-css").Include(CSS.SingleSelectDropDown));
+            bundles.Add(new ScriptBundle("~/powertool-js").Include(Plugin.SingleSelectDropDown,Plugin.SingleSelectDropDownFn, "~/Scripts/PowerTools.js"));
         }
     }
 }
