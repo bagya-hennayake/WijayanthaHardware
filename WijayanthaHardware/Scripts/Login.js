@@ -12,7 +12,7 @@
         processData = false;
         $.ajax({
             type: "POST",
-            url: '/Security/Login',
+            url: action,
             data: dataString,
             dataType: "json",
             contentType: contentType,

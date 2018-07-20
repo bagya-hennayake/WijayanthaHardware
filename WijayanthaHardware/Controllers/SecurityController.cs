@@ -22,7 +22,7 @@ namespace WijayanthaHardware.Controllers
         [HttpGet]
         public ActionResult Login(string ReturnUrl)
         {
-            ViewBag.returnURL = ReturnUrl;
+            //ViewBag.returnURL = ReturnUrl;
             return View(new LoginViewModel());
         }
 
