@@ -10,6 +10,7 @@ using WijayanthaHardware.Services;
 
 namespace WijayanthaHardware.Controllers
 {
+    [Authorize]
     public class PaintsController : Controller
     {
         private readonly PaintService _paintService;

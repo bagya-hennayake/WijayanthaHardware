@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Security;
+using WijayanthaHardware.Common;
 using WijayanthaHardware.Models;
 using WijayanthaHardware.Services;
 
@@ -44,21 +45,16 @@ namespace WijayanthaHardware.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel loginViewModel, string ReturnUrl)
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
             var loginBo = loginViewModel.Mapper(loginViewModel);
             var result = await _loginService.AuthenticateUser(loginBo);
             if (result)
             {
-                FormsAuthentication.SetAuthCookie(loginBo.Username, false);
-                FormsAuthentication.RedirectFromLoginPage(loginBo.Username, false);
-                if (Url.IsLocalUrl(ReturnUrl))
-                    return Redirect(ReturnUrl);
-                else
-                    return RedirectToAction("DashBoard", "Home");
+                _loginService.SetFormsAuthentication(this.HttpContext, loginBo);
+                return Json(new { status = "redirect", redirecURL = loginViewModel.ReturnUrl ?? "/Home/DashBoard" }, JsonRequestBehavior.AllowGet);
             }
-            return View("Login", loginViewModel);
-            //return Json(new { status = TransactionStatusEnum.error, message = "Invalid username or password" }, JsonRequestBehavior.AllowGet);
+            return Json(new { status = TransactionStatusEnum.error.ToString(), title = "Login Failed", message = "Invalid username or password" }, JsonRequestBehavior.AllowGet);
         }
 
 

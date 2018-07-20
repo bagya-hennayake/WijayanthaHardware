@@ -18,7 +18,7 @@ namespace WijayanthaHardware.Models
         [Required(ErrorMessage = "Please enter your password")]
         [DataType(DataType.Password)]
         public string UserPassword { get; set; }
-
+        public string ReturnUrl { get; set; }
         public LoginBO Mapper(LoginViewModel loginViewModel)
         {
             loginViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(loginViewModel.UserPassword, "SHA1");
