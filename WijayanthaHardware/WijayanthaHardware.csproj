@@ -227,6 +227,7 @@
     <Content Include="Content\css\fonts\Orbitron\OFL.txt" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\nice-select.css" />
+    <Content Include="Content\css\Preloader.css" />
     <Content Include="Content\css\styles.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
@@ -265,7 +266,6 @@
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Bold.ttf" />
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Medium.ttf" />
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Regular.ttf" />
-    <Content Include="Content\scss\PreaLoder.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropdownfn.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

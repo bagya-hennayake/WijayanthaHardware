@@ -27,9 +27,16 @@ function showWaitBlock() {
             width: 'unset',
             border: 'none',
             left: '50%',
+            top: '50%',
+            transform: 'translate(-50%,-50%)',
             backgroundColor: 'none'
         },
-        message: "<div class='Loader'></div>",
+        overlayCSS: { backgroundColor: 'rgb(175, 169, 169)' },
+        message: '<div class="loader"><div class="dot dot1"></div><div class="dot dot2"></div><div class="dot dot3"></div><div class="dot dot4"></div></div>',
         baseZ: 50000
     });
-} 
+}
+
+function hideWaitBlock() {
+    $.unblockUI();
+}

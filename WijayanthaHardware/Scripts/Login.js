@@ -3,6 +3,7 @@
 
     $("#LoginForm").submit(function (event) {
         if (!$("#LoginForm").valid()) { return; }
+        showWaitBlock();
         event.preventDefault();
         event.stopImmediatePropagation();
         var action = $("#LoginForm").attr("action");
@@ -20,15 +21,18 @@
             success: function (result) {
                 if (result.status == "redirect") {
                     window.location.href = result.redirecURL;
+                    hideWaitBlock();
                 }
 
                 else {
                     showToastr(result);
+                    hideWaitBlock();
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
 
                 toastr.error("Something went wrong, please try refreshing the page", "Failed");
+                hideWaitBlock();
                 return;
             }
         });
