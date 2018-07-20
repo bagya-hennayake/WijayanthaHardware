@@ -12,13 +12,13 @@
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
-                    @Html.LabelFor(x => x.PaintCategoryId)
+                    @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
                     @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide" })
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
-                    @Html.LabelFor(x => x.PaintSubCategoryId)
+                    @Html.LabelFor(x => x.PaintSubCategoryId, new { @class = "small-heading" })
                     @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide" })
                 </div>
             </div>
