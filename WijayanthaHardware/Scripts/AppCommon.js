@@ -20,3 +20,16 @@
         toastr.warning(data.message, data.title);
     }
 }
+
+function showWaitBlock() {
+    $.blockUI({
+        css: {
+            width: 'unset',
+            border: 'none',
+            left: '50%',
+            backgroundColor: 'none'
+        },
+        message: "<div class='Loader'></div>",
+        baseZ: 50000
+    });
+} 

@@ -265,11 +265,13 @@
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Bold.ttf" />
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Medium.ttf" />
     <Content Include="Content\css\fonts\Orbitron\Orbitron-Regular.ttf" />
+    <Content Include="Content\scss\PreaLoder.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropdownfn.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
     <Content Include="Scripts\jquery.nice-select.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
