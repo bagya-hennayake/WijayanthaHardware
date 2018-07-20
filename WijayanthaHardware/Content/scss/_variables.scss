@@ -1,6 +1,84 @@
+
+/*Color variables*/
 $gradient-start :#ABDCFF;
 $gradient-end :#0396FF;
-
-$font:'Open Sans', sans-serif;
-$login-brand:#c2468c;
+$login-brand: #c2468c;
 $main-color: #0a99ff;
+$grey: #cbced0;
+$light-grey:#797979;
+
+
+
+/*Fonts & variables*/
+$font-openRegular: 'OpenSans-Regular', sans-serif;
+$font-openBoldItalic: 'OpenSans-BoldItalic', sans-serif;
+$font-openExtraBold: 'OpenSans-ExtraBold', sans-serif;
+$font-openExtraBoldItalic: 'OpenSans-ExtraBoldItalic', sans-serif;
+$font-openItalic: 'OpenSans-Italic', sans-serif;
+$font-openLight: 'OpenSans-Light', sans-serif;
+$font-openLightItalic: 'OpenSans-LightItalic', sans-serif;
+$font-openSemiBold: 'OpenSans-SemiBold', sans-serif;
+$font-openSemiBoldItalic: 'OpenSans-SemiBoldItalic', sans-serif;
+
+$font-OrbitronBlack: 'Orbitron-Black', sans-serif;
+$font-OrbitronBold: 'Orbitron-Bold', sans-serif;
+$font-OrbitronMedium: 'Orbitron-Medium', sans-serif;
+$font-OrbitronRegular: 'Orbitron-Regular', sans-serif;
+
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../css/fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-BoldItalic';
+    src: url('../css/fonts/Open_Sans/OpenSans-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-ExtraBold';
+    src: url('../css/fonts/Open_Sans/OpenSans-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-ExtraBoldItalic';
+    src: url('../css/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Italic';
+    src: url('../css/fonts/Open_Sans/OpenSans-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../css/fonts/Open_Sans/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-LightItalic';
+    src: url('../css/fonts/Open_Sans/OpenSans-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../css/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('../css/fonts/Open_Sans/OpenSans-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'OpenSans-SemiBoldItalic';
+    src: url('../css/fonts/Open_Sans/OpenSans-SemiBoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Orbitron-Black';
+    src: url('../css/fonts/Orbitron/Orbitron-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Orbitron-Bold';
+    src: url('../css/fonts/Orbitron/Orbitron-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Orbitron-Medium';
+    src: url('../css/fonts/Orbitron/Orbitron-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Orbitron-Regular';
+    src: url('../css/fonts/Orbitron/Orbitron-Regular.ttf') format('truetype');
+}

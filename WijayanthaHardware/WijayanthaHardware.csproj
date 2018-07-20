@@ -223,6 +223,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\fonts\Open_Sans\LICENSE.txt" />
+    <Content Include="Content\css\fonts\Orbitron\OFL.txt" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\nice-select.css" />
     <Content Include="Content\css\styles.css" />
@@ -248,6 +250,20 @@
     <Content Include="Content\scss\nice-select.scss" />
     <Content Include="Content\css\nice-select.css.map" />
     <Content Include="Content\css\styles.css.map" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-Bold.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-BoldItalic.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-ExtraBold.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-Italic.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-Light.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-LightItalic.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-Regular.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-SemiBold.ttf" />
+    <Content Include="Content\css\fonts\Open_Sans\OpenSans-SemiBoldItalic.ttf" />
+    <Content Include="Content\css\fonts\Orbitron\Orbitron-Black.ttf" />
+    <Content Include="Content\css\fonts\Orbitron\Orbitron-Bold.ttf" />
+    <Content Include="Content\css\fonts\Orbitron\Orbitron-Medium.ttf" />
+    <Content Include="Content\css\fonts\Orbitron\Orbitron-Regular.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dropdownfn.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

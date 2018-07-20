@@ -12,14 +12,48 @@
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
-                    @Html.LabelFor(x => x.PowerToolId)
-                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category", new { @class = "wide" })
+                    @Html.LabelFor(x => x.PowerToolId, new { @class = "small-heading" })
+                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select Tool Category", new { @class = "wide select-list" })
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
-                    @Html.LabelFor(x => x.PowerToolSubCategoryId)
-                    @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select Tool", new { @class = "wide" })
+                    @Html.LabelFor(x => x.PowerToolSubCategoryId, new { @class = "small-heading" })
+                    @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select Tool", new { @class = "wide select-list" })
+                </div>
+            </div>
+        </div>
+        <div class="item-details">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <div class="item-left">
+                        <div class="item-name">Arc reactor</div>
+                        <table>
+                            <tr>
+                                <td>Price</td>
+                                <td>10000 LKR</td>
+                            </tr>
+                            <tr>
+                                <td>Cost code</td>
+                                <td>XSASOIS</td>
+                            </tr>
+                            <tr>
+                                <td>Brand</td>
+                                <td>Samsung Inc</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td>Warranty Period</td>
+                                <td>10 Months</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="item-right">
+                        <div class="availability-count">100</div>
+                        <div class="availability-text">Item remaining</div>
+                    </div>
                 </div>
             </div>
         </div>

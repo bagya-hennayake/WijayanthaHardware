@@ -2,7 +2,7 @@
 
 
 body {
-    font-family: $font;
+    font-family: $font-openRegular;
     overflow-x: hidden;
 }
 
@@ -18,6 +18,7 @@ select {
     margin: 30px;
     font-style: italic;
     font-weight: 600;
+
     &:after,
     &:before {
         position: absolute;
@@ -26,22 +27,24 @@ select {
         height: 2px;
         content: '';
     }
+
     &:after {
         bottom: -20px;
         left: 55%;
         background: #b5e0ff;
     }
+
     &:before {
         bottom: -30px;
         left: 45%;
         background: $main-color;
     }
 }
+
 .small-heading {
     color: $main-color;
-    margin:30px 0;
+    margin: 30px 0 10px;
     text-transform: uppercase;
-    font-style:italic;
     font-weight: 600;
 }
 /*Top menu*/
@@ -149,7 +152,7 @@ select {
                 z-index: 1;
                 opacity: 0.7;
                 transition: 250ms ease all;
-                font-weight:500;
+                font-weight: 500;
             }
 
             > ul {
@@ -421,71 +424,73 @@ select {
         color: #fff;
         font-size: 25px;
         text-transform: uppercase;
-        &:hover{
+
+        &:hover {
             text-decoration: none;
         }
-        i{
-            margin:0 5px;
+        i {
+            margin: 0 5px;
         }
     }
 }
-.powertools {
-    .tool-search {
-        padding: 30px 0;
+.page-content {
+    .select-bar {
+        margin: 20px 0;
 
-        .select-tool {
-            margin-right: 30px;
-            position: relative;
-            select {
-                width: 220px;
-                height: 40px;
-                border-radius: 10px;
-                border-color: #0a99ff;
-                vertical-align: middle;
-                outline: none;
-                padding: 0 10px;
-                color: #fff;
-                background: #35abff;
-                font-size: 20px;
+        .select-list {
+            margin-bottom: 40px;
+        }
+    }
+
+    .item-details {
+        padding: 20px 0;
+        border-top: 2px solid $grey;
+
+        .item-left {
+            .item-name {
+                padding: 10px 0;
+                color: $main-color;
+                font-size: 35px;
+                font-weight: 700;
+            }
+
+            table {
+                width: 100%;
+
+                tr {
+                    td {
+                        padding: 10px 0;
+                        font-size: 20px;
+                        border-bottom: 1px solid $grey;
+
+                        &:nth-child(1) {
+                            color: $main-color;
+                        }
+
+                        &:nth-child(2) {
+                            color: $light-grey;
+                            font-style: italic;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .item-right {
+            text-align: center;
+            font-family: $font-OrbitronRegular;
+            padding: 50px 0 10px;
+
+            .availability-count {
+                font-size: 110px;
+                color: #a9a9a9;
+            }
+
+            .availability-text {
+                font-size: 30px;
+                color:$main-color;
             }
         }
     }
-}
-
-.cd-dropdown > span,
-.cd-dropdown ul li:nth-last-child(-n+3) span {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-
-.cd-dropdown ul {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-}
-
-.cd-dropdown ul li {
-    position: absolute;
-    width: 100%;
-}
-
-.cd-active.cd-dropdown > span {
-    color: $main-color;
-}
-
-.cd-active.cd-dropdown > span,
-.cd-active.cd-dropdown ul li span {
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-}
-
-.cd-active.cd-dropdown ul li span {
-    -webkit-transition: all 0.2s linear 0s;
-    -moz-transition: all 0.2s linear 0s;
-    -ms-transition: all 0.2s linear 0s;
-    -o-transition: all 0.2s linear 0s;
-    transition: all 0.2s linear 0s;
-}
-
-.cd-active.cd-dropdown ul li span:hover {
-    background: $main-color;
-    color: #fff;
 }
