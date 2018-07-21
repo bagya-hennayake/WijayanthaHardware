@@ -21,5 +21,6 @@ namespace WijayanthaHardware.Models
         public string WarrantyPeriod { get; set; }
         public string CostCode { get; set; }
         public int AvailableQuantity { get; set; }
+        public string Details { get; set; }
     }
 }

@@ -25,18 +25,18 @@ namespace WijayanthaHardware.Services
             }
         }
 
-        public async Task<PowerToolsViewModel> GetPowerToolSubCategoryDetailAsync(int? powerToolSubCategoryId)
+        public async Task<PowerToolsViewModel> GetPowerToolSubCategoryDetailAsync(int? powerToolSubCategoryId, int? powerToolCategory)
 
         {
             using (var context = CreateContext())
             {
-                var result = await context.PowerToolMaster.Include(i => i.PowerToolSubCatogery).Include(i => i.PowerToolCategory).Where(a => a.PowerToolCategoryId == powerToolSubCategoryId)
+                var result = await context.PowerToolMaster.Include(i => i.PowerToolSubCatogery).Include(i => i.PowerToolCategory).Where(a => a.PowerToolCategoryId == powerToolCategory && a.PowerToolSubCatogeryId == powerToolSubCategoryId && a.Status == (int)RecordStatusEnum.Active)
                     .Select(s => new PowerToolsViewModel
                     {
                         ToolName = s.PowerToolSubCatogery.Value,
                         ToolPrice = s.Price,
                         CostCode = s.CostCode,
-                        ToolBrand = s.PowerToolCategory.Value,
+                        Details = s.PowerToolSubCatogery.Description,
                         WarrantyPeriod = s.WarrantyPeriod,
                         AvailableQuantity = s.Quantity
                     }).FirstOrDefaultAsync();

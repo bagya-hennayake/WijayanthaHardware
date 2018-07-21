@@ -23,12 +23,12 @@
                 </div>
             </div>
         </div>
-        <div class="item-details">
+        <div class="item-details" id="item-details-Table" style="opacity:0;">
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div class="item-left">
-                        <div class="item-name">@Model.ToolName</div>
-                        <table class="power-tools">
+                        <div class="item-name" id="@Html.IdFor(x=>x.ToolName)"></div>
+                        <table>
                             <tr>
                                 <td>Price</td>
                                 <td id="@Html.IdFor(x=>x.ToolPrice)"></td>
@@ -38,8 +38,8 @@
                                 <td id="@Html.IdFor(x=>x.CostCode)"></td>
                             </tr>
                             <tr>
-                                <td>Brand</td>
-                                <td id="@Html.IdFor(x=>x.ToolBrand)"></td>
+                                <td>Detail</td>
+                                <td id="@Html.IdFor(x=>x.Details)"></td>
                             </tr>
                             <tr>
                             <tr>
