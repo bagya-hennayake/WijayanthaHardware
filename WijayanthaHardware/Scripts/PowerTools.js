@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    
+
     $("#PowerToolId").change(function () {
         $.ajax({
             type: "GET",
@@ -11,7 +11,6 @@
                     $("#PowerToolSubCategoryId").append("<option value='" + data[i].PowerToolSubCategoryId + "'>" + data[i].Value + "</option>")
                 });
                 $('#PowerToolSubCategoryId').niceSelect('update');
-                //$('#ToolPrice').text('test price');
             }
         });
     });
@@ -23,8 +22,13 @@
             type: "GET",
             url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val(),
             success: function (data) {
-              
-                //$('#ToolPrice').text('test price');
+                $('#item-details-Table').removeAttr("hidden").animate({ opacity: 1 }, 85);
+                $('#ToolName').text(data.ToolName);
+                $('#ToolPrice').text(data.ToolPrice);
+                $('#ToolBrand').text(data.ToolBrand);
+                $('#WarrantyPeriod').text(data.WarrantyPeriod);
+                $('#CostCode').text(data.CostCode);
+                $('#AvailableQuantity').text(data.AvailableQuantity);
             }
         });
     });
