@@ -439,6 +439,9 @@ select {
 
         .select-list {
             margin-bottom: 40px;
+            &.paint-list{
+                margin-bottom:10px;
+            }
         }
     }
 
@@ -454,7 +457,7 @@ select {
                 font-weight: 700;
             }
 
-            table {
+            .power-tools {
                 width: 100%;
 
                 tr {
@@ -489,7 +492,23 @@ select {
 
             .availability-text {
                 font-size: 30px;
-                color:$main-color;
+                color: $main-color;
+            }
+        }
+    }
+
+    .search-bar {
+        margin:25px 0;
+        input[type=text] {
+            width: 100%;
+            border-radius: 5px;
+            line-height: 38px;
+            padding: 0 15px;
+            outline: none;
+            border: 1px solid #e8e8e8;
+            transition:.3s;
+            &:focus{
+                border-color:#999;
             }
         }
     }

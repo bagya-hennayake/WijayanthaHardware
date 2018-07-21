@@ -13,14 +13,27 @@
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
                     @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
-                    @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide" })
+                    @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide select-list paint-list" })
                 </div>
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="select-bar">
                     @Html.LabelFor(x => x.PaintSubCategoryId, new { @class = "small-heading" })
-                    @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide" })
+                    @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide select-list paint-list" })
                 </div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <div class="search-bar">
+                    <input class="typeahead" type="text" placeholder="Search Paint Color">
+                </div>
+            </div>
+        </div>
+        <div class="item-details">
+            <div class="col-xs-12 col-md-4">
+
+            </div>
+            <div class="col-xs-12 col-md-8">
+
             </div>
         </div>
     </div>
