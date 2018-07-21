@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
 
     $("#PowerToolId").change(function () {
+        $('#item-details-Table').animate({ opacity: 0 }, 85);
         $.ajax({
             type: "GET",
             url: "/PowerTools/GetPowerToolSubCategories?powerToolCategory=" + $(this).val(),
@@ -18,14 +19,15 @@
 
 
     $("#PowerToolSubCategoryId").change(function () {
+        $('#item-details-Table').animate({ opacity: 0 }, 85);
         $.ajax({
             type: "GET",
-            url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val(),
+            url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val() + "&powerToolCategory=" + $("#PowerToolId").val(),
             success: function (data) {
-                $('#item-details-Table').removeAttr("hidden").animate({ opacity: 1 }, 85);
+                $('#item-details-Table').animate({ opacity: 1 }, 85);
                 $('#ToolName').text(data.ToolName);
-                $('#ToolPrice').text(data.ToolPrice);
-                $('#ToolBrand').text(data.ToolBrand);
+                $('#ToolPrice').text(data.ToolPrice + " LKR");
+                $('#Details').text(data.Details);
                 $('#WarrantyPeriod').text(data.WarrantyPeriod);
                 $('#CostCode').text(data.CostCode);
                 $('#AvailableQuantity').text(data.AvailableQuantity);

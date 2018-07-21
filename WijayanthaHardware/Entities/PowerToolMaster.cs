@@ -5,9 +5,11 @@ using System.Linq;
 using System.Web;
 
 namespace WijayanthaHardware.Entities
-{[Table("PowerToolMaster",Schema = "Inventory")]
+{
+    [Table("PowerToolMaster", Schema = "Inventory")]
     public class PowerToolMaster
-    {[key]
+    {
+        [key]
         public int PowerToolMasterId { get; set; }
         public PowerToolCategory PowerToolCategory { get; set; }
         public int PowerToolCategoryId { get; set; }
@@ -18,6 +20,7 @@ namespace WijayanthaHardware.Entities
         public double Price { get; set; }
         public string CostCode { get; set; }
         public string WarrantyPeriod { get; set; }
+        public int Status { get; set; }
 
     }
 }
