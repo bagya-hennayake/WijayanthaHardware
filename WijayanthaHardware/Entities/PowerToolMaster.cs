@@ -15,5 +15,9 @@ namespace WijayanthaHardware.Entities
         public int PowerToolSubCatogeryId { get; set; }
         public string Detail { get; set; }
         public int Quantity { get; set; }
+        public double Price { get; set; }
+        public string CostCode { get; set; }
+        public string WarrantyPeriod { get; set; }
+
     }
 }

@@ -38,5 +38,11 @@ namespace WijayanthaHardware.Controllers
             var result = await _powerToolService.GetPowerToolsSubCategory(powerToolCategory);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        public async Task<ActionResult> GetPowerToolSubCategoryDetail(int? powerToolSubCatId)
+        {
+           var result = await _powerToolService.GetPowerToolSubCategoryDetailAsync(powerToolSubCatId);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
 }

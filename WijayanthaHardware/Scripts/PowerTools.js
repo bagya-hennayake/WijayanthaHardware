@@ -15,5 +15,18 @@
             }
         });
     });
+
+
+
+    $("#PowerToolSubCategoryId").change(function () {
+        $.ajax({
+            type: "GET",
+            url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val(),
+            success: function (data) {
+              
+                //$('#ToolPrice').text('test price');
+            }
+        });
+    });
 });
 
