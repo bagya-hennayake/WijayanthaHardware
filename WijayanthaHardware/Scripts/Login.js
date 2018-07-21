@@ -20,19 +20,18 @@
             processData: processData,
             success: function (result) {
                 if (result.status == "redirect") {
-                    window.location.href = result.redirecURL;
+                    window.location.href = result.redirectURL;
                     hideWaitBlock();
                 }
 
                 else {
-                    showToastr(result);
                     hideWaitBlock();
+                    showToastr(result);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-
-                toastr.error("Something went wrong, please try refreshing the page", "Failed");
                 hideWaitBlock();
+                toastr.error("Something went wrong, please try refreshing the page", "Failed");
                 return;
             }
         });

@@ -22,10 +22,23 @@ namespace WijayanthaHardware.Controllers
         [HttpGet]
         public ActionResult Login(string ReturnUrl)
         {
-            //ViewBag.returnURL = ReturnUrl;
             return View(new LoginViewModel());
         }
 
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel)
+        {
+            var loginBo = loginViewModel.Mapper(loginViewModel);
+            var result = await _loginService.AuthenticateUser(loginBo);
+            if (result)
+            {
+                _loginService.SetFormsAuthentication(this.HttpContext, loginBo);
+                return Json(new { status = "redirect", redirectURL = loginViewModel.ReturnUrl ?? "/Home/DashBoard" }, JsonRequestBehavior.AllowGet);
+            }
+            return Json(new { status = TransactionStatusEnum.error.ToString(), title = "Login Failed", message = "Invalid username or password" }, JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Register()
         {
@@ -41,22 +54,6 @@ namespace WijayanthaHardware.Controllers
             await _registerService.RegisterNewUserAsync(registerViewModel);
             return RedirectToAction("DashBoard", "Home");
         }
-
-        [AllowAnonymous]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel loginViewModel)
-        {
-            var loginBo = loginViewModel.Mapper(loginViewModel);
-            var result = await _loginService.AuthenticateUser(loginBo);
-            if (result)
-            {
-                _loginService.SetFormsAuthentication(this.HttpContext, loginBo);
-                return Json(new { status = "redirect", redirecURL = loginViewModel.ReturnUrl ?? "/Home/DashBoard" }, JsonRequestBehavior.AllowGet);
-            }
-            return Json(new { status = TransactionStatusEnum.error.ToString(), title = "Login Failed", message = "Invalid username or password" }, JsonRequestBehavior.AllowGet);
-        }
-
 
         public ActionResult Logout()
         {

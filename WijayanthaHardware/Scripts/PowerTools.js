@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-
+    
     $("#PowerToolId").change(function () {
         $.ajax({
             type: "GET",
@@ -11,6 +11,7 @@
                     $("#PowerToolSubCategoryId").append("<option value='" + data[i].PowerToolSubCategoryId + "'>" + data[i].Value + "</option>")
                 });
                 $('#PowerToolSubCategoryId').niceSelect('update');
+                //$('#ToolPrice').text('test price');
             }
         });
     });

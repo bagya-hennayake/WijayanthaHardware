@@ -15,5 +15,11 @@ namespace WijayanthaHardware.Models
         [Display(Name = "Tool")]
         public int? PowerToolSubCategoryId { get; set; }
         public SelectList PowerToolSubSelectList { get; set; }
+        public string ToolName { get; set; }
+        public double ToolPrice { get; set; }
+        public string ToolBrand { get; set; }
+        public string WarrantyPeriod { get; set; }
+        public string CostCode { get; set; }
+        public int AvailableQuantity { get; set; }
     }
 }

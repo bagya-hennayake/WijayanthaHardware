@@ -27,31 +27,31 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <div class="item-left">
-                        <div class="item-name">Arc reactor</div>
+                        <div class="item-name">@Model.ToolName</div>
                         <table>
                             <tr>
                                 <td>Price</td>
-                                <td>10000 LKR</td>
+                                <td id="@Html.IdFor(x=>x.ToolPrice)"></td>
                             </tr>
                             <tr>
                                 <td>Cost code</td>
-                                <td>XSASOIS</td>
+                                <td id="@Html.IdFor(x=>x.CostCode)"></td>
                             </tr>
                             <tr>
                                 <td>Brand</td>
-                                <td>Samsung Inc</td>
+                                <td id="@Html.IdFor(x=>x.ToolBrand)"></td>
                             </tr>
                             <tr>
                             <tr>
                                 <td>Warranty Period</td>
-                                <td>10 Months</td>
+                                <td id="@Html.IdFor(x=>x.WarrantyPeriod)"></td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div class="item-right">
-                        <div class="availability-count">100</div>
+                        <div class="availability-count" id="@Html.IdFor(x=>x.AvailableQuantity)"></div>
                         <div class="availability-text">Item remaining</div>
                     </div>
                 </div>
