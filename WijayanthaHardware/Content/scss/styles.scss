@@ -439,8 +439,9 @@ select {
 
         .select-list {
             margin-bottom: 40px;
-            &.paint-list{
-                margin-bottom:10px;
+
+            &.paint-list {
+                margin-bottom: 10px;
             }
         }
     }
@@ -498,7 +499,8 @@ select {
     }
 
     .search-bar {
-        margin:25px 0;
+        margin: 25px 0;
+
         input[type=text] {
             width: 100%;
             border-radius: 5px;
@@ -506,10 +508,15 @@ select {
             padding: 0 15px;
             outline: none;
             border: 1px solid #e8e8e8;
-            transition:.3s;
-            &:focus{
-                border-color:#999;
+            transition: .3s;
+
+            &:focus {
+                border-color: #999;
             }
+        }
+
+        .twitter-typeahead{
+            width:100%;
         }
     }
 }

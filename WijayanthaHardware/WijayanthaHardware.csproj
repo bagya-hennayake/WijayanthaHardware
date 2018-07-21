@@ -217,6 +217,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\PaintColourViewModel.cs" />
     <Compile Include="Models\PaintViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
@@ -237,6 +238,7 @@
     <Content Include="Content\css\nice-select.css" />
     <Content Include="Content\css\Preloader.css" />
     <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\Typeahead.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
@@ -246,6 +248,8 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\AppCommon.js" />
+    <Content Include="Scripts\bloodhound.js" />
+    <Content Include="Scripts\bloodhound.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -297,6 +301,10 @@
     <Content Include="Scripts\scripts.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\typeahead.bundle.js" />
+    <Content Include="Scripts\typeahead.bundle.min.js" />
+    <Content Include="Scripts\typeahead.jquery.js" />
+    <Content Include="Scripts\typeahead.jquery.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

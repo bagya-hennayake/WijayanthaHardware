@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using WijayanthaHardware.BusinessObjects;
 using WijayanthaHardware.Common;
+using WijayanthaHardware.Models;
 
 namespace WijayanthaHardware.Services
 {
@@ -26,6 +27,19 @@ namespace WijayanthaHardware.Services
             }
 
 
+        }
+
+        public async Task<List<PaintColourViewModel>> GetPaintColoursAsync(string query)
+        {
+            using (var context = CreateContext())
+            {
+                var list = await context.PaintColour.Where(w=>w.Colour.Contains(query)).Select(s => new PaintColourViewModel
+                {
+                    PaintColourId = s.PaintColourId,
+                    Colour = s.Colour
+                }).ToListAsync();
+                return list;
+            }
         }
     }
 }

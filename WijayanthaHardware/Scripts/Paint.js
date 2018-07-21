@@ -15,5 +15,30 @@
 
         });
     });
+
+
+
+    //Type Ahead
+
+    var paintColours = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '/Paints/GetPaintColourLookup?query=%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+
+    $('#searchBar').typeahead(
+        {
+            minLength: 1,
+            highlight: true
+        },
+        {
+            name: 'paintColours',
+            display: 'Colour',
+            source: paintColours
+        });
 });
+
 

@@ -27,8 +27,9 @@ namespace WijayanthaHardware
             bundles.Add(new StyleBundle("~/powertool-css").Include(CSS.SingleSelectDropDown));
             bundles.Add(new ScriptBundle("~/powertool-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, "~/Scripts/PowerTools.js"));
 
-            bundles.Add(new StyleBundle("~/paint-css").Include(CSS.SingleSelectDropDown));
-            bundles.Add(new ScriptBundle("~/paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, "~/Scripts/Paint.js"));
+            bundles.Add(new StyleBundle("~/paint-css").Include(CSS.SingleSelectDropDown, "~/Content/css/Typeahead.css"));
+            bundles.Add(new ScriptBundle("~/paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn,
+                "~/Scripts/typeahead.bundle.js", "~/Scripts/Paint.js"));
         }
     }
 }
