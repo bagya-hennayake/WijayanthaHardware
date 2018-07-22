@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     $("#PaintCategoryId").change(function () {
+        $('#paintDetails').animate({ opacity: 0 }, 85);
         $.ajax({
             type: "GET",
             url: "/Paints/GetPaintSubCategory?paintCategoryId=" + $(this).val(),
@@ -51,7 +52,7 @@
                 success: function (data) {
                     $("#paint-details-Table > tbody").empty();
                     $(data).each(function (i) {
-                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].Volume + "</td><td>" + data[i].Price + "</td><td>" + data[i].AvailableQuantity + "</td></tr>");
+                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
                     });
                     $('#paintDetails').animate({ opacity: 1 }, 85);
                 }
