@@ -15,5 +15,9 @@ namespace WijayanthaHardware.Models
         [Display(Name = "Paint")]
         public int PaintSubCategoryId { get; set; }
         public SelectList PaintSubategoryList { get; set; }
+        public string PaintColour { get; set; }
+        public string Volume { get; set; }
+        public int AvailableQuantity { get; set; }
+        public double Price { get; set; }
     }
 }

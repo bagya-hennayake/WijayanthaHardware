@@ -33,11 +33,27 @@ namespace WijayanthaHardware.Services
         {
             using (var context = CreateContext())
             {
-                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory).Where(w => w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query)).Select(s => new PaintColourViewModel
+                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory).Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query)).Select(s => new PaintColourViewModel
                 {
                     PaintColourId = s.PaintColour.PaintColourId,
                     Colour = s.PaintColour.Colour
                 }).ToListAsync();
+                return list;
+            }
+        }
+
+        public async Task<List<PaintViewModel>> GetpaintByColourIdAsync(int? PaintCategoryId, int? PaintSubCategoryId, int paintColourId)
+        {
+            using (var context = CreateContext())
+            {
+                var list = await context.PaintMaster.Include(i => i.PaintVolume)
+                    .Where(w => w.PaintColourId == paintColourId && w.PaintCategoryId == PaintCategoryId && w.Status == (int)RecordStatusEnum.Active)
+                    .Select(s => new PaintViewModel
+                    {
+                        Volume = s.PaintVolume.Value,
+                        Price = s.Price,
+                        AvailableQuantity = s.Quantity
+                    }).OrderBy(o => o.Volume).ToListAsync();
                 return list;
             }
         }
