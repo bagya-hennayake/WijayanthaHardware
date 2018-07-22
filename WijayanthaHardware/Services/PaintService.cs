@@ -37,7 +37,7 @@ namespace WijayanthaHardware.Services
                 {
                     PaintColourId = s.PaintColour.PaintColourId,
                     Colour = s.PaintColour.Colour
-                }).ToListAsync();
+                }).Distinct().ToListAsync();
                 return list;
             }
         }
@@ -47,7 +47,7 @@ namespace WijayanthaHardware.Services
             using (var context = CreateContext())
             {
                 var list = await context.PaintMaster.Include(i => i.PaintVolume)
-                    .Where(w => w.PaintColourId == paintColourId && w.PaintCategoryId == PaintCategoryId && w.Status == (int)RecordStatusEnum.Active)
+                    .Where(w => w.PaintColourId == paintColourId && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.Status == (int)RecordStatusEnum.Active)
                     .Select(s => new PaintViewModel
                     {
                         Volume = s.PaintVolume.Value,

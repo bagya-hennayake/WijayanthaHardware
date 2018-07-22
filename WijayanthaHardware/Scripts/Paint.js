@@ -53,8 +53,8 @@
                     $(data).each(function (i) {
                         $("#paint-details-Table > tbody").append("<tr><td>" + data[i].Volume + "</td><td>" + data[i].Price + "</td><td>" + data[i].AvailableQuantity + "</td></tr>");
                     });
+                    $('#paintDetails').animate({ opacity: 1 }, 85);
                 }
-
             });
         });
 });
