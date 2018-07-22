@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,10 +13,17 @@ namespace WijayanthaHardware.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        // GET: Home
-        public ActionResult DashBoard()
+        private readonly DashBoardService _dashBoardService;
+
+        public HomeController(DashBoardService dashBoardService)
         {
-            return View();
+            _dashBoardService = dashBoardService;
+        }
+        // GET: Home
+        public async Task<ActionResult> DashBoard()
+        {
+            var result = await _dashBoardService.GetDashBoardChartDataAsync();
+            return View(result);
         }
 
 
