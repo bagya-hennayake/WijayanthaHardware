@@ -45,18 +45,14 @@
             source: paintColours
         }).on("typeahead:select", function (e, paintColour) {
             var paintClolourId = paintColour.PaintColourId;
-            alert(paintClolourId);
             $.ajax({
                 type: "POST",
                 url: "/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + paintClolourId,
                 success: function (data) {
-                    alert('suscces');
-                    //$("#PaintSubCategoryId").empty();
-                    //$("#PaintSubCategoryId").append("<option>Select Paint</option>");
-                    //$(data).each(function (i) {
-                    //    $("#PaintSubCategoryId").append("<option value='" + data[i].PaintSubCategoryId + "'>" + data[i].Value + "</option>")
-                    //});
-                    //$('#PaintSubCategoryId').niceSelect('update');
+                    $("#paint-details-Table > tbody").empty();
+                    $(data).each(function (i) {
+                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].Volume + "</td><td>" + data[i].Price + "</td><td>" + data[i].AvailableQuantity + "</td></tr>");
+                    });
                 }
 
             });
