@@ -53,7 +53,7 @@ namespace WijayanthaHardware.Services
                         Volume = s.PaintVolume.Value,
                         Price = s.Price,
                         AvailableQuantity = s.Quantity
-                    }).OrderBy(o => o.Volume).ToListAsync();
+                    }).OrderByDescending(o => o.Volume).ToListAsync();
                 return list;
             }
         }

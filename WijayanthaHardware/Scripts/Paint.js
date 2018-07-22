@@ -16,6 +16,10 @@
         });
     });
 
+
+    $("#PaintSubCategoryId").change(function () {
+        $('#paintDetails').animate({ opacity: 0 }, 85);
+    });
     //Type Ahead implementation
     //var customerViewModel = {};
     var paintColours = new Bloodhound({
