@@ -40,9 +40,9 @@ namespace WijayanthaHardware.Controllers
         }
 
 
-        public async Task<ActionResult> GetPaintColourLookup(string query)
-        {
-            var result = await _paintService.GetPaintColoursAsync(query);
+        public async Task<ActionResult> GetPaintColourLookup(string query, int? PaintCategoryId, int? PaintSubCategoryId)
+      {
+            var result = await _paintService.GetPaintColoursAsync(query, PaintCategoryId, PaintSubCategoryId);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }

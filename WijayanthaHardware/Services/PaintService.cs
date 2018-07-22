@@ -29,14 +29,14 @@ namespace WijayanthaHardware.Services
 
         }
 
-        public async Task<List<PaintColourViewModel>> GetPaintColoursAsync(string query)
+        public async Task<List<PaintColourViewModel>> GetPaintColoursAsync(string query, int? PaintCategoryId, int? PaintSubCategoryId)
         {
             using (var context = CreateContext())
             {
-                var list = await context.PaintColour.Where(w=>w.Colour.Contains(query)).Select(s => new PaintColourViewModel
+                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory).Where(w => w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query)).Select(s => new PaintColourViewModel
                 {
-                    PaintColourId = s.PaintColourId,
-                    Colour = s.Colour
+                    PaintColourId = s.PaintColour.PaintColourId,
+                    Colour = s.PaintColour.Colour
                 }).ToListAsync();
                 return list;
             }
