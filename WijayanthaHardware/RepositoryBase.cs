@@ -6,8 +6,6 @@ namespace WijayanthaHardware
     {
         private WijayanathaDb _wijayanathaDb;
 
-        public RepositoryBase() { }
-
         public WijayanathaDb CreateContext()
         {
             return _wijayanathaDb ?? new WijayanathaDb();
