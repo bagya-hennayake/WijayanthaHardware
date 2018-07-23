@@ -538,8 +538,8 @@ select {
             }
 
             &:nth-child(odd) {
-                background: #c3c3c3;
-                color: #fff;
+                background: $grey;
+                color: #000;
             }
         }
 
