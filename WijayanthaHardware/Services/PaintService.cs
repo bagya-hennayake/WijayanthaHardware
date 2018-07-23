@@ -36,7 +36,7 @@ namespace WijayanthaHardware.Services
                 var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory).Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query)).Select(s => new PaintColourViewModel
                 {
                     PaintColourId = s.PaintColour.PaintColourId,
-                    Colour = s.PaintColour.Colour
+                    Colour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]"
                 }).Distinct().ToListAsync();
                 return list;
             }
@@ -47,13 +47,14 @@ namespace WijayanthaHardware.Services
             using (var context = CreateContext())
             {
                 var list = await context.PaintMaster.Include(i => i.PaintVolume)
-                    .Where(w => w.PaintColourId == paintColourId && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.Status == (int)RecordStatusEnum.Active)
+                    .Where(w => (paintColourId != 0 ? w.PaintColour.PaintColourId == paintColourId && w.Status == (int)RecordStatusEnum.Active : w.Status == (int)RecordStatusEnum.Active) && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId)
                     .Select(s => new PaintViewModel
                     {
+                        PaintColour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]",
                         Volume = s.PaintVolume.Value,
                         Price = s.Price,
                         AvailableQuantity = s.Quantity
-                    }).OrderByDescending(o => o.Volume).ToListAsync();
+                    }).OrderBy(o => o.PaintColour).ToListAsync();
                 return list;
             }
         }

@@ -51,6 +51,7 @@ namespace WijayanthaHardware
             container.RegisterType<LookUpServices, LookUpServices>();
             container.RegisterType<PowerToolService, PowerToolService>();
             container.RegisterType<PaintService, PaintService>();
+            container.RegisterType<DashBoardService, DashBoardService>();
         }
     }
 }

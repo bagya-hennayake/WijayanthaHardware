@@ -19,6 +19,19 @@
 
     $("#PaintSubCategoryId").change(function () {
         $('#paintDetails').animate({ opacity: 0 }, 85);
+        $.ajax({
+            type: "POST",
+            url: "/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0,
+            success: function (data) {
+                $("#paint-details-Table > tbody").empty();
+                $(data).each(function (i) {
+                    $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
+                });
+                $('#searchBar').val("");
+                if (data.length > 0)
+                    $('#paintDetails').animate({ opacity: 1 }, 85);
+            }
+        });
     });
     //Type Ahead implementation
     //var customerViewModel = {};
@@ -30,8 +43,10 @@
             replace: function (url, uriEncodedQuery) {
                 url = url + $('#searchBar').val();
                 var paintSubCat = $('#PaintSubCategoryId').val();
-                if (paintSubCat > 0)
+                if (paintSubCat > 0) {
+                    $('#paintDetails').animate({ opacity: 0 }, 85);
                     return url + '&PaintCategoryId=' + encodeURIComponent($('#PaintCategoryId').val()) + '&PaintSubCategoryId=' + encodeURIComponent(paintSubCat)
+                }
                 else
                     toastr.error("Please select a paint", "Oops!");
             },
@@ -56,7 +71,7 @@
                 success: function (data) {
                     $("#paint-details-Table > tbody").empty();
                     $(data).each(function (i) {
-                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
+                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
                     });
                     $('#paintDetails').animate({ opacity: 1 }, 85);
                 }
