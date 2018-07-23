@@ -58,6 +58,7 @@
         {
             minLength: 1,
             highlight: true
+            //limit: Infinity
         },
         {
             name: 'paintColours',
