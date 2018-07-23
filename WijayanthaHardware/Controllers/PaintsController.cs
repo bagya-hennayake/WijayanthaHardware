@@ -21,7 +21,7 @@ namespace WijayanthaHardware.Controllers
             _paintService = paintService;
             _lookUpServices = lookUpServices;
         }
-        // GET: Paints
+
         public ActionResult Index()
         {
             var result = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
