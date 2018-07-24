@@ -52,5 +52,13 @@ namespace WijayanthaHardware.Controllers
             var result = await _paintService.GetpaintByColourIdAsync(PaintCategoryId, PaintSubCategoryId, paintColourId);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> AddNewPaintCategory(PaintViewModel paintViewModel)
+        {
+            var isSuccess = await _paintService.AddNewPaintCategoryAsync(paintViewModel);
+            return isSuccess ? Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paint Category has been saved successfully" }, JsonRequestBehavior.AllowGet)
+                : Json(new { status = TransactionStatusEnum.error.ToString(), title = "Failed", message = "This Paint Category is already available" }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
