@@ -19,7 +19,7 @@ namespace WijayanthaHardware.Controllers
         {
             _dashBoardService = dashBoardService;
         }
-        // GET: Home
+
         public async Task<ActionResult> DashBoard()
         {
             var result = await _dashBoardService.GetDashBoardChartDataAsync();
