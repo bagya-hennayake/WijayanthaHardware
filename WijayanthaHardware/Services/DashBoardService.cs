@@ -24,7 +24,7 @@ namespace WijayanthaHardware.Services
                         var result = await context.PaintSubCategory.Include(i => i.PaintCategory).Where(w => w.PaintCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
                         var vm = new PaintViewModel
                         {
-                            CategoryName = result.FirstOrDefault().PaintCategory.Value,
+                            SubCategoryName = result.FirstOrDefault().PaintCategory.Value,
                             AvailableQuantity = result.Count()
                         };
                         paintViewModel.Add(vm);

@@ -19,6 +19,10 @@ namespace WijayanthaHardware.Models
         public string Volume { get; set; }
         public int AvailableQuantity { get; set; }
         public double Price { get; set; }
+        public string SubCategoryName { get; set; }
         public string CategoryName { get; set; }
+        public string Value { get; set; }
+        public string Description { get; set; }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using WijayanthaHardware.BusinessObjects;
 using WijayanthaHardware.Common;
+using WijayanthaHardware.Entities;
 using WijayanthaHardware.Models;
 
 namespace WijayanthaHardware.Services
@@ -22,11 +23,8 @@ namespace WijayanthaHardware.Services
                         PaintSubCategoryId = s.PaintSubCategoryId,
                         Value = s.Value
                     }).OrderBy(o => o.Value).ToListAsync();
-
                 return result;
             }
-
-
         }
 
         public async Task<List<PaintColourViewModel>> GetPaintColoursAsync(string query, int? PaintCategoryId, int? PaintSubCategoryId)
@@ -56,6 +54,49 @@ namespace WijayanthaHardware.Services
                         AvailableQuantity = s.Quantity
                     }).OrderBy(o => o.PaintColour).ToListAsync();
                 return list;
+            }
+        }
+
+        public async Task<bool> AddNewPaintCategoryAsync(PaintViewModel paintViewModel)
+        {
+            using (var context = CreateContext())
+            {
+                var result = await context.PaintCategory.AnyAsync(f => f.Value.ToLower() == paintViewModel.Value.ToLower() && f.Status == (int)RecordStatusEnum.Active);
+                if (!result)
+                {
+                    var newCategory = new PaintCategory
+                    {
+                        Value = paintViewModel.Value,
+                        Description = paintViewModel.Description,
+                        Status = (int)RecordStatusEnum.Active
+                    };
+                    context.PaintCategory.Add(newCategory);
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+                else return false;
+            }
+        }
+
+        public async Task<bool> AddNewsubCategoryAsync(PaintViewModel paintViewModel)
+        {
+            using (var context = CreateContext())
+            {
+                var result = await context.PaintCategory.AnyAsync(f => f.Value.ToLower() == paintViewModel.Value.ToLower() && f.PaintCategoryId == paintViewModel.PaintCategoryId && f.Status == (int)RecordStatusEnum.Active);
+                if (!result)
+                {
+                    var newSubCategory = new PaintSubCategory
+                    {
+                        Value = paintViewModel.Value,
+                        Description = paintViewModel.Description,
+                        PaintCategoryId = paintViewModel.PaintCategoryId,
+                        Status = (int)RecordStatusEnum.Active
+                    };
+                    context.PaintSubCategory.Add(newSubCategory);
+                    await context.SaveChangesAsync();
+                    return true;
+                }
+                else return false;
             }
         }
     }
