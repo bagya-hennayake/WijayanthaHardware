@@ -50,6 +50,7 @@ namespace WijayanthaHardware.Services
                     .Where(w => (paintColourId != 0 ? w.PaintColour.PaintColourId == paintColourId && w.Status == (int)RecordStatusEnum.Active : w.Status == (int)RecordStatusEnum.Active) && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId)
                     .Select(s => new PaintViewModel
                     {
+                        PaintId = s.PaintMasterId,
                         PaintColour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]",
                         Volume = s.PaintVolume.Value,
                         Price = s.Price,

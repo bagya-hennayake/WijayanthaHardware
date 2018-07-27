@@ -25,7 +25,7 @@
             success: function (data) {
                 $("#paint-details-Table > tbody").empty();
                 $(data).each(function (i) {
-                    $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
+                    $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td><td><a href='/Paints/EditPaint?paintId=" + data[i].PaintId + "'<i class='fas fa-edit'></i></a></td></tr>");
                 });
                 $('#searchBar').val("");
                 if (data.length > 0)
@@ -34,7 +34,6 @@
         });
     });
     //Type Ahead implementation
-    //var customerViewModel = {};
     var paintColours = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -72,7 +71,7 @@
                 success: function (data) {
                     $("#paint-details-Table > tbody").empty();
                     $(data).each(function (i) {
-                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td></tr>");
+                        $("#paint-details-Table > tbody").append("<tr><td>" + data[i].PaintColour + "</td><td>" + data[i].Volume + "</td><td>" + data[i].AvailableQuantity + "</td><td>" + data[i].Price + " LKR</td><td><a href='/Paints/EditPaint?paintId=" + data[i].PaintId + "'<i class='fas fa-edit'></i></a></td></tr>");
                     });
                     $('#paintDetails').animate({ opacity: 1 }, 85);
                 }
