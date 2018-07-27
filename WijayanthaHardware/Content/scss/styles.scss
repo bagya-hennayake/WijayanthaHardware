@@ -23,6 +23,31 @@ input[type=text] {
         border-color: #999;
     }
 }
+.common-margin{
+    margin:30px 0 0;
+}
+.same-btn {
+    display: inline-block;
+    padding: 10px 0;
+    color: #fff;
+    background: $main-color;
+    border-radius: 5px;
+    width: 130px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 2px solid $main-color;
+    transition: .5s all;
+
+    &:hover {
+        color: $main-color;
+        background: transparent;
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 0 10px 0 rgba(10, 153, 255,0.5);
+        -moz-box-shadow: 0 0 10px 0 rgba(10, 153, 255,0.5);
+        -webkit-box-shadow: 0 0 10px 0 rgba(10, 153, 255,0.5);
+    }
+}
 .big-heading {
     position: relative;
     color: $main-color;
@@ -576,12 +601,25 @@ input[type=text] {
 }
 .paint-master {
     .add-paint {
+        .btns{
+            text-align:right;
+        }
     }
 
-    .paint-add-btns{
+    .paint-add-btns {
+        padding: 30px 0;
+
         ul {
+            padding: 0;
+            float: right;
+
             li {
+                margin: 0 5px;
                 display: inline-block;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }

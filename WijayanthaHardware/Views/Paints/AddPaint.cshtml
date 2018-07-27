@@ -10,9 +10,9 @@
     <div class="container">
         <div class="paint-add-btns">
             <ul>
-                <li><a href="#">Add category</a></li>
-                <li><a href="#">Add paint</a></li>
-                <li><a href="#">Update paint</a></li>
+                <li><a class="same-btn" href="#">Add category</a></li>
+                <li><a class="same-btn" href="#addcolor" data-toggle="modal">Add color</a></li>
+                <li><a class="same-btn" href="#">Update paint</a></li>
             </ul>
         </div>
         <div class="add-paint">
@@ -20,83 +20,56 @@
             <form action="/" method="post">
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
-                        <select class="wide">
+                        <select class="wide common-margin">
                             <option value="value">text</option>
                         </select>
                     </div>
                     <div class="col-xs-12 col-md-6">
-                        <select class="wide">
+                        <select class="wide common-margin">
                             <option value="value">text</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-md-12"><input type="text" name="name" value="" placeholder="Add Paint" /></div>
-                </div>
-                <div class="row">
-                    <div class="add-paint-quantity">
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="checkbox" name="name" value="" />
-                            <label>10L</label>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Price" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="checkbox" name="name" value="" />
-                            <label>10L</label>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Price" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="checkbox" name="name" value="" />
-                            <label>10L</label>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Price" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="checkbox" name="name" value="" />
-                            <label>10L</label>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Price" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="checkbox" name="name" value="" />
-                            <label>10L</label>
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
-                        </div>
-                        <div class="col-xs-4 col-sm-4 col-md-4">
-                            <input type="text" name="name" value="" placeholder="Price" />
+                    <div class="col-xs-12 col-md-12">
+                        <div class="common-margin">
+                            <input type="text" name="name" value="" placeholder="Add Paint" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="btns">
-                        <button type="submit">Submit</button>
-                        <button>reset</button>
+                    <div class="add-paint-quantity">
+                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                            <input id="litre" type="checkbox" name="litre" value="" />
+                            <label for="litre">10 L</label>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                            <input type="text" name="qty" value="" placeholder="Cost" />
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btns common-margin">
+                        <button class="same-btn" type="submit">Submit</button>
+                        <button class="same-btn">reset</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+@*add paint modal*@
+@{
+    @Html.Partial("_AddColor")
+}
+@*add paint modal end*@
 @section script
 {
     @Scripts.Render("~/add-paint-js")

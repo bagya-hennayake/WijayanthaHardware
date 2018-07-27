@@ -564,6 +564,7 @@
     <Content Include="Views\PowerTools\Index.cshtml" />
     <Content Include="Views\Paints\Index.cshtml" />
     <Content Include="Views\Paints\AddPaint.cshtml" />
+    <Content Include="Views\Paints\_AddColor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
