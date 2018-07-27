@@ -31,9 +31,9 @@
     });
 
     $("#PaintSubCategoryId").change(function () {
-        $.post("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (newDataArray) {
+        $.post("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (data) {
             PaintTable.clear();
-            PaintTable.rows.add(newDataArray);
+            PaintTable.rows.add(data);
             PaintTable.draw();
         });
     });
