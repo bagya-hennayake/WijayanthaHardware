@@ -21,16 +21,15 @@ namespace WijayanthaHardware
             bundles.Add(new StyleBundle("~/powertool-css").Include(CSS.SingleSelectDropDown));
             bundles.Add(new ScriptBundle("~/powertool-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, "~/Scripts/PowerTools.js"));
 
-            bundles.Add(new StyleBundle("~/paint-css").Include(CSS.SingleSelectDropDown,CSS.TypeAhead));
-            bundles.Add(new ScriptBundle("~/paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn,
-                Plugin.DataTable, Plugin.DatableBootStrap, "~/Scripts/typeahead.bundle.js", "~/Scripts/Paint.js"));
-                Plugin.TypeAhead, "~/Scripts/Paint.js"));
+            bundles.Add(new StyleBundle("~/paint-css").Include(CSS.SingleSelectDropDown, CSS.DataTable));
+            bundles.Add(new ScriptBundle("~/paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.DataTable, Plugin.DatableBootStrap,
+                "~/Scripts/Paint.js"));
 
 
-            bundles.Add(new StyleBundle("~/add-paint-css").Include(CSS.SingleSelectDropDown,CSS.TypeAhead ));
-            bundles.Add(new ScriptBundle("~/add-paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn,Plugin.TypeAhead
+            bundles.Add(new StyleBundle("~/add-paint-css").Include(CSS.SingleSelectDropDown, CSS.TypeAhead));
+            bundles.Add(new ScriptBundle("~/add-paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.TypeAhead
                ));
-            
+
         }
     }
 }
