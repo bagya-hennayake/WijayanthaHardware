@@ -199,6 +199,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\PowerToolMapper.cs" />
     <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.cs" />
     <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.Designer.cs">
       <DependentUpon>201807181437259_added status to power tool subcategory table.cs</DependentUpon>

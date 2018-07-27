@@ -31,11 +31,13 @@ namespace WijayanthaHardware.Services
         {
             using (var context = CreateContext())
             {
-                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory).Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query)).Select(s => new PaintColourViewModel
-                {
-                    PaintColourId = s.PaintColour.PaintColourId,
-                    Colour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]"
-                }).Distinct().ToListAsync();
+                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory)
+                    .Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintCategoryId == PaintCategoryId && w.PaintSubCategoryId == PaintSubCategoryId && w.PaintColour.Colour.Contains(query))
+                    .Select(s => new PaintColourViewModel
+                    {
+                        PaintColourId = s.PaintColour.PaintColourId,
+                        Colour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]"
+                    }).Distinct().ToListAsync();
                 return list;
             }
         }
@@ -82,7 +84,7 @@ namespace WijayanthaHardware.Services
         {
             using (var context = CreateContext())
             {
-                var result = await context.PaintCategory.AnyAsync(f => f.Value.ToLower() == paintViewModel.Value.ToLower() && f.PaintCategoryId == paintViewModel.PaintCategoryId && f.Status == (int)RecordStatusEnum.Active);
+                var result = await context.PaintSubCategory.AnyAsync(f => f.Value.ToLower() == paintViewModel.Value.ToLower() && f.PaintCategoryId == paintViewModel.PaintCategoryId && f.Status == (int)RecordStatusEnum.Active);
                 if (!result)
                 {
                     var newSubCategory = new PaintSubCategory

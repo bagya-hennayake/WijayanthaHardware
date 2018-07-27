@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using WijayanthaHardware.BusinessObjects;
 using WijayanthaHardware.Common;
+using WijayanthaHardware.Mappers;
 using WijayanthaHardware.Models;
 
 namespace WijayanthaHardware.Services
@@ -30,17 +31,8 @@ namespace WijayanthaHardware.Services
         {
             using (var context = CreateContext())
             {
-                var result = await context.PowerToolMaster.Include(i => i.PowerToolSubCatogery).Include(i => i.PowerToolCategory).Where(a => a.PowerToolCategoryId == powerToolCategory && a.PowerToolSubCatogeryId == powerToolSubCategoryId && a.Status == (int)RecordStatusEnum.Active)
-                    .Select(s => new PowerToolsViewModel
-                    {
-                        ToolName = s.PowerToolSubCatogery.Value,
-                        ToolPrice = s.Price,
-                        CostCode = s.CostCode,
-                        Details = s.PowerToolSubCatogery.Description,
-                        WarrantyPeriod = s.WarrantyPeriod,
-                        AvailableQuantity = s.Quantity
-                    }).FirstOrDefaultAsync();
-                return result;
+                var result = await context.PowerToolMaster.Include(i => i.PowerToolSubCatogery).Include(i => i.PowerToolCategory).FirstOrDefaultAsync(a => a.PowerToolCategoryId == powerToolCategory && a.PowerToolSubCatogeryId == powerToolSubCategoryId && a.Status == (int)RecordStatusEnum.Active);
+                return PowerToolMapper.BuildPowerToolsViewModel(result);
             }
         }
     }
