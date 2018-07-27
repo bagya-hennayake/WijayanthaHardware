@@ -22,13 +22,8 @@
                     @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide select-list paint-list" })
                 </div>
             </div>
-            <div class="col-xs-12 col-md-12">
-                <div id="paintSearch" class="search-bar">
-                    <input id="searchBar" type="text" placeholder="Search Paint Color" class="typeahead">
-                </div>
-            </div>
         </div>
-        <div id="paintDetails" style="opacity:0;">
+        <div id="paintDetails">
             <table class="paint-details" id="paint-details-Table">
                 <thead>
                     <tr>
