@@ -65,5 +65,9 @@ namespace WijayanthaHardware.Controllers
         {
             return Content("result");
         }
+        public ActionResult AddPaint()
+        {
+            return View();
+        } 
     }
 }
