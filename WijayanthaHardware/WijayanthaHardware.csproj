@@ -326,6 +326,7 @@
     <Content Include="Views\Security\Register.cshtml" />
     <Content Include="Views\PowerTools\Index.cshtml" />
     <Content Include="Views\Paints\Index.cshtml" />
+    <Content Include="Views\Paints\AddPaint.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "AddPaint";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+@section style{
+    @Styles.Render("~/add-paint-css")
+}
+<div class="paint-master">
+    <div class="container">
+        <div class="paint-add-btns">
+            <ul>
+                <li><a href="#">Add category</a></li>
+                <li><a href="#">Add paint</a></li>
+                <li><a href="#">Update paint</a></li>
+            </ul>
+        </div>
+        <div class="add-paint">
+            <h1 class="small-heading">Add paint</h1>
+            <form action="/" method="post">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <select class="wide">
+                            <option value="value">text</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <select class="wide">
+                            <option value="value">text</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12"><input type="text" name="name" value="" placeholder="Add Paint" /></div>
+                </div>
+                <div class="row">
+                    <div class="add-paint-quantity">
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="checkbox" name="name" value="" />
+                            <label>10L</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="checkbox" name="name" value="" />
+                            <label>10L</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="checkbox" name="name" value="" />
+                            <label>10L</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="checkbox" name="name" value="" />
+                            <label>10L</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="checkbox" name="name" value="" />
+                            <label>10L</label>
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Quantity" />
+                        </div>
+                        <div class="col-xs-4 col-sm-4 col-md-4">
+                            <input type="text" name="name" value="" placeholder="Price" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btns">
+                        <button type="submit">Submit</button>
+                        <button>reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section script
+{
+    @Scripts.Render("~/add-paint-js")
+}
+
+

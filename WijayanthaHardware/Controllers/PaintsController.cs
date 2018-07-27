@@ -60,5 +60,9 @@ namespace WijayanthaHardware.Controllers
             return isSuccess ? Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paint Category has been saved successfully" }, JsonRequestBehavior.AllowGet)
                 : Json(new { status = TransactionStatusEnum.error.ToString(), title = "Failed", message = "This Paint Category is already available" }, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult AddPaint()
+        {
+            return View();
+        } 
     }
 }

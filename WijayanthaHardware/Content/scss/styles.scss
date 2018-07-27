@@ -10,6 +10,19 @@ select {
     display: none;
 }
 
+input[type=text] {
+    width: 100%;
+    border-radius: 5px;
+    line-height: 38px;
+    padding: 0 15px;
+    outline: none;
+    border: 1px solid #e8e8e8;
+    transition: .3s;
+
+    &:focus {
+        border-color: #999;
+    }
+}
 .big-heading {
     position: relative;
     color: $main-color;
@@ -558,6 +571,18 @@ select {
         td {
             padding: 5px 0;
             font-size: 15px;
+        }
+    }
+}
+.paint-master {
+    .add-paint {
+    }
+
+    .paint-add-btns{
+        ul {
+            li {
+                display: inline-block;
+            }
         }
     }
 }
