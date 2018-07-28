@@ -11,7 +11,7 @@ namespace WijayanthaHardware.Entities
     public class PaintVolume
     {
         [Key]
-        public int VolumeId { get; set; }
+        public int PaintVolumeId { get; set; }
         public string Value { get; set; }
         public string Description { get; set; }
         public int Status { get; set; }

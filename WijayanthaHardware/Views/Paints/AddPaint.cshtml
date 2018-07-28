@@ -17,7 +17,8 @@
         </div>
         <div class="add-paint">
             <h1 class="small-heading">Add paint</h1>
-            <form action="/" method="post">
+            @using (Ajax.BeginForm("AddNewPaints", "Paints", null, new AjaxOptions { HttpMethod = "POST" }, new { @id = "AddPaints", role = "form" }))
+            {
                 <div class="row">
                     <div class="col-xs-12 col-md-6">
                         @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
@@ -35,30 +36,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="add-paint-quantity">
-                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
-                            <input id="litre" type="checkbox" name="litre" value="" />
-                            <label for="litre">10 L</label>
-                        </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
-                            <input type="text" name="qty" value="" placeholder="Cost" />
-                        </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
-                            <input type="text" name="name" value="" placeholder="Price" />
-                        </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
-                            <input type="text" name="name" value="" placeholder="Quantity" />
+
+                foreach (var paintVolume in Model.Volumes)
+                {
+                    <div class="row itemlist" id="@paintVolume.Value" value="">
+                        <div class="add-paint-quantity">
+                            <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                                <input id="litre" type="checkbox" name="litre" value="@paintVolume.Value" />
+                                <label for="litre">@paintVolume.Text</label>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                                <input type="text" name="Cost" value="" placeholder="Cost" disabled autocomplete="off" />
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                                <input type="number" name="Price" value="" placeholder="Price" disabled min="0" class="form-control" autocomplete="off" />
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
+                                <input type="number" name="Quantity" value="" placeholder="Quantity" disabled min="0" class="form-control" autocomplete="off" />
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                }
                 <div class="row">
                     <div class="btns common-margin">
-                        <button class="same-btn" type="submit">Submit</button>
-                        <button class="same-btn">reset</button>
+                        <button class="same-btn" type="submit">Save</button>
+                        <button class="same-btn" type="reset">reset</button>
                     </div>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>
@@ -70,7 +76,9 @@
 @*add paint modal end*@
 @section script
 {
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @Scripts.Render("~/add-paint-js")
+
 }
 
 

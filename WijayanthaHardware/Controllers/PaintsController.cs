@@ -66,13 +66,19 @@ namespace WijayanthaHardware.Controllers
         }
         public ActionResult AddPaint()
         {
-            var result = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
             var paintViewModel = new PaintViewModel
             {
-                PaintCatergoryList = new SelectList(result, "LookUpId", "Value"),
+                Volumes = new SelectList(_lookUpServices.GetLookUp(LookUpTypeEnum.PaintVolume), "LookUpId", "Value"),
+                PaintCatergoryList = new SelectList(_lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory), "LookUpId", "Value"),
                 PaintSubategoryList = new SelectList(new List<LookUpBO>(), "LookUpId", "Value")
             };
             return View(paintViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult AddNewPaints(List<PaintViewModel> newPaintDetails)
+        {
+            return Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paints have been saved successfully" }, JsonRequestBehavior.AllowGet);
         }
     }
 }

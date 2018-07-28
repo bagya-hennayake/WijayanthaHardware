@@ -17,7 +17,7 @@ namespace WijayanthaHardware.Entities
         public PaintCategory PaintCategory { get; set; }
         public int PaintCategoryId { get; set; }
         public PaintVolume PaintVolume { get; set; }
-        public int VolumeId { get; set; }
+        public int PaintVolumeId { get; set; }
         public int Quantity { get; set; }
         public double Price { get; set; }
         public PaintSubCategory PaintSubCategory { get; set; }

@@ -20,6 +20,7 @@
             crossorigin="anonymous"></script>
     <script src="~/Scripts/scripts.js"></script>
     <script src="~/Scripts/modernizr.custom.js"></script>
+    <link href="~/Content/css/Preloader.css" rel="stylesheet" />
     @******************************************************Scripts*********************************************************@
 
     @RenderSection("style", required: false)
@@ -51,6 +52,8 @@
     @RenderBody()
 
     @RenderSection("script", required: false)
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+    <script src="~/Scripts/AppCommon.js"></script>
     <script src="~/Scripts/toastr.min.js"></script>
 </body>
 </html>

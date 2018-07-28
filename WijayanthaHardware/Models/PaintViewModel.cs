@@ -25,6 +25,10 @@ namespace WijayanthaHardware.Models
         public string Description { get; set; }
         public int PaintId { get; set; }
         public string CostCode { get; set; }
+        public SelectList Volumes { get; set; }
+        public int VolumeId { get; set; }
+        public int Quantity { get; set; }
+        public int ColourId { get; set; }
 
     }
 }
