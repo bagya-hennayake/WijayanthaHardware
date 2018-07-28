@@ -200,26 +200,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\PowerToolMapper.cs" />
-    <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.cs" />
-    <Compile Include="Migrations\201807181437259_added status to power tool subcategory table.Designer.cs">
-      <DependentUpon>201807181437259_added status to power tool subcategory table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807181441465_added status to PowerToolCategory.cs" />
-    <Compile Include="Migrations\201807181441465_added status to PowerToolCategory.Designer.cs">
-      <DependentUpon>201807181441465_added status to PowerToolCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807211532494_edited powertool master table.cs" />
-    <Compile Include="Migrations\201807211532494_edited powertool master table.Designer.cs">
-      <DependentUpon>201807211532494_edited powertool master table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807211759375_added status to powertool master.cs" />
-    <Compile Include="Migrations\201807211759375_added status to powertool master.Designer.cs">
-      <DependentUpon>201807211759375_added status to powertool master.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807280440329_added costcode to paint master table.cs" />
-    <Compile Include="Migrations\201807280440329_added costcode to paint master table.Designer.cs">
-      <DependentUpon>201807280440329_added costcode to paint master table.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
@@ -584,23 +564,6 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807181437259_added status to power tool subcategory table.resx">
-      <DependentUpon>201807181437259_added status to power tool subcategory table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807181441465_added status to PowerToolCategory.resx">
-      <DependentUpon>201807181441465_added status to PowerToolCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807211532494_edited powertool master table.resx">
-      <DependentUpon>201807211532494_edited powertool master table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807211759375_added status to powertool master.resx">
-      <DependentUpon>201807211759375_added status to powertool master.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807280440329_added costcode to paint master table.resx">
-      <DependentUpon>201807280440329_added costcode to paint master table.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
