@@ -23,6 +23,7 @@ namespace WijayanthaHardware.Entities
         public PaintSubCategory PaintSubCategory { get; set; }
         public int PaintSubCategoryId { get; set; }
         public int Status { get; set; }
+        public string CostCode { get; set; }
 
     }
 }

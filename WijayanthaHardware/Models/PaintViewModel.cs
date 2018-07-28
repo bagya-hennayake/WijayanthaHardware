@@ -24,6 +24,7 @@ namespace WijayanthaHardware.Models
         public string Value { get; set; }
         public string Description { get; set; }
         public int PaintId { get; set; }
+        public string CostCode { get; set; }
 
     }
 }

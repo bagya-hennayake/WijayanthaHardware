@@ -26,7 +26,7 @@ namespace WijayanthaHardware
 
 
             bundles.Add(new StyleBundle("~/add-paint-css").Include(CSS.SingleSelectDropDown, CSS.TypeAhead));
-            bundles.Add(new ScriptBundle("~/add-paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.TypeAhead));
+            bundles.Add(new ScriptBundle("~/add-paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.TypeAhead, "~/Scripts/NewPaint.js"));
 
         }
     }

@@ -40,13 +40,12 @@ namespace WijayanthaHardware.Controllers
         }
 
 
-        public async Task<ActionResult> GetPaintColourLookup(string query, int? PaintCategoryId, int? PaintSubCategoryId)
+        public async Task<ActionResult> GetPaintColourLookup(string query)
         {
-            var result = await _paintService.GetPaintColoursAsync(query, PaintCategoryId, PaintSubCategoryId);
+            var result = await _paintService.GetPaintColoursAsync(query);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
         public async Task<ActionResult> GetListOfPaintsByColour(int? PaintCategoryId, int? PaintSubCategoryId, int paintColourId)
         {
             var result = await _paintService.GetpaintByColourIdAsync(PaintCategoryId, PaintSubCategoryId, paintColourId);
@@ -67,7 +66,13 @@ namespace WijayanthaHardware.Controllers
         }
         public ActionResult AddPaint()
         {
-            return View();
-        } 
+            var result = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
+            var paintViewModel = new PaintViewModel
+            {
+                PaintCatergoryList = new SelectList(result, "LookUpId", "Value"),
+                PaintSubategoryList = new SelectList(new List<LookUpBO>(), "LookUpId", "Value")
+            };
+            return View(paintViewModel);
+        }
     }
 }

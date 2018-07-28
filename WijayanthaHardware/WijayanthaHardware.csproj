@@ -216,6 +216,10 @@
     <Compile Include="Migrations\201807211759375_added status to powertool master.Designer.cs">
       <DependentUpon>201807211759375_added status to powertool master.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807280440329_added costcode to paint master table.cs" />
+    <Compile Include="Migrations\201807280440329_added costcode to paint master table.Designer.cs">
+      <DependentUpon>201807280440329_added costcode to paint master table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
@@ -532,6 +536,7 @@
     <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\NewPaint.js" />
     <Content Include="Scripts\Paint.js" />
     <Content Include="Scripts\PowerTools.js" />
     <Content Include="Scripts\respond.js" />
@@ -592,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807211759375_added status to powertool master.resx">
       <DependentUpon>201807211759375_added status to powertool master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807280440329_added costcode to paint master table.resx">
+      <DependentUpon>201807280440329_added costcode to paint master table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,7 +19,12 @@
             { data: "PaintColour" },
             { data: "Volume" },
             { data: "AvailableQuantity" },
-            { data: "Price" },
+            {
+                data: "Price",
+                render: function (data, type, row) {
+                    return row.Price + " LKR";
+                }
+            },
             {
                 data: "PaintId",
                 "bSortable": false,
@@ -31,7 +36,7 @@
     });
 
     $("#PaintSubCategoryId").change(function () {
-        $.post("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (data) {
+        $.get("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (data) {
             PaintTable.clear();
             PaintTable.rows.add(data);
             PaintTable.draw();
