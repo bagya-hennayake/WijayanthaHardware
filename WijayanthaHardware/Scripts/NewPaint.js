@@ -15,7 +15,7 @@
         });
     });
 
-    //Type Ahead implementation
+    /*----------- Type Ahead implementation start -----------------*/
     var paintColours = new Bloodhound({
         datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
         queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -38,4 +38,6 @@
         }).on("typeahead:select", function (e, paintColour) {
             paintColourId = paintColour.PaintColourId;
         });
+    /*---------- Type Ahead implementation end -----------------*/
+
 });
