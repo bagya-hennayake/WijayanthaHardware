@@ -31,13 +31,12 @@ namespace WijayanthaHardware.Services
         {
             using (var context = CreateContext())
             {
-                var list = await context.PaintMaster.Include(i => i.PaintCategory).Include(i => i.PaintSubCategory)
-                    .Where(w => w.Status == (int)RecordStatusEnum.Active && w.PaintColour.Colour.Contains(query))
+                var list = await context.PaintColour.Where(w => w.Status == (int)RecordStatusEnum.Active && (w.Colour.Contains(query) || w.ColourCode.Contains(query)))
                     .Select(s => new PaintColourViewModel
                     {
-                        PaintColourId = s.PaintColour.PaintColourId,
-                        Colour = s.PaintColour.Colour + " [" + s.PaintColour.ColourCode + "]"
-                    }).Distinct().ToListAsync();
+                        PaintColourId = s.PaintColourId,
+                        Colour = s.Colour + " [" + s.ColourCode + "]"
+                    }).ToListAsync();
                 return list;
             }
         }
