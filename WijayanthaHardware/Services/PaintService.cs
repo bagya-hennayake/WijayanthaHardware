@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -100,6 +102,67 @@ namespace WijayanthaHardware.Services
                 }
                 else return false;
             }
+        }
+
+        public async Task<bool> AddNewpaintsAsync(List<PaintViewModel> newPaintDetails)
+        {
+            try
+            {
+                using (var context = CreateContext())
+                {
+                    var firstRecord = newPaintDetails.First();
+                    var isVolumeAvailable = newPaintDetails.Select(s => s.VolumeId).ToList();
+                    var IsPaintAvailable = await context.PaintMaster.AnyAsync(a => a.PaintCategoryId == firstRecord.PaintCategoryId &&
+                     a.PaintSubCategoryId == firstRecord.PaintSubCategoryId && a.PaintColourId == firstRecord.ColourId &&
+                     isVolumeAvailable.Contains(a.PaintVolumeId));
+                    if (IsPaintAvailable) return true;
+                }
+                
+
+                //var connectionString = context.Database.Connection.ConnectionString;
+                using (var bulkCopy = new SqlBulkCopy(CreateContext().Database.Connection.ConnectionString, SqlBulkCopyOptions.KeepIdentity))
+                {
+                    bulkCopy.ColumnMappings.Add("PaintColourId", "PaintColourId");
+                    bulkCopy.ColumnMappings.Add("PaintCategoryId", "PaintCategoryId");
+                    bulkCopy.ColumnMappings.Add("PaintVolumeId", "PaintVolumeId");
+                    bulkCopy.ColumnMappings.Add("Quantity", "Quantity");
+                    bulkCopy.ColumnMappings.Add("Price", "Price");
+                    bulkCopy.ColumnMappings.Add("PaintSubCategoryId", "PaintSubCategoryId");
+                    bulkCopy.ColumnMappings.Add("Status", "Status");
+                    bulkCopy.ColumnMappings.Add("CostCode", "CostCode");
+
+
+                    bulkCopy.BatchSize = newPaintDetails.Count();
+                    bulkCopy.DestinationTableName = "[Inventory].[PaintMaster]";
+                    await bulkCopy.WriteToServerAsync(GetTableRows(newPaintDetails));
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var errormsg = ex.StackTrace;
+                return false;
+            }
+        }
+
+        private DataTable GetTableRows(List<PaintViewModel> newPaintDetails)
+        {
+            var dataTable = new DataTable();
+            dataTable.Columns.Add("PaintColourId", typeof(int));
+            dataTable.Columns.Add("PaintCategoryId", typeof(int));
+            dataTable.Columns.Add("PaintVolumeId", typeof(int));
+            dataTable.Columns.Add("Quantity", typeof(int));
+            dataTable.Columns.Add("Price", typeof(double));
+            dataTable.Columns.Add("PaintSubCategoryId", typeof(int));
+            dataTable.Columns.Add("Status", typeof(int));
+            dataTable.Columns.Add("CostCode", typeof(string));
+
+            foreach (var newpaint in newPaintDetails)
+            {
+                dataTable.Rows.Add(newpaint.ColourId, newpaint.PaintCategoryId, newpaint.VolumeId, newpaint.Quantity, newpaint.Price, newpaint.PaintSubCategoryId, (int)RecordStatusEnum.Active, newpaint.CostCode);
+            }
+            return dataTable;
         }
     }
 }
