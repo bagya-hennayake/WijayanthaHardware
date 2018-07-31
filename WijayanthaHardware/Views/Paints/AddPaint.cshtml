@@ -1,9 +1,11 @@
 ﻿@model WijayanthaHardware.Models.PaintViewModel
 @{
+    int counter = 0;
     ViewBag.Title = "AddPaint";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 @section style{
+    
     @Styles.Render("~/add-paint-css")
 }
 <div class="paint-master">
@@ -42,8 +44,8 @@
                     <div class="row itemlist" id="@paintVolume.Value" value="">
                         <div class="add-paint-quantity">
                             <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
-                                <input id="litre" type="checkbox" name="litre" value="@paintVolume.Value" />
-                                <label for="litre">@paintVolume.Text</label>
+                                <input id="litre-@counter" type="checkbox" name="litre" value="@paintVolume.Value" />
+                                <label for="litre-@counter">@paintVolume.Text</label>
                             </div>
                             <div class="col-xs-6 col-sm-3 col-md-3 common-margin">
                                 <input type="text" name="Cost" value="" placeholder="Cost" disabled autocomplete="off" />
@@ -56,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-
+                    counter++;
                 }
                 <div class="row">
                     <div class="btns common-margin">

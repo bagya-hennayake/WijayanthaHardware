@@ -104,45 +104,45 @@ namespace WijayanthaHardware.Services
             }
         }
 
-        public async Task<bool> AddNewpaintsAsync(List<PaintViewModel> newPaintDetails)
+        public async Task<string> AddNewpaintsAsync(List<PaintViewModel> newPaintDetails)
         {
-            try
+            using (var context = CreateContext())
             {
-                using (var context = CreateContext())
+                var connection = context.Database.Connection.ConnectionString;
+                try
                 {
                     var firstRecord = newPaintDetails.First();
                     var isVolumeAvailable = newPaintDetails.Select(s => s.VolumeId).ToList();
-                    var IsPaintAvailable = await context.PaintMaster.AnyAsync(a => a.PaintCategoryId == firstRecord.PaintCategoryId &&
-                     a.PaintSubCategoryId == firstRecord.PaintSubCategoryId && a.PaintColourId == firstRecord.ColourId &&
-                     isVolumeAvailable.Contains(a.PaintVolumeId));
-                    if (IsPaintAvailable) return true;
-                }
-                
+                    var AvailableVolumes = await context.PaintMaster.Include(i => i.PaintVolume).Where(a => a.PaintCategoryId == firstRecord.PaintCategoryId
+                      && a.PaintSubCategoryId == firstRecord.PaintSubCategoryId && a.PaintColourId == firstRecord.ColourId)
+                    .ToListAsync();
 
-                //var connectionString = context.Database.Connection.ConnectionString;
-                using (var bulkCopy = new SqlBulkCopy(CreateContext().Database.Connection.ConnectionString, SqlBulkCopyOptions.KeepIdentity))
+                    var AlreadyavailableVolumes = AvailableVolumes.Select(s => s.PaintVolumeId).Intersect(newPaintDetails.Select(s => s.VolumeId).ToList()).ToList();
+                    if (AlreadyavailableVolumes.Count > 0)
+                    {
+                        return string.Format($"Volume(s) {string.Join(", ", AvailableVolumes.Where(f => AlreadyavailableVolumes.Contains(f.PaintVolumeId)).Select(x => x.PaintVolume.Value).Distinct().ToArray())}  have been already added to the selected colour");
+                    }
+                    using (var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepIdentity))
+                    {
+                        bulkCopy.ColumnMappings.Add("PaintColourId", "PaintColourId");
+                        bulkCopy.ColumnMappings.Add("PaintCategoryId", "PaintCategoryId");
+                        bulkCopy.ColumnMappings.Add("PaintVolumeId", "PaintVolumeId");
+                        bulkCopy.ColumnMappings.Add("Quantity", "Quantity");
+                        bulkCopy.ColumnMappings.Add("Price", "Price");
+                        bulkCopy.ColumnMappings.Add("PaintSubCategoryId", "PaintSubCategoryId");
+                        bulkCopy.ColumnMappings.Add("Status", "Status");
+                        bulkCopy.ColumnMappings.Add("CostCode", "CostCode");
+
+                        bulkCopy.BatchSize = newPaintDetails.Count();
+                        bulkCopy.DestinationTableName = "[Inventory].[PaintMaster]";
+                        await bulkCopy.WriteToServerAsync(GetTableRows(newPaintDetails));
+                        return string.Empty;
+                    }
+                }
+                catch (Exception ex)
                 {
-                    bulkCopy.ColumnMappings.Add("PaintColourId", "PaintColourId");
-                    bulkCopy.ColumnMappings.Add("PaintCategoryId", "PaintCategoryId");
-                    bulkCopy.ColumnMappings.Add("PaintVolumeId", "PaintVolumeId");
-                    bulkCopy.ColumnMappings.Add("Quantity", "Quantity");
-                    bulkCopy.ColumnMappings.Add("Price", "Price");
-                    bulkCopy.ColumnMappings.Add("PaintSubCategoryId", "PaintSubCategoryId");
-                    bulkCopy.ColumnMappings.Add("Status", "Status");
-                    bulkCopy.ColumnMappings.Add("CostCode", "CostCode");
-
-
-                    bulkCopy.BatchSize = newPaintDetails.Count();
-                    bulkCopy.DestinationTableName = "[Inventory].[PaintMaster]";
-                    await bulkCopy.WriteToServerAsync(GetTableRows(newPaintDetails));
-                    return false;
+                    return ex.StackTrace;
                 }
-
-            }
-            catch (Exception ex)
-            {
-                var errormsg = ex.StackTrace;
-                return false;
             }
         }
 
