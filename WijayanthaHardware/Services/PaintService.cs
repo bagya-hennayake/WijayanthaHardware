@@ -120,7 +120,7 @@ namespace WijayanthaHardware.Services
                     var AlreadyavailableVolumes = AvailableVolumes.Select(s => s.PaintVolumeId).Intersect(newPaintDetails.Select(s => s.VolumeId).ToList()).ToList();
                     if (AlreadyavailableVolumes.Count > 0)
                     {
-                        return string.Format($"Volume(s) {string.Join(", ", AvailableVolumes.Where(f => AlreadyavailableVolumes.Contains(f.PaintVolumeId)).Select(x => x.PaintVolume.Value).Distinct().ToArray())}  have been already added to the selected colour");
+                        return string.Format("{0} {1}  {2} been already added to the selected colour", AlreadyavailableVolumes.Count > 1 ? "Volumes" : "Volume", string.Join(", ", AvailableVolumes.Where(f => AlreadyavailableVolumes.Contains(f.PaintVolumeId)).Select(x => x.PaintVolume.Value).Distinct().ToArray()), AlreadyavailableVolumes.Count > 1 ? "have" : "has");
                     }
                     using (var bulkCopy = new SqlBulkCopy(connection, SqlBulkCopyOptions.KeepIdentity))
                     {
