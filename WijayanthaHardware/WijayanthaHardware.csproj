@@ -201,6 +201,7 @@
     </Compile>
     <Compile Include="Mappers\PowerToolMapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
     <Compile Include="Models\PaintViewModel.cs" />
@@ -551,6 +552,7 @@
     <Content Include="Views\Paints\Index.cshtml" />
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
+    <Content Include="Views\Paints\AddCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

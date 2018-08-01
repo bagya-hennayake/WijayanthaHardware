@@ -110,7 +110,37 @@
                 showToastr(result);
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                hideWaitBlock();
                 toastr.error("ajax error block", "ajax error block");
+            }
+        });
+    });
+
+
+    $("#AddNewColourForm").submit(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        var newcolourcode = $('#newColourCode').val();
+        var newcolour = $('#newColour').val();
+        if (newcolourcode == "") return toastr.error("Colour code is empty", "Failed");
+        if (newcolour == "") return toastr.error("Colour is empty", "Failed");
+
+        var action = $("#AddNewColourForm").attr("action");
+        showWaitBlock();
+        $.ajax({
+            dataType: "json",
+            type: "POST",
+            url: action,
+            data: { 'code': newcolourcode, 'colour': newcolour },
+
+            success: function (result) {
+                hideWaitBlock();
+                showToastr(result);
+                if (result.status == "success") { $('#newColourCode').val(''); $('#newColour').val(''); $('#addcolor').modal('hide'); }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                hideWaitBlock();
+                toastr.error(errorThrown, "Ajax Error ");
             }
         });
     });

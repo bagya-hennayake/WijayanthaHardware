@@ -5,19 +5,20 @@
             <div class="modal-header">
                 <h5 class="modal-title small-heading" id="exampleModalLongTitle">Add New Color</h5>
             </div>
-            <form action="/" method="post">
+            @using (Ajax.BeginForm("AddNewColour", "Paints", null, new AjaxOptions { HttpMethod = "POST" }, new { @id = "AddNewColourForm", role = "form" }))
+            {
                 <div class="modal-body">
                     <label class="form-label">Color code</label><br />
-                    <input type="text" name="name" value="" placeholder="Add color code" />
+                    <input id="newColourCode" type="text" name="name" value="" placeholder="Add color code" autocomplete="off"/>
                     <label class="form-label">Color name</label><br />
-                    <input type="text" name="name" value="" placeholder="Add paint colour" />
+                    <input id="newColour" type="text" name="name" value="" placeholder="Add paint colour" autocomplete="off"/>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="same-btn">Save Changes</button>
+                    <button type="submit" class="same-btn" >Save Changes</button>
                     <button type="button" class="same-btn" data-dismiss="modal">Close</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>
