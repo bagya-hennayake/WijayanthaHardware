@@ -12,13 +12,12 @@
     <div class="container">
         <div class="paint-add-btns">
             <ul>
-                <li><a class="same-btn" href="#">Add category</a></li>
+                <li><a class="same-btn" href="/Paints/AddCategory">Add category</a></li>
                 <li><a class="same-btn" href="#addcolor" data-toggle="modal">Add color</a></li>
-                <li><a class="same-btn" href="#">Update paint</a></li>
             </ul>
         </div>
         <div class="add-paint">
-            <h1 class="small-heading">Add paint</h1>
+            <h1 class="big-heading">Add paint</h1>
             @using (Ajax.BeginForm("AddNewPaints", "Paints", null, new AjaxOptions { HttpMethod = "POST" }, new { @id = "AddPaints", role = "form" }))
             {
                 <div class="row">
