@@ -164,5 +164,27 @@ namespace WijayanthaHardware.Services
             }
             return dataTable;
         }
+
+        public async Task<bool> AddNewColourAsync(string code, string colour)
+        {
+            using (var context = CreateContext())
+            {
+                var isColourAvailable = await context.PaintColour.AnyAsync(a => a.ColourCode.ToLower() == code.Trim().ToLower() && a.Colour.ToLower() == colour.Trim().ToLower());
+                if (isColourAvailable) return isColourAvailable;
+
+                else
+                {
+                    var newColour = new PaintColour
+                    {
+                        Colour = colour,
+                        ColourCode = code,
+                        Status = (int)RecordStatusEnum.Active
+                    };
+                    context.PaintColour.Add(newColour);
+                    await context.SaveChangesAsync();
+                    return isColourAvailable;
+                }
+            }
+        }
     }
 }

@@ -81,5 +81,17 @@ namespace WijayanthaHardware.Controllers
             var result = await _paintService.AddNewpaintsAsync(newPaintDetails);
             return result != string.Empty ? Json(new { status = TransactionStatusEnum.error.ToString(), title = "Failed", message = result }, JsonRequestBehavior.AllowGet) : Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paints have been saved successfully" }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> AddNewColour(string code, string colour)
+        {
+            var result = await _paintService.AddNewColourAsync(code, colour);
+            return result ? Json(new { status = TransactionStatusEnum.error.ToString(), title = "Failed", message = "This colour is already added" }, JsonRequestBehavior.AllowGet) : Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "New colour has been added successfully" }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
     }
 }
