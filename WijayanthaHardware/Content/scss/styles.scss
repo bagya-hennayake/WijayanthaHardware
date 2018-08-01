@@ -200,7 +200,7 @@ input[type="number"] {
 
             > a {
                 padding: 2rem 0;
-                font-size: 1.6vw;
+                font-size: 1.5vw;
                 position: relative;
                 width: 100%;
                 text-align: center;
@@ -581,16 +581,17 @@ input[type="number"] {
     .paint-details {
         width: 100%;
         margin: 20px 0 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
 
         tr {
-            &:nth-child(even) {
-                background: $main-color;
-                color: #fff;
-            }
-
             &:nth-child(odd) {
-                background: $grey;
+                background: #e8e9ea;
                 color: #000;
+            }
+            border-bottom:1px solid #ccc;
+            &:last-child{
+                border:none;
             }
         }
 
@@ -599,11 +600,16 @@ input[type="number"] {
         }
 
         th {
-            padding: 0 0 10px;
+            padding: 10px 0;
             font-size: 20px;
             font-weight: 700;
             background: #fff;
             color: $light-grey;
+            border-bottom: 2px solid #ccc;
+            border-right:2px solid #ccc;
+            &:last-child{
+                border-right:none;
+            }
         }
 
         td {
@@ -612,10 +618,11 @@ input[type="number"] {
         }
     }
 }
+
 .paint-master {
     .add-paint {
         .btns{
-            padding:0 0 5% 0;
+            padding:0 15px 5% 0;
             text-align:right;
         }
     }
