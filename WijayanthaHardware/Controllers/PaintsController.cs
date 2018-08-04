@@ -62,7 +62,7 @@ namespace WijayanthaHardware.Controllers
 
         public ActionResult EditPaint(int paintId)
         {
-            return Content("result");
+            return PartialView("EditPaint");
         }
         public ActionResult AddPaint()
         {

@@ -29,7 +29,7 @@
                 data: "PaintId",
                 "bSortable": false,
                 render: function (data, type, row) {
-                    return "<a href='/Paints/EditPaint?paintId=" + row.PaintId + "'<i class='fas fa-edit'></i></a>";
+                    return "<a data-toggle='modal' data-target='#editPaint' href='/Paints/EditPaint?paintId=" + row.PaintId + "'<i class='fas fa-edit'></i></a>";
                 }
             }
         ]
