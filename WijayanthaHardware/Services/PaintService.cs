@@ -186,5 +186,33 @@ namespace WijayanthaHardware.Services
                 }
             }
         }
+
+        public async Task<PaintViewModel> EditPaint(int paintMasterId)
+        {
+            using (var context = CreateContext())
+            {
+                var result = await context.PaintMaster.Include(i => i.PaintColour).Include(i => i.PaintSubCategory).Include(i => i.PaintVolume)
+                    .FirstOrDefaultAsync(f => f.Status == (int)RecordStatusEnum.Active && f.PaintMasterId == paintMasterId);
+
+                return new PaintViewModel()
+                {
+                    PaintMasterId = result.PaintMasterId,
+                    Colour = result.PaintColour.Colour + " [" + result.PaintColour.ColourCode + "]",
+                    AvailableQuantity = result.Quantity,
+                    Price = result.Price
+                };
+            }
+        }
+
+        public async Task UpdatePaintAsync(PaintViewModel paintViewModel)
+        {
+            using (var context = CreateContext())
+            {
+                var result = context.PaintMaster.FirstOrDefault(f => f.PaintMasterId == paintViewModel.PaintMasterId && f.Status == (int)RecordStatusEnum.Active);
+                result.Quantity = paintViewModel.AvailableQuantity;
+                result.Price = paintViewModel.Price;
+                await context.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -1,0 +1,68 @@
+﻿@model WijayanthaHardware.Models.PaintViewModel
+
+<div id="innerFormModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title small-heading">@Model.Colour</h5>
+            </div>
+            @using (Ajax.BeginForm("EditPaint", "Paints", null, new AjaxOptions { HttpMethod = "POST" }, new { @id = "EditPaint", role = "form" }))
+            {
+                @Html.HiddenFor(x => x.PaintMasterId)
+                <div class="modal-body">
+                    <label class="form-label">Update Quantity</label><br />
+                    @Html.TextBoxFor(x => x.AvailableQuantity, null, new { type = "number", autocomplete = "off" })
+                    <label class="form-label">Update Price</label><br />
+                    @Html.TextBoxFor(x => x.Price, null, new { type = "number", autocomplete = "off" })
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="same-btn">Update</button>
+                    <button type="button" class="same-btn" data-dismiss="modal">Close</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#EditPaint").submit(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        showWaitBlock();
+
+        var action = $("#EditPaint").attr("action");
+        var dataString;
+        dataString = new FormData($("#EditPaint").get(0));
+        contentType = false;
+        processData = false;
+        $.ajax({
+            type: "POST",
+            url: "/Paints/EditPaint",
+            data: dataString,
+            dataType: "json",
+            contentType: contentType,
+            processData: processData,
+            success: function (result) {
+                hideWaitBlock();
+                $('#innerFormModal').modal('hide');
+                showToastr(result);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                hideWaitBlock();
+                toastr.error("Something went wrong, please try refreshing the page", "Failed");
+                return;
+            }
+        });
+    });
+
+    $('#innerFormModal').on('hidden.bs.modal', function () {
+
+
+        $.get("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (data) {
+            PaintTable.clear();
+            PaintTable.rows.add(data);
+            PaintTable.draw();
+        });
+    })
+
+</script>

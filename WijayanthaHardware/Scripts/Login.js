@@ -22,6 +22,9 @@
                 if (result.status == "redirect") {
                     window.location.href = result.redirectURL;
                     hideWaitBlock();
+                    PaintTable.clear();
+                    PaintTable.rows.add(data);
+                    PaintTable.draw();
                 }
 
                 else {

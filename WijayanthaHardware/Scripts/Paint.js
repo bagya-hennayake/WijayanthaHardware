@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var  PaintTable;
+$(document).ready(function () {
     $("#PaintCategoryId").change(function () {
         $.ajax({
             type: "GET",
@@ -10,11 +11,13 @@
                     $("#PaintSubCategoryId").append("<option value='" + data[i].PaintSubCategoryId + "'>" + data[i].Value + "</option>")
                 });
                 $('#PaintSubCategoryId').niceSelect('update');
+                PaintTable.clear();
+                PaintTable.draw();
             }
         });
     });
 
-    var PaintTable = $('#paint-details-Table').DataTable({
+    PaintTable = $('#paint-details-Table').DataTable({
         columns: [
             { data: "PaintColour" },
             { data: "Volume" },
@@ -29,7 +32,7 @@
                 data: "PaintId",
                 "bSortable": false,
                 render: function (data, type, row) {
-                    return "<a href='/Paints/EditPaint?paintId=" + row.PaintId + "'<i class='fas fa-edit'></i></a>";
+                    return "<a  class='btn-load-inner-form-modal-edit' href='/Paints/EditPaint?paintId=" + row.PaintId + "'><i class='fas fa-edit'></i></a>";
                 }
             }
         ]
