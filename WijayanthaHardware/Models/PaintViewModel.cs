@@ -29,6 +29,8 @@ namespace WijayanthaHardware.Models
         public int VolumeId { get; set; }
         public int Quantity { get; set; }
         public int ColourId { get; set; }
+        public string Colour { get; set; }
+        public int PaintMasterId { get; set; }
 
     }
 }

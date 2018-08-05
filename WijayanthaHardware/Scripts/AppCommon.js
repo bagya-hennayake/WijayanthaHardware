@@ -40,3 +40,15 @@ function showWaitBlock() {
 function hideWaitBlock() {
     $.unblockUI();
 }
+
+$(function () {
+
+    $(document).on("click", '.btn-load-inner-form-modal-edit', function (e) {
+        e.preventDefault();
+        var link = $(this);
+        var url = link.prop('href');
+        $("#markup").load(url, function () {
+            $('#innerFormModal').modal('show');
+        });
+    });
+});
