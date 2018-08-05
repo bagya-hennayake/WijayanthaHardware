@@ -28,8 +28,6 @@
     $("#EditPaint").submit(function (event) {
         event.preventDefault();
         event.stopImmediatePropagation();
-        //if ($("#PaintCategoryId").val() == null || $("#PaintCategoryId").val() == "") return showToastr("Select paint category", "Failed");
-        //if ($('#PaintSubCategoryId').val() == null || $('#PaintSubCategoryId').val() == "") return showToastr("Select paint", "Failed");
         showWaitBlock();
 
         var action = $("#EditPaint").attr("action");
