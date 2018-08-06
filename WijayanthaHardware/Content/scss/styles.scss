@@ -1,5 +1,5 @@
 @import "_variables";
-@import "_mixins.scss";
+@import "_mixins";
 body {
     font-family: $font-openRegular;
     overflow-x: hidden;
@@ -21,6 +21,8 @@ input[type=text] {
     &:focus {
         border-color: rgba(10, 153, 255,0.5);
         @include box-shadow(0 0 9px 0px rgba(10, 153, 255,0.5));
+        box-shadow: 0 0 9px 0px rgba(10, 153, 255,0.5);
+        -webkit-box-shadow: 0 0 9px 0px rgba(10, 153, 255,0.5);
     }
 }
 input[type="number"] {
@@ -200,7 +202,7 @@ input[type="number"] {
 
             > a {
                 padding: 2rem 0;
-                font-size: 1.5vw;
+                font-size: 1.6vw;
                 position: relative;
                 width: 100%;
                 text-align: center;
