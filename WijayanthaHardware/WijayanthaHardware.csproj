@@ -554,9 +554,10 @@
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
     <Content Include="Views\Paints\AddCategory.cshtml" />
-    <Content Include="Views\Paints\EditPaint.cshtml" />
+    
     <Content Include="Views\Paints\_NewCategory.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
+    <Content Include="Views\Paints\_EditPaint.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -60,10 +60,20 @@ namespace WijayanthaHardware.Controllers
                 : Json(new { status = TransactionStatusEnum.error.ToString(), title = "Failed", message = "This Paint Category is already available" }, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult EditPaint(int paintId)
+        public async Task<PartialViewResult> EditPaint(int paintId)
         {
-            return PartialView("EditPaint");
+            var result = await _paintService.EditPaint(paintId);
+            return PartialView("_EditPaint", result);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> EditPaint(PaintViewModel paintViewModel)
+        {
+            await _paintService.UpdatePaintAsync(paintViewModel);
+            return Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paint details have been updated successfully" }, JsonRequestBehavior.AllowGet);
+        }
+
+
         public ActionResult AddPaint()
         {
             var paintViewModel = new PaintViewModel
