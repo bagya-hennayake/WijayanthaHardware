@@ -26,6 +26,11 @@ namespace WijayanthaHardware.Controllers
             return View(result);
         }
 
+        public ActionResult Sales()
+        {
+            return View();
+        }
+
 
     }
 }

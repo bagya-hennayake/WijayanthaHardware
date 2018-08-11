@@ -4,4 +4,71 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
+<div class="all-categories">
+    <div class="container">
+        <h2 class="big-heading">Categories</h2>
+        <a class="same-btn pull-right" data-toggle="modal" href="#addcategory">Add new</a>
+        <table class="paint-categories">
+            <thead>
+                <tr>
+                    <th>Categories</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Category111</td>
+                    <td>
+                        <ul>
+                            <li><a class="view-list" href="#"><i class="fas fa-list-ul"></i></a></li>
+                            <li><a class="edit-category" href="#"><i class="fas fa-edit"></i></a></li>
+                            <li><a class="delete-category" href="#"><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category111</td>
+                    <td>
+                        <ul>
+                            <li><a class="view-list" href="#"><i class="fas fa-list-ul"></i></a></li>
+                            <li><a class="edit-category" href="#"><i class="fas fa-edit"></i></a></li>
+                            <li><a class="delete-category" href="#"><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category111</td>
+                    <td>
+                        <ul>
+                            <li><a class="view-list" href="#"><i class="fas fa-list-ul"></i></a></li>
+                            <li><a class="edit-category" href="#"><i class="fas fa-edit"></i></a></li>
+                            <li><a class="delete-category" href="#"><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category111</td>
+                    <td>
+                        <ul>
+                            <li><a class="view-list" href="#"><i class="fas fa-list-ul"></i></a></li>
+                            <li><a class="edit-category" href="#"><i class="fas fa-edit"></i></a></li>
+                            <li><a class="delete-category" href="#"><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Category111</td>
+                    <td>
+                        <ul>
+                            <li><a class="view-list" href="#"><i class="fas fa-list-ul"></i></a></li>
+                            <li><a class="edit-category" href="#"><i class="fas fa-edit"></i></a></li>
+                            <li><a class="delete-category" href="#"><i class="fas fa-trash"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
+@Html.Partial("_NewCategory")

@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Sales";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+@section style{
+    @Styles.Render("~/sales-css")
+}
+<div class="sales">
+    <div class="container">
+        <h2 class="big-heading">sales</h2>
+        <div class="sales-point">
+            <form action="/" method="post">
+                <div class="row">
+                    <h2 class="small-heading pull-left">paint</h2>
+                    <button id="newpaintsale" class="same-btn pull-right">Add more</button>
+                </div>
+                <div class="paintsales">
+                    <div class="row">
+                        <div class="piant-details">
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <label class="small-heading">Paint category</label>
+                                <select class="wide">
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <label class="small-heading">Paint</label>
+                                <select class="wide">
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <label class="small-heading">Volume</label>
+                                <select class="wide">
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-3">
+                                <label class="small-heading">Quantity</label>
+                                <input type="text" name="name" value="" placeholder="Quantity" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="small-heading pull-left">power tools</h2>
+                    <button id="newpowersale" class="same-btn pull-right">Add more</button>
+                </div>
+                <div class="power-sales">
+                    <div class="row">
+                        <div class="tools-details">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <label class="small-heading">Tool Category</label>
+                                <select class="wide">
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <label class="small-heading">Tool</label>
+                                <select class="wide">
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                    <option value="value">text</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section script
+{
+    @Scripts.Render("~/sales-js")
+}
