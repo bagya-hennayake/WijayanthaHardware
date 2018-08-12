@@ -28,8 +28,8 @@ namespace WijayanthaHardware
             bundles.Add(new StyleBundle("~/add-paint-css").Include(CSS.SingleSelectDropDown, CSS.TypeAhead));
             bundles.Add(new ScriptBundle("~/add-paint-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.TypeAhead, "~/Scripts/NewPaint.js"));
 
-            bundles.Add(new StyleBundle("~/sales-css").Include(CSS.SingleSelectDropDown));
-            bundles.Add(new ScriptBundle("~/sales-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn,"~/Scripts/sales.js"));
+            bundles.Add(new StyleBundle("~/sales-css").Include(CSS.SingleSelectDropDown, CSS.TypeAhead));
+            bundles.Add(new ScriptBundle("~/sales-js").Include(Plugin.SingleSelectDropDown, Plugin.SingleSelectDropDownFn, Plugin.TypeAhead,"~/Scripts/sales.js"));
         }
     }
 }

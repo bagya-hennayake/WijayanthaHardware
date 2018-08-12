@@ -68,7 +68,6 @@ input[type="number"] {
     }
 
     &:focus {
-        color: #fff;
         text-decoration: none;
         outline: none;
     }
@@ -767,26 +766,72 @@ input[type="number"] {
 }
 .sales {
     .sales-point {
-        margin: 8% 0 0;
-
-        h2 {
-            margin: 0 0 0 25px;
-        }
+        margin: 8% 0;
+        padding-bottom: 20px;
 
         .same-btn {
-            margin-right: 25px;
+        }
+
+        .common-padding {
+            padding: 20px 10px 45px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 45px;
         }
 
         .paintsales {
-            padding: 20px 10px 45px;
-            border-bottom: 2px solid #ccc;
-            margin-bottom: 45px;
         }
 
         .power-sales {
-            padding: 20px 10px 45px;
-            border-bottom: 2px solid #ccc;
-            margin-bottom: 45px;
+        }
+
+        .othersales {
+            input {
+                margin: 20px 0;
+            }
+        }
+    }
+
+    .sales-total {
+        border: 1px dashed $main-color;
+        padding: 20px;
+        margin-bottom: 40px;
+
+        table {
+            width: 100%;
+
+            tr {
+                td {
+                    padding: 10px 0;
+                    font-size: 20px;
+                    border-bottom: 1px solid #cbced0;
+
+                    &:nth-child(1) {
+                        color: $main-color;
+                    }
+
+                    &:nth-child(2) {
+                        color: #797979;
+                        font-style: italic;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .right-item {
+            padding-top: 20px;
+            text-align: center;
+            font-family: "Orbitron-Regular",sans-serif;
+
+            .total {
+                font-size: 50px;
+                color: #a9a9a9;
+            }
+
+            .total-text {
+                font-size: 30px;
+                color: $main-color;
+            }
         }
     }
 }
