@@ -383,6 +383,7 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\favicon.png" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
@@ -504,6 +505,7 @@
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
     <Content Include="Scripts\dropdownfn.js" />
+    <Content Include="Scripts\sales.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -553,6 +555,9 @@
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
     <Content Include="Views\Paints\AddCategory.cshtml" />
+    
+    <Content Include="Views\Paints\_NewCategory.cshtml" />
+    <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Paints\_EditPaint.cshtml" />
   </ItemGroup>
   <ItemGroup>
