@@ -57,5 +57,35 @@ namespace WijayanthaHardware.Services
                 return new List<DashboardViewModel>();
             }
         }
+
+
+        //public async Task<List<PowerToolsViewModel>> GetDashBoardChartDataAsync()
+        //{
+        //    try
+        //    {
+        //        var paintViewModel = new List<PowerToolsViewModel>();
+        //        using (var context = CreateContext())
+        //        {
+        //            var uiniqueProductIds = await context.PowerToolMaster.Where(w => w.Status == (int)RecordStatusEnum.Active).Select(s => s.PowerToolCategoryId).Distinct().ToListAsync();
+
+        //            foreach (var distinctid in uiniqueProductIds)
+        //            {
+        //                var result = await context.PowerToolSubCatogery.Include(i => i.PowerToolCategory).Where(w => w.PowerToolCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
+        //                var vm = new PaintViewModel
+        //                {
+        //                    CategoryName = result.FirstOrDefault().PowerToolCategoryId.Value,
+        //                    AvailableQuantity = result.Count()
+        //                };
+        //                PowerToolsViewModel.Add(vm);
+        //            }
+        //        }
+        //        return PowerToolsViewModel;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var aa = ex.StackTrace;
+        //        return new List<PowerToolsViewModel>();
+        //    }
+
+        }
     }
-}

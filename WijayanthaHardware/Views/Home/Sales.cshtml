@@ -1,4 +1,4 @@
-﻿
+﻿@model WijayanthaHardware.Models.SalesModelsalesModel
 @{
     ViewBag.Title = "Sales";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -21,35 +21,38 @@
                     <div class="row">
                         <div class="piant-details">
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <label class="small-heading">Paint category</label>
-                                <select class="wide">
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                </select>
+                                <div class="select-bar">
+                                    @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
+
+                                    @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide select-list paint-list" })
+                                </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-3">
-                                <label class="small-heading">Paint</label>
-                                <select class="wide">
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                </select>
+                                <div class="select-bar">
+                                    @Html.LabelFor(x => x.PaintSubCategoryId, new { @class = "small-heading" })
+                                    @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide select-list paint-list" })
+                                </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-2">
-                                <label class="small-heading">color</label>
-                                <input class="color-type" type="text" name="name" value="" placeholder="Color" />
+                                <div class="select-bar">
+                                    @Html.LabelFor(x => x.PaintColour, new { @class = "small-heading" })
+                                    <input class="color-type" type="text" name="name" value="" placeholder="Color" />
+                                </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-2">
-                                <label class="small-heading">Volume</label>
-                                <select class="wide">
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                </select>
+                                <div class="select-bar">
+                                    <label class="small-heading">Volume</label>
+                                    @*<select class="wide">
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                    </select>*@
+                                    @*@Html.LabelFor(x => x.ColourVolume, new { @class = "small-heading" })*@
+                                    <input class="VolumeId-type" type="text" name="name" value="" placeholder="Volume" />
+
+
+                                </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-2">
                                 <label class="small-heading">Quantity</label>
@@ -69,23 +72,13 @@
                         <div class="tools-details">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <label class="small-heading">Tool Category</label>
-                                <select class="wide">
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                </select>
+                                <div class="select-bar">
+                                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select PowerTool Category", new { @class = "wide select-list paint-list" })
+                                </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <label class="small-heading">Tool</label>
-                                <select class="wide">
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                    <option value="value">text</option>
-                                </select>
+                                @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select tool", new { @class = "wide select-list paint-list" })
                             </div>
                         </div>
                     </div>
@@ -130,4 +123,5 @@
 @section script
 {
     @Scripts.Render("~/sales-js")
+    @Scripts.Render("~/paint-js")
 }

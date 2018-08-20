@@ -16,6 +16,35 @@ $(document).ready(function () {
             }
         });
     });
+    function typeAhead() {
+
+    /*----------- Type Ahead implementation start -----------------*/
+    var paintColours = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+                remote: {
+                url: '/Paints/GetPaintColourLookup?query=%QUERY',
+            wildcard: '%QUERY'
+        }
+        });
+
+    $('.color-type').typeahead(
+            {
+            minLength: 1,
+                highlight: true
+                    //limit: Infinity
+        },
+        {
+            name: 'paintColours',
+            display: 'Colour',
+            source: paintColours
+        }).on("typeahead:select", function (e, paintColour) {
+    paintColourId = paintColour.PaintColourId;
+    });
+/*---------- Type Ahead implementation end -----------------*/
+
+    }
+
 
     PaintTable = $('#paint-details-Table').DataTable({
         columns: [
