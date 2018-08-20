@@ -34,10 +34,10 @@ namespace WijayanthaHardware.Services
                     var uniquePowerToolIds = await context.PowerToolMaster.Where(w => w.Status == (int)RecordStatusEnum.Active).Select(s => s.PowerToolCategoryId).Distinct().ToListAsync();//can u continue from hrere? oksame code as this
                     foreach (var distinctid in uniquePowerToolIds)
                     {                                                               // u wrote tool category first ryt? i deleted it?yep//sorry, my mistaitke it's ok
-                        var result = await context.PowerToolSubCatogery.Include(i => i.ToolCategory).Where(w => w.PowerToolCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
+                        var result = await context.PowerToolSubCatogery.Include(i => i.PowerToolCategory).Where(w => w.PowerToolCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
                         var vm = new DashboardViewModel
                         {
-                            ToolName = result.FirstOrDefault().ToolCategory.Value,
+                            ToolName = result.FirstOrDefault().PowerToolCategory.Value,
                             PowerToolAvailabilityCount = result.Count(),
                             Type = "powertool"
                         };

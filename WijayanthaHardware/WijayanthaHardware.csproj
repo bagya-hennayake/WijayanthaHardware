@@ -187,9 +187,7 @@
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
-    <Compile Include="Entities\SuplierMaster.cs" />
     <Compile Include="Entities\Sales.cs" />
-    <Compile Include="Entities\SuplierMaster.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
     <Compile Include="Entities\PaintMaster.cs" />
@@ -574,7 +572,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\" />
-    <Folder Include="Views\Sales\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
