@@ -184,8 +184,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaintsController.cs" />
     <Compile Include="Controllers\PowerToolsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
+    <Compile Include="Entities\Sales.cs" />
+    <Compile Include="Entities\SuplierMaster.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
     <Compile Include="Entities\PaintMaster.cs" />
@@ -207,6 +210,7 @@
     <Compile Include="Models\PaintViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\salesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Services\DashBoardService.cs" />
@@ -215,6 +219,7 @@
     <Compile Include="Services\PaintService.cs" />
     <Compile Include="Services\PowerToolService.cs" />
     <Compile Include="Services\RegisterService.cs" />
+    <Compile Include="Services\SalesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -542,7 +547,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -555,7 +562,6 @@
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
     <Content Include="Views\Paints\AddCategory.cshtml" />
-    
     <Content Include="Views\Paints\_NewCategory.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Paints\_EditPaint.cshtml" />
@@ -563,6 +569,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\" />
+    <Folder Include="Views\Sales\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

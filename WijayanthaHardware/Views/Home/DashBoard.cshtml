@@ -1,4 +1,5 @@
 ﻿@model List<WijayanthaHardware.Models.PaintViewModel>
+@*@model List<WijayanthaHardware.Models.PowerToolsViewModel>*@
 @{
     ViewBag.Title = "DashBoard";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -22,10 +23,19 @@
                                     </li>
                                 }
                             </ul>
+                            @*<ul class="pieID legend">
+                                @foreach (var powertool in Model)
+                                {
+                                    <li>
+                                        <em>@powertool</em>
+                                        <span>@powertool.AvailableQuantity</span>
+                                    </li>
+                                }
+                            </ul>*@
                         </section>
                     </div>
                 </div>
             </div>
         </div>
-       </div>
+    </div>
 </div>
