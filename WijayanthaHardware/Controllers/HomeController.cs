@@ -50,11 +50,5 @@ namespace WijayanthaHardware.Controllers
             //};
             return View(SalesModel);
         }
-        //public async Task<ActionResult> GetPaintColourLookup(string query)
-        //{
-        //    var result = await _saleService.GetPaintColoursAsync(query);
-        //    return Json(result, JsonRequestBehavior.AllowGet);
-        //}
-
     }
 }
