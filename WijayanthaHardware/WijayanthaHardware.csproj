@@ -184,8 +184,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaintsController.cs" />
     <Compile Include="Controllers\PowerToolsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
+    <Compile Include="Entities\SuplierMaster.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
     <Compile Include="Entities\PaintMaster.cs" />
@@ -201,6 +203,7 @@
     </Compile>
     <Compile Include="Mappers\PowerToolMapper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SalesVeiwModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
@@ -555,10 +558,12 @@
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
     <Content Include="Views\Paints\AddCategory.cshtml" />
-    
     <Content Include="Views\Paints\_NewCategory.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Paints\_EditPaint.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Home\_powerToolChart.cshtml" />
+    <Content Include="Views\Home\_paintChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,21 @@
+﻿@model List<WijayanthaHardware.Models.DashboardViewModel>
+<div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="powerTools-info">
+        <div class="pie-chart">
+            <h1>PowerTools Availability</h1>
+            <section>
+                <div class="pieID pie">
+                </div>
+                <ul class="pieID legend">
+                    @foreach (var Tool in Model.Where(w => w.Type == "powertool").ToList())
+                    {
+                        <li>
+                            <em>@Tool.ToolName</em>
+                            <span>@Tool.PowerToolAvailabilityCount</span>
+                        </li>
+                    }
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
