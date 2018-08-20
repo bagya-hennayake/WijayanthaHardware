@@ -835,3 +835,38 @@ input[type="number"] {
         }
     }
 }
+/*Mobile Menu*/
+.navbar-header{
+    background: $main-color;
+    .navbar-toggle{
+        border: none;
+        &:hover{
+            background: none;
+        }
+        &:active{
+            background: none;
+        }
+        &:focus{
+            background: none;
+        }
+        .icon-bar{
+            background: #fff;
+        }
+    }
+    .navbar-brand{
+        color:#fff;
+    }
+}
+.navbar-collapse{
+    .nav{
+        li{
+            text-transform: uppercase;
+            &:hover{
+                background: #fff;
+            }
+            a{
+                color: $main-color;
+            }
+        }
+    }
+}
