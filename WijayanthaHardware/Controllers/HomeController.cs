@@ -14,10 +14,12 @@ namespace WijayanthaHardware.Controllers
     public class HomeController : Controller
     {
         private readonly DashBoardService _dashBoardService;
+        private readonly LookUpServices _lookUpServices;
 
-        public HomeController(DashBoardService dashBoardService)
+        public HomeController(DashBoardService dashBoardService, LookUpServices lookUpServices)
         {
             _dashBoardService = dashBoardService;
+            _lookUpServices = lookUpServices;
         }
 
         public async Task<ActionResult> DashBoard()
@@ -28,9 +30,16 @@ namespace WijayanthaHardware.Controllers
 
         public ActionResult Sales()
         {
-            return View();
+            var paints = _lookUpServices.GetLookUp(LookUpTypeEnum.PaintCategory);
+            var powertools = _lookUpServices.GetLookUp(LookUpTypeEnum.PowerToolCategory);
+            var SalesModel = new SalesModelsalesModel
+            {
+                PaintCatergoryList = new SelectList(paints, "LookUpId", "Value"),
+                PaintSubategoryList = new SelectList(new List<LookUpBO>(), "LookUpId", "Value"),
+                PowerToolSelectList = new SelectList(powertools, "LookUpId", "Value"),
+                PowerToolSubSelectList = new SelectList(new List<LookUpBO>(), "LookUpId", "Value")
+            };
+            return View(SalesModel);
         }
-
-
     }
 }

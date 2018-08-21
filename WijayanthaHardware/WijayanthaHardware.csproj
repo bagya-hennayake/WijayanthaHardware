@@ -206,6 +206,7 @@
     <Compile Include="Models\PaintViewModel.cs" />
     <Compile Include="Models\PowerToolsViewModel.cs" />
     <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\SalesModelsalesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Services\DashBoardService.cs" />
@@ -554,7 +555,6 @@
     <Content Include="Views\Paints\AddPaint.cshtml" />
     <Content Include="Views\Paints\_AddColor.cshtml" />
     <Content Include="Views\Paints\AddCategory.cshtml" />
-    
     <Content Include="Views\Paints\_NewCategory.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Paints\_EditPaint.cshtml" />
