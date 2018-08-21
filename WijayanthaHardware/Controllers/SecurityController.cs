@@ -18,6 +18,7 @@ namespace WijayanthaHardware.Controllers
             _loginService = loginService;
             _registerService = registerService;
         }
+
         [AllowAnonymous]
         [HttpGet]
         public ActionResult Login(string ReturnUrl)
@@ -50,7 +51,7 @@ namespace WijayanthaHardware.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel registerViewModel)
         {
-            registerViewModel.UserPassword = FormsAuthentication.HashPasswordForStoringInConfigFile(registerViewModel.UserPassword, "SHA1");
+            registerViewModel.UserPassword = FormsAuthentication. HashPasswordForStoringInConfigFile(registerViewModel.UserPassword, "SHA1");
             await _registerService.RegisterNewUserAsync(registerViewModel);
             return RedirectToAction("DashBoard", "Home");
         }
