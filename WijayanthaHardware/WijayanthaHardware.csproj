@@ -186,6 +186,7 @@
     <Compile Include="Controllers\PowerToolsController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
+    <Compile Include="Entities\Class1.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
     <Compile Include="Entities\PaintMaster.cs" />
@@ -200,6 +201,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\PowerToolMapper.cs" />
+    <Compile Include="Migrations\201808211706152_sales.cs" />
+    <Compile Include="Migrations\201808211706152_sales.Designer.cs">
+      <DependentUpon>201808211706152_sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808221502426_sales1.cs" />
+    <Compile Include="Migrations\201808221502426_sales1.Designer.cs">
+      <DependentUpon>201808221502426_sales1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
@@ -572,6 +581,14 @@
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808211706152_sales.resx">
+      <DependentUpon>201808211706152_sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221502426_sales1.resx">
+      <DependentUpon>201808221502426_sales1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
