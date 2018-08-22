@@ -22,8 +22,6 @@ namespace WijayanthaHardware.Services
         }
         public void SetFormsAuthentication(HttpContextBase httpContextBase, LoginBO loginBO)
         {
-
-
             var ticket = new FormsAuthenticationTicket(
                 loginBO.Username,
                 false,

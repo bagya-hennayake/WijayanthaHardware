@@ -23,7 +23,7 @@ $("#newpaintsale").click(function () {
     event.preventDefault();
     counter++;
     var $paint = $('<div class="row"><div class="piant-details"><div class= "col-xs-6 col-sm-6 col-md-3" ><label class="small-heading">Paint category</label><select class="wide"><option value="value">text</option></select></div ><div class="col-xs-6 col-sm-6 col-md-3"><label class="small-heading">Paint</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class= "small-heading">color</label ><input id="col' + counter + '"  type="text" name="name" value="" placeholder="Color" /></div ><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Volume</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Quantity</label><input type="text" name="name" value="" placeholder="Quantity" /></div></div ></div >');
-
+   
 
     $(".sales-point .paintsales").append($paint);
     $('select').niceSelect();
@@ -54,6 +54,23 @@ $("#newpowersale").click(function () {
 
 $(document).ready(function () {
 
+        /*----------- Type Ahead implementation start -----------------*/
+        var paintColours = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            remote: {
+                url: '/Paints/GetPaintColourLookup?query=%QUERY',
+                wildcard: '%QUERY'
+            }
+        });
+    });
+
+});
+
+function typeAhead() {
+
+    /*----------- Type Ahead implementation start -----------------*/
+
 
     $('.color-type').typeahead(
         {
@@ -69,22 +86,6 @@ $(document).ready(function () {
             paintColourId = paintColour.PaintColourId;
         });
     /*---------- Type Ahead implementation end -----------------*/
-    $("#PaintCategoryId").change(function () {
-        $.ajax({
-            type: "GET",
-            url: "/Paints/GetPaintSubCategory?paintCategoryId=" + $(this).val(),
-            success: function (data) {
-                $("#PaintSubCategoryId").empty();
-                $("#PaintSubCategoryId").append("<option>Select Paint</option>");
-                $(data).each(function (i) {
-                    $("#PaintSubCategoryId").append("<option value='" + data[i].PaintSubCategoryId + "'>" + data[i].Value + "</option>")
-                });
-                $('#PaintSubCategoryId').niceSelect('update');
-                PaintTable.clear();
-                PaintTable.draw();
-            }
-        });
-    });
 
     $("#PowerToolId").change(function () {
         $.ajax({
@@ -119,29 +120,6 @@ $(document).ready(function () {
             }
         });
     });
-
-});
-
-function typeAhead() {
-
-    /*----------- Type Ahead implementation start -----------------*/
-
-
-    $('.color-type').typeahead(
-        {
-            minLength: 1,
-            highlight: true
-            //limit: Infinity
-        },
-        {
-            name: 'paintColours',
-            display: 'Colour',
-            source: paintColours
-        }).on("typeahead:select", function (e, paintColour) {
-            paintColourId = paintColour.PaintColourId;
-        });
-    /*---------- Type Ahead implementation end -----------------*/
-
 
 
 }

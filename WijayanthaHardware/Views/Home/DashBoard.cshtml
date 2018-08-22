@@ -1,4 +1,4 @@
-﻿@model List<WijayanthaHardware.Models.PaintViewModel>
+﻿@model List<WijayanthaHardware.Models.DashboardViewModel>
 @{
     ViewBag.Title = "DashBoard";
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
@@ -6,26 +6,8 @@
 <div class="body-content">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="paint-info">
-                    <div class="pie-chart">
-                        <h1>Paint Availability</h1>
-                        <section>
-                            <div class="pieID pie">
-                            </div>
-                            <ul class="pieID legend">
-                                @foreach (var paint in Model)
-                                {
-                                    <li>
-                                        <em>@paint.CategoryName</em>
-                                        <span>@paint.AvailableQuantity</span>
-                                    </li>
-                                }
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </div>
+            @Html.Partial("_paintChart")
+            @Html.Partial("_powerToolChart")
         </div>
     </div>
 </div>

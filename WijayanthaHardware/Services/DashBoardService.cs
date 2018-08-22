@@ -10,11 +10,11 @@ namespace WijayanthaHardware.Services
 {
     public class DashBoardService : RepositoryBase
     {
-        public async Task<List<PaintViewModel>> GetDashBoardChartDataAsync()
+        public async Task<List<DashboardViewModel>> GetDashBoardPaintChartDataAsync()
         {
             try
             {
-                var paintViewModel = new List<PaintViewModel>();
+                var dashboardViewModel = new List<DashboardViewModel>();
                 using (var context = CreateContext())
                 {
                     var uiniqueProductIds = await context.PaintMaster.Where(w => w.Status == (int)RecordStatusEnum.Active).Select(s => s.PaintCategoryId).Distinct().ToListAsync();
@@ -22,22 +22,70 @@ namespace WijayanthaHardware.Services
                     foreach (var distinctid in uiniqueProductIds)
                     {
                         var result = await context.PaintSubCategory.Include(i => i.PaintCategory).Where(w => w.PaintCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
-                        var vm = new PaintViewModel
+                        var vm = new DashboardViewModel
                         {
-                            CategoryName = result.FirstOrDefault().PaintCategory.Value,
-                            AvailableQuantity = result.Count()
+                            PaintName = result.FirstOrDefault().PaintCategory.Value,
+                            PaintAvailabiltyCount = result.Count(),
+                            Type = "paint"
                         };
-                        paintViewModel.Add(vm);
+                        dashboardViewModel.Add(vm);
+                    }
+
+                    var uniquePowerToolIds = await context.PowerToolMaster.Where(w => w.Status == (int)RecordStatusEnum.Active).Select(s => s.PowerToolCategoryId).Distinct().ToListAsync();//can u continue from hrere? oksame code as this
+                    foreach (var distinctid in uniquePowerToolIds)
+                    {                                                               // u wrote tool category first ryt? i deleted it?yep//sorry, my mistaitke it's ok
+                        var result = await context.PowerToolSubCatogery.Include(i => i.PowerToolCategory).Where(w => w.PowerToolCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
+                        var vm = new DashboardViewModel
+                        {
+                            ToolName = result.FirstOrDefault().PowerToolCategory.Value,
+                            PowerToolAvailabilityCount = result.Count(),
+                            Type = "powertool"
+                        };
+                        dashboardViewModel.Add(vm);//why we use the paintviewmodel for both powertool ant paint
+                                                   //gppd question, we must have made a new modle for dashboard, since we dont have a new modle we are using the paintview modle, and we cannot pass 2 objects to the view
+                                                   //shall we create a new view modle?ok
+                                                   //u create
+                                                   //I it dont kw how to do
+                                                   //creiate a class in the models folder
                     }
                 }
-                return paintViewModel;
+                return dashboardViewModel;
             }
             catch (Exception ex)
             {
                 var aa = ex.StackTrace;
-                return new List<PaintViewModel>();
+                return new List<DashboardViewModel>();
             }
+        }
+
+
+        //public async Task<List<PowerToolsViewModel>> GetDashBoardChartDataAsync()
+        //{
+        //    try
+        //    {
+        //        var paintViewModel = new List<PowerToolsViewModel>();
+        //        using (var context = CreateContext())
+        //        {
+        //            var uiniqueProductIds = await context.PowerToolMaster.Where(w => w.Status == (int)RecordStatusEnum.Active).Select(s => s.PowerToolCategoryId).Distinct().ToListAsync();
+
+        //            foreach (var distinctid in uiniqueProductIds)
+        //            {
+        //                var result = await context.PowerToolSubCatogery.Include(i => i.PowerToolCategory).Where(w => w.PowerToolCategoryId == distinctid && w.Status == (int)RecordStatusEnum.Active).ToListAsync();
+        //                var vm = new PaintViewModel
+        //                {
+        //                    CategoryName = result.FirstOrDefault().PowerToolCategoryId.Value,
+        //                    AvailableQuantity = result.Count()
+        //                };
+        //                PowerToolsViewModel.Add(vm);
+        //            }
+        //        }
+        //        return PowerToolsViewModel;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var aa = ex.StackTrace;
+        //        return new List<PowerToolsViewModel>();
+        //    }
 
         }
     }
-}

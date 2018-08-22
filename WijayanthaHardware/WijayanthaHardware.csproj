@@ -184,9 +184,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaintsController.cs" />
     <Compile Include="Controllers\PowerToolsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="DBContext\WijayanathaDb.cs" />
-    <Compile Include="Entities\Class1.cs" />
+    <Compile Include="Entities\Sales.cs" />
     <Compile Include="Entities\PaintCategory.cs" />
     <Compile Include="Entities\keyAttribute.cs" />
     <Compile Include="Entities\PaintMaster.cs" />
@@ -210,6 +211,8 @@
       <DependentUpon>201808221502426_sales1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SalesVeiwModel.cs" />
+    <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PaintColourViewModel.cs" />
     <Compile Include="Models\PaintViewModel.cs" />
@@ -224,6 +227,7 @@
     <Compile Include="Services\PaintService.cs" />
     <Compile Include="Services\PowerToolService.cs" />
     <Compile Include="Services\RegisterService.cs" />
+    <Compile Include="Services\SalesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -551,7 +555,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -567,6 +573,9 @@
     <Content Include="Views\Paints\_NewCategory.cshtml" />
     <Content Include="Views\Home\Sales.cshtml" />
     <Content Include="Views\Paints\_EditPaint.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Home\_powerToolChart.cshtml" />
+    <Content Include="Views\Home\_paintChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
