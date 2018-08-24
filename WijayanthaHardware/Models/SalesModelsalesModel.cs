@@ -17,11 +17,11 @@ namespace WijayanthaHardware.Models
         public int PaintSubCategoryId { get; set; }
         public SelectList PaintSubategoryList { get; set; }
 
-        [Display(Name = "Colour")]
-        public string PaintColour { get; set; }
-        public SelectList ColourList { get; set; }
-
+        //[Display(Name = "Colour")]
         //public string PaintColour { get; set; }
+        //public SelectList ColourList { get; set; }
+
+        public string PaintColour { get; set; }
         public string Volume { get; set; }
         public int AvailableQuantity { get; set; }
         public double Price { get; set; }
@@ -32,9 +32,9 @@ namespace WijayanthaHardware.Models
         public int PaintId { get; set; }
         public string CostCode { get; set; }
         [Display(Name = "Volume")]
-        public string VolumeId { get; set; }
-        public SelectList Volumes { get; set; }
-        //public int VolumeId { get; set; }
+       
+   
+        public int VolumeId { get; set; }
         public int Quantity { get; set; }
 
         public string Colour { get; set; }
