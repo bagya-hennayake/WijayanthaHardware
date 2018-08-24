@@ -202,13 +202,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\PowerToolMapper.cs" />
-    <Compile Include="Migrations\201808211706152_sales.cs" />
-    <Compile Include="Migrations\201808211706152_sales.Designer.cs">
-      <DependentUpon>201808211706152_sales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808221502426_sales1.cs" />
-    <Compile Include="Migrations\201808221502426_sales1.Designer.cs">
-      <DependentUpon>201808221502426_sales1.cs</DependentUpon>
+    <Compile Include="Migrations\201808221701463_sales table.cs" />
+    <Compile Include="Migrations\201808221701463_sales table.Designer.cs">
+      <DependentUpon>201808221701463_sales table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SalesVeiwModel.cs" />
@@ -592,11 +588,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808211706152_sales.resx">
-      <DependentUpon>201808211706152_sales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221502426_sales1.resx">
-      <DependentUpon>201808221502426_sales1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808221701463_sales table.resx">
+      <DependentUpon>201808221701463_sales table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

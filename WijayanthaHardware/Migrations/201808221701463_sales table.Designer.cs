@@ -7,13 +7,13 @@ namespace WijayanthaHardware.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class sales : IMigrationMetadata
+    public sealed partial class salestable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(sales));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(salestable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808211706152_sales"; }
+            get { return "201808221701463_sales table"; }
         }
         
         string IMigrationMetadata.Source
