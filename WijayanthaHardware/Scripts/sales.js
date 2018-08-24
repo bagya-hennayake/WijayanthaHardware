@@ -7,18 +7,10 @@
     }
 });
 
-var ColourVolume = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Volume'),
-    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-        url: '/Paints/GetVolumeLookup?query=%QUERY',
-        wildcard: '%QUERY'
-    }
-});
 
 
 
-counter = 0;
+counter = 1;
 $("#newpaintsale").click(function () {
     event.preventDefault();
     counter++;
@@ -63,6 +55,22 @@ $(document).ready(function () {
             wildcard: '%QUERY'
         }
     });
+
+
+
+    $('#col0').typeahead(
+        {
+            minLength: 1,
+            highlight: true
+            //limit: Infinity
+        },
+        {
+            name: 'paintColours',
+            display: 'Colour',
+            source: paintColours
+        }).on("typeahead:select", function (e, paintColour) {
+            paintColourId = paintColour.PaintColourId;
+        });
 });
 
 
