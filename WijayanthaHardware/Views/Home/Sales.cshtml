@@ -36,7 +36,7 @@
                             <div class="col-xs-6 col-sm-6 col-md-2">
                                 <div class="select-bar">
                                     @Html.LabelFor(x => x.PaintColour, new { @class = "small-heading" })
-                                    <input class="color-type" type="text" id="color-type" value="" placeholder="Color" />
+                                    <input id="col0" class="color-type" type="text" name="name" value="" placeholder="Color" />
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-2">
@@ -104,10 +104,9 @@
                             <td>Paint sales</td>
                             <td>10000LKR</td>
                         </tr>
-                        <tr><td>Power tools sales</td>
-                        <td id="@Html.IdFor(x=>x.ToolPrice)"></td>
-                            @*<td>Power tools sales</td>
-                            <td>15000LKR</td>*@
+                        <tr>
+                            <td>Power tools sales</td>
+                            <td>15000LKR</td>
                         </tr>
                         <tr>
                             <td>Other sales</td>
@@ -126,5 +125,5 @@
 @section script
 {
     @Scripts.Render("~/sales-js")
-    @*@Scripts.Render("~/paint-js")*@
+    @Scripts.Render("~/paint-js")
 }

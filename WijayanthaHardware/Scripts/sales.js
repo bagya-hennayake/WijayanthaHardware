@@ -10,15 +10,14 @@
 
 
 
-
-counter = 0;
+counter = 1;
 $("#newpaintsale").click(function () {
     event.preventDefault();
     counter++;
-     var $paint = $('<div class="row"><div class="piant-details"><div class= "col-xs-6 col-sm-6 col-md-3" ><label class="small-heading">Paint category</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div ><div class="col-xs-6 col-sm-6 col-md-3"><label class="small-heading">Paint</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class= "small-heading">color</label ><input id="col' +counter + '"  type="text" name="name" value="" placeholder="Color" /></div ><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Volume</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Quantity</label><input type="text" name="name" value="" placeholder="Quantity" /></div></div ></div >');
+    var $paint = $('<div class="row"><div class="piant-details"><div class= "col-xs-6 col-sm-6 col-md-3" ><label class="small-heading">Paint category</label><select class="wide"><option value="value">text</option></select></div ><div class="col-xs-6 col-sm-6 col-md-3"><label class="small-heading">Paint</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class= "small-heading">color</label ><input id="col' + counter + '"  type="text" name="name" value="" placeholder="Color" /></div ><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Volume</label><select class="wide"><option value="value">text</option><option value="value">text</option><option value="value">text</option><option value="value">text</option></select></div><div class="col-xs-6 col-sm-6 col-md-2"><label class="small-heading">Quantity</label><input type="text" name="name" value="" placeholder="Quantity" /></div></div ></div >');
 
 
-    $(".sales-paint .paintsales").append($paint);
+    $(".sales-point .paintsales").append($paint);
     $('select').niceSelect();
 
     $('#col' + counter).typeahead(
@@ -45,31 +44,43 @@ $("#newpowersale").click(function () {
 
 });
 
+$(document).ready(function () {
+
+    /*----------- Type Ahead implementation start -----------------*/
+    var paintColours = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        remote: {
+            url: '/Paints/GetPaintColourLookup?query=%QUERY',
+            wildcard: '%QUERY'
+        }
+    });
+
+
+
+    $('#col0').typeahead(
+        {
+            minLength: 1,
+            highlight: true
+            //limit: Infinity
+        },
+        {
+            name: 'paintColours',
+            display: 'Colour',
+            source: paintColours
+        }).on("typeahead:select", function (e, paintColour) {
+            paintColourId = paintColour.PaintColourId;
+        });
+});
 
 
 
 function typeAhead() {
 
-    $(document).ready(function () {
-
     /*----------- Type Ahead implementation start -----------------*/
 
 
-        /*----------- Type Ahead implementation start -----------------*/
-        var paintColours = new Bloodhound({
-                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
-                    queryTokenizer: Bloodhound.tokenizers.whitespace,
-    remote: {
-    url: '/Paints/GetPaintColourLookup?query=%QUERY',
-        wildcard: '%QUERY'
-        }
-        });
-        });
-
- 
-
     $('.color-type').typeahead(
-
         {
             minLength: 1,
             highlight: true
@@ -138,6 +149,8 @@ $(document).ready(function () {
         });
     });
 
+
+
     $("#PowerToolSubCategoryId").change(function () {
         $('#item-details-Table').animate({ opacity: 0 }, 85);
         $.ajax({
@@ -146,7 +159,7 @@ $(document).ready(function () {
             success: function (data) {
                 $('#item-details-Table').animate({ opacity: 1 }, 85);
                 $('#ToolName').text(data.ToolName);
-                $('#ToolPrice').text(data.ToolPrice + " LKR");
+                $('#Power tools sales').text(data.ToolPrice + " LKR");
                 $('#Details').text(data.Details);
                 $('#WarrantyPeriod').text(data.WarrantyPeriod);
                 $('#CostCode').text(data.CostCode);
@@ -156,21 +169,4 @@ $(document).ready(function () {
     });
 });
 
-var  PaintTable;
-$(document).ready(function () {
-    $("#PaintCategoryId").change(function () {
-        $.ajax({
-            type: "GET",
-            url: "/Paints/GetPaintSubCategory?paintCategoryId=" + $(this).val(),
-            success: function (data) {
-                $("#PaintSubCategoryId").empty();
-                $("#PaintSubCategoryId").append("<option>Select Paint</option>");
-                $(data).each(function (i) {
-                    $("#PaintSubCategoryId").append("<option value='" + data[i].PaintSubCategoryId + "'>" + data[i].Value + "</option>")
-                });
-                $('#PaintSubCategoryId').niceSelect('update');
-                PaintTable.clear();
-                PaintTable.draw();
-            }
-        });
-    });
+
