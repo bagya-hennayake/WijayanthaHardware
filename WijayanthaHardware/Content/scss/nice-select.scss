@@ -41,6 +41,7 @@ $arrow_color: $gray !default;
     width: auto;
 
     @media(max-width: 767px) {
+        padding-left: $dropdown_padding - 8;
         font-size: 10px;
     }
 
@@ -163,6 +164,7 @@ $arrow_color: $gray !default;
         transition: all 0.2s;
 
         @media(max-width: 767px) {
+            padding-left: $dropdown_padding - 8;
             font-size: 10px;
         }
 
