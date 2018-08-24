@@ -8,7 +8,8 @@ namespace WijayanthaHardware.Entities
 {
     [Table("Sales", Schema = "Master")]
     public class Sales
-    {[key]
+    {
+        [key]
         public int SalesId { get; set; }
         public string SalesDescription { get; set; }
 
