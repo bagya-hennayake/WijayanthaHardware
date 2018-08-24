@@ -15,5 +15,7 @@ namespace WijayanthaHardware.Services
 {
     public class SalesService
     {
+
+
     }
 }

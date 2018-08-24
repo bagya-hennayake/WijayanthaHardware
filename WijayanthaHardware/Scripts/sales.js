@@ -65,7 +65,7 @@ $(document).ready(function () {
         });
     });
 
-});
+
 
 function typeAhead() {
 
@@ -141,8 +141,6 @@ $(document).ready(function () {
         });
     });
 
-
-
     $("#PowerToolSubCategoryId").change(function () {
         $('#item-details-Table').animate({ opacity: 0 }, 85);
         $.ajax({
@@ -151,7 +149,7 @@ $(document).ready(function () {
             success: function (data) {
                 $('#item-details-Table').animate({ opacity: 1 }, 85);
                 $('#ToolName').text(data.ToolName);
-                $('#Power tools sales').text(data.ToolPrice + " LKR");
+                $('#ToolPrice').text(data.ToolPrice + " LKR");
                 $('#Details').text(data.Details);
                 $('#WarrantyPeriod').text(data.WarrantyPeriod);
                 $('#CostCode').text(data.CostCode);
@@ -160,5 +158,4 @@ $(document).ready(function () {
         });
     });
 });
-
 
