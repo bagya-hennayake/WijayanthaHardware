@@ -19,6 +19,7 @@ namespace WijayanthaHardware.DBContext
         public DbSet<PowerToolSubCatogery> PowerToolSubCatogery { get; set; }
         public DbSet<PowerToolMaster> PowerToolMaster { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Sales> Sales { get; set; }
 
 
 

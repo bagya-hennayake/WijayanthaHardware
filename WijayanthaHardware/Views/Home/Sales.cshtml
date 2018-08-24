@@ -71,13 +71,15 @@
                     <div class="row">
                         <div class="tools-details">
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <label class="small-heading">Tool Category</label>
+                                @*<label class="small-heading">Tool Category</label>*@
                                 <div class="select-bar">
+                                    @Html.LabelFor(x => x.PowerToolId, new { @class = "small-heading" })
                                     @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select PowerTool Category", new { @class = "wide select-list paint-list" })
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
-                                <label class="small-heading">Tool</label>
+                                @*<label class="small-heading">Tool</label>*@
+                                @Html.LabelFor(x => x.PowerToolSubCategoryId, new { @class = "small-heading" })
                                 @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select tool", new { @class = "wide select-list paint-list" })
                             </div>
                         </div>

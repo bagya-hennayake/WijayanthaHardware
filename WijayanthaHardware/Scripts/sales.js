@@ -63,21 +63,29 @@ $(document).ready(function () {
                 wildcard: '%QUERY'
             }
         });
+    });
 
-        $('.color-type').typeahead(
-                {
-                    minLength: 1,
-                    highlight: true
-                    //limit: Infinity
-                },
-            {
-                name: 'paintColours',
-                display: 'Colour',
-                source: paintColours
-            }).on("typeahead:select", function (e, paintColour) {
-                paintColourId = paintColour.PaintColourId;
-            });
-        /*---------- Type Ahead implementation end -----------------*/
+});
+
+function typeAhead() {
+
+    /*----------- Type Ahead implementation start -----------------*/
+
+
+    $('.color-type').typeahead(
+        {
+            minLength: 1,
+            highlight: true
+            //limit: Infinity
+        },
+        {
+            name: 'paintColours',
+            display: 'Colour',
+            source: paintColours
+        }).on("typeahead:select", function (e, paintColour) {
+            paintColourId = paintColour.PaintColourId;
+        });
+    /*---------- Type Ahead implementation end -----------------*/
 
     $("#PowerToolId").change(function () {
         $.ajax({
@@ -114,32 +122,41 @@ $(document).ready(function () {
     });
 
 
-    PaintTable = $('#paint-details-Table').DataTable({
-        columns: [
-            { data: "PaintColour" },
-            { data: "Volume" },
-            { data: "AvailableQuantity" },
-            {
-                data: "Price",
-                render: function (data, type, row) {
-                    return row.Price + " LKR";
-                }
-            },
-            {
-                data: "PaintId",
-                "bSortable": false,
-                render: function (data, type, row) {
-                    return "<a  class='btn-load-inner-form-modal-edit' href='/Paints/EditPaint?paintId=" + row.PaintId + "'><i class='fas fa-edit'></i></a>";
-                }
+}
+$(document).ready(function () {
+
+    $("#PowerToolId").change(function () {
+        $('#item-details-Table').animate({ opacity: 0 }, 85);
+        $.ajax({
+            type: "GET",
+            url: "/PowerTools/GetPowerToolSubCategories?powerToolCategory=" + $(this).val(),
+            success: function (data) {
+                $("#PowerToolSubCategoryId").empty();
+                $("#PowerToolSubCategoryId").append("<option>Select Tool</option>");
+                $(data).each(function (i) {
+                    $("#PowerToolSubCategoryId").append("<option value='" + data[i].PowerToolSubCategoryId + "'>" + data[i].Value + "</option>")
+                });
+                $('#PowerToolSubCategoryId').niceSelect('update');
             }
-        ]
+        });
     });
 
-    $("#PaintSubCategoryId").change(function () {
-        $.get("/Paints/GetListOfPaintsByColour?PaintCategoryId=" + $('#PaintCategoryId').val() + '&PaintSubCategoryId=' + $('#PaintSubCategoryId').val() + '&paintColourId=' + 0, function (data) {
-            PaintTable.clear();
-            PaintTable.rows.add(data);
-            PaintTable.draw();
+
+
+    $("#PowerToolSubCategoryId").change(function () {
+        $('#item-details-Table').animate({ opacity: 0 }, 85);
+        $.ajax({
+            type: "GET",
+            url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val() + "&powerToolCategory=" + $("#PowerToolId").val(),
+            success: function (data) {
+                $('#item-details-Table').animate({ opacity: 1 }, 85);
+                $('#ToolName').text(data.ToolName);
+                $('#Power tools sales').text(data.ToolPrice + " LKR");
+                $('#Details').text(data.Details);
+                $('#WarrantyPeriod').text(data.WarrantyPeriod);
+                $('#CostCode').text(data.CostCode);
+                $('#AvailableQuantity').text(data.AvailableQuantity);
+            }
         });
     });
 });
