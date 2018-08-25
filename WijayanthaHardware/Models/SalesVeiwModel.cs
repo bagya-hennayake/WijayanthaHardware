@@ -23,8 +23,9 @@ namespace WijayanthaHardware.Models
         public int AvailableQuantity { get; set; }
         public string Details { get; set; }
         public SelectList Sales { get; internal set; }
+        public string SaleValue { get; set; }
         public object PaintMasterId { get; internal set; }
-        public string Colour { get; internal set; }
+        public int PaintColourId { get; internal set; }
         public object Price { get; internal set; }
     }
 }

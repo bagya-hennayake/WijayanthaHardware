@@ -572,6 +572,7 @@
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Home\_powerToolChart.cshtml" />
     <Content Include="Views\Home\_paintChart.cshtml" />
+    <Content Include="Views\Home\saleso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
