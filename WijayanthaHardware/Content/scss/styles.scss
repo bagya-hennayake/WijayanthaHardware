@@ -9,7 +9,8 @@ select {
     display: none;
 }
 
-input[type=text] {
+input[type=text],
+input[type="date"]{
     width: 100%;
     border-radius: 5px;
     line-height: 38px;
@@ -70,7 +71,6 @@ input[type="number"] {
     &:focus {
         text-decoration: none;
         outline: none;
-        color: #fff;
     }
 }
 .big-heading {
@@ -852,6 +852,27 @@ input[type="number"] {
                 font-size: 30px;
                 color: $main-color;
             }
+        }
+    }
+}
+
+/*report*/
+.reports {
+    .form-content{
+        margin-top: 5%;
+        label{
+            margin-right:10px;
+            margin-left: 20px;
+        }
+        input[type="date"] {
+        width: unset;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+        .same-btn{
+            padding: 8px 0;
+            margin-left: 15px;
         }
     }
 }
