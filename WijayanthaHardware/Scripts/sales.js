@@ -169,4 +169,21 @@ $(document).ready(function () {
     });
 });
 
-
+$(document).ready(function () {
+    $("#psales-btn").click(function () {
+        $("#pwrsales").removeClass("active");
+        $("#othersales").removeClass("active");
+        $("#psales").addClass("active");
+    })
+    
+    $("#pwrsales-btn").click(function () {
+        $("#othersales").removeClass("active");
+        $("#psales").removeClass("active");
+        $("#pwrsales").addClass("active");
+    })
+    $("#othersales-btn").click(function () {
+        $("#othersales").addClass("active");
+        $("#psales").removeClass("active");
+        $("#pwrsales").removeClass("active");
+    })
+});

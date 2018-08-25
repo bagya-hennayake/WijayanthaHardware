@@ -9,92 +9,107 @@
 <div class="sales">
     <div class="container">
         <h2 class="big-heading">sales</h2>
+        <a id="psales-btn" href="#0" class="same-btn pull-left">paints</a>
+        <a id="pwrsales-btn" href="#0" class="same-btn pull-left">powertools</a>
+        <a id="othersales-btn" href="#0" class="same-btn pull-left">Others</a>
         <div class="sales-point">
-            <form action="/" method="post">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <h2 class="small-heading pull-left">paint</h2>
-                        <button id="newpaintsale" class="same-btn pull-right">Add more</button>
-                    </div>
-                </div>
-                <div class="paintsales common-padding">
-                    <div class="row">
-                        <div class="piant-details">
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="select-bar">
-                                    @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
-
-                                    @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide select-list paint-list" })
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-3">
-                                <div class="select-bar">
-                                    @Html.LabelFor(x => x.PaintSubCategoryId, new { @class = "small-heading" })
-                                    @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide select-list paint-list" })
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-2">
-                                <div class="select-bar">
-                                    @Html.LabelFor(x => x.PaintColour, new { @class = "small-heading" })
-                                    <input id="col0" class="color-type" type="text" name="name" value="" placeholder="Color" />
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-2">
-                                <div class="select-bar">
-                                    <label class="small-heading">Volume</label>
-                                    @*<select class="wide">
-                                            <option value="value">text</option>
-                                            <option value="value">text</option>
-                                            <option value="value">text</option>
-                                            <option value="value">text</option>
-                                        </select>*@
-                                    @*@Html.LabelFor(x => x.ColourVolume, new { @class = "small-heading" })*@
-                                    <input class="VolumeId-type" type="text" name="name" value="" placeholder="Volume" />
-
-
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-2">
-                                <label class="small-heading">Quantity</label>
-                                <input type="text" name="name" value="" placeholder="Quantity" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-md-12">
-                        <h2 class="small-heading pull-left">power tools</h2>
-                        <button id="newpowersale" class="same-btn pull-right">Add more</button>
-                    </div>
-                </div>
-                <div class="power-sales common-padding">
-                    <div class="row">
-                        <div class="tools-details">
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                @*<label class="small-heading">Tool Category</label>*@
-                                <div class="select-bar">
-                                    @Html.LabelFor(x => x.PowerToolId, new { @class = "small-heading" })
-                                    @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select PowerTool Category", new { @class = "wide select-list paint-list" })
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                @*<label class="small-heading">Tool</label>*@
-                                @Html.LabelFor(x => x.PowerToolSubCategoryId, new { @class = "small-heading" })
-                                @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select tool", new { @class = "wide select-list paint-list" })
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="othersales common-padding">
+            <div id="psales" class="active">
+                <form action="/" method="post">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
-                            <h2 class="small-heading">other sales</h2>
-                            <input type="number" name="name" value="" placeholder="Enter sales amount for other items" />
+                            <h2 class="small-heading pull-left">paint</h2>
+                            <button id="newpaintsale" class="same-btn pull-right">Add more</button>
                         </div>
                     </div>
-                </div>
-                <button type="submit" class="same-btn pull-right">submit</button>
-            </form>
+                    <div class="paintsales common-padding">
+                        <div class="row">
+                            <div class="piant-details">
+                                <div class="col-xs-6 col-sm-6 col-md-3">
+                                    <div class="select-bar">
+                                        @Html.LabelFor(x => x.PaintCategoryId, new { @class = "small-heading" })
+
+                                        @Html.DropDownListFor(x => x.PaintCategoryId, Model.PaintCatergoryList, "Select Paint Category", new { @class = "wide select-list paint-list" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-3">
+                                    <div class="select-bar">
+                                        @Html.LabelFor(x => x.PaintSubCategoryId, new { @class = "small-heading" })
+                                        @Html.DropDownListFor(x => x.PaintSubCategoryId, Model.PaintSubategoryList, "Select Paint", new { @class = "wide select-list paint-list" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-2">
+                                    <div class="select-bar">
+                                        @Html.LabelFor(x => x.PaintColour, new { @class = "small-heading" })
+                                        <input id="col0" class="color-type" type="text" name="name" value="" placeholder="Color" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-2">
+                                    <div class="select-bar">
+                                        <label class="small-heading">Volume</label>
+                                        @*<select class="wide">
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                        <option value="value">text</option>
+                                    </select>*@
+                                        @*@Html.LabelFor(x => x.ColourVolume, new { @class = "small-heading" })*@
+                                        <input class="VolumeId-type" type="text" name="name" value="" placeholder="Volume" />
+
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-2">
+                                    <label class="small-heading">Quantity</label>
+                                    <input type="text" name="name" value="" placeholder="Quantity" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="same-btn pull-right">submit</button>
+                </form>
+            </div>
+            <div id="pwrsales">
+                <form action="/" method="post">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h2 class="small-heading pull-left">power tools</h2>
+                            <button id="newpowersale" class="same-btn pull-right">Add more</button>
+                        </div>
+                    </div>
+                    <div class="power-sales common-padding">
+                        <div class="row">
+                            <div class="tools-details">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    @*<label class="small-heading">Tool Category</label>*@
+                                    <div class="select-bar">
+                                        @Html.LabelFor(x => x.PowerToolId, new { @class = "small-heading" })
+                                        @Html.DropDownListFor(x => x.PowerToolId, Model.PowerToolSelectList, "Select PowerTool Category", new { @class = "wide select-list paint-list" })
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    @*<label class="small-heading">Tool</label>*@
+                                    @Html.LabelFor(x => x.PowerToolSubCategoryId, new { @class = "small-heading" })
+                                    @Html.DropDownListFor(x => x.PowerToolSubCategoryId, Model.PowerToolSubSelectList, "Select tool", new { @class = "wide select-list paint-list" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="same-btn pull-right">submit</button>
+                </form>
+            </div>
+            <div id="othersales">
+                <form action="/" method="post">
+                    <div class="othersales common-padding">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <h2 class="small-heading">other sales</h2>
+                                <input type="number" name="name" value="" placeholder="Enter sales amount for other items" />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="same-btn pull-right">submit</button>
+                </form>
+            </div>
         </div>
         <div class="sales-total">
             <div class="row">
