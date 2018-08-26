@@ -56,4 +56,118 @@ $(document).ready(function () {
     createPie(".pieID.legend", ".pieID.pie");
 
 
+
+    // Build the chart
+    //powertool chart
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: 'Tools',
+            colorByPoint: true,
+            data: [{
+                name: 'Rivet Gun',
+                y: 61.41,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Miller',
+                y: 11.84
+            }, {
+                name: 'Grater',
+                y: 10.85
+            }, {
+                name: 'Drill',
+                y: 4.67
+            }, {
+                name: 'Saw',
+                y: 4.18
+            }
+            , {
+                name: 'Grinder',
+                y: 4.18
+            }, {
+            name: 'Other',
+            y: 7.05
+            }]
+        }]
+    });
+
+    //paint chart
+    Highcharts.chart('paintcontainer', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: 'Colors',
+            colorByPoint: true,
+            data: [{
+                name: 'Blue',
+                y: 61.41,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Black',
+                y: 11.84
+            }, {
+                name: 'Red',
+                y: 10.85
+            }, {
+                name: 'Grey',
+                y: 4.67
+            }, {
+                name: 'Sky blue',
+                y: 4.18
+            }
+                , {
+                name: 'pea-cock',
+                y: 4.18
+            }, {
+                name: 'Other',
+                y: 7.05
+            }]
+        }]
+    });
+
 });
+
+
