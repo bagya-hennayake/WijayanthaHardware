@@ -110,6 +110,12 @@ input[type="number"] {
     text-transform: uppercase;
     font-weight: 600;
 }
+.pieChart{
+    padding-top: 30px;
+}
+.highcharts-credits{
+    display: none;
+}
 /*Top menu*/
 .menu {
     background-image: linear-gradient(to right, $gradient-start 0%, $gradient-end 100%);
@@ -858,21 +864,64 @@ input[type="number"] {
 
 /*report*/
 .reports {
-    .form-content{
+    .form-content {
         margin-top: 5%;
-        label{
-            margin-right:10px;
+
+        label {
+            margin-right: 10px;
             margin-left: 20px;
         }
+
         input[type="date"] {
-        width: unset;
+            width: unset;
+
             &::-webkit-inner-spin-button {
                 display: none;
             }
         }
-        .same-btn{
+
+        .same-btn {
             padding: 8px 0;
             margin-left: 15px;
+        }
+    }
+
+    .report-table {
+        .report-details {
+            width: 100%;
+            margin: 45px 0 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+
+            th {
+                padding: 10px 0;
+                font-size: 20px;
+                font-weight: 700;
+                background: #fff;
+                color: #797979;
+                border-bottom: 2px solid #ccc;
+                border-right: 2px solid #ccc;
+                text-align: center;
+            }
+
+            tr {
+                border-bottom: 1px solid #ccc;
+
+                td {
+                    padding: 5px 0;
+                    font-size: 15px;
+                    text-align: center;
+                }
+
+                &:nth-child(odd) {
+                    background: #e8e9ea;
+                    color: #000;
+                }
+
+                &:last-child {
+                    border: none;
+                }
+            }
         }
     }
 }
