@@ -1,4 +1,4 @@
-﻿var  PaintTable;
+﻿var PaintTable;
 $(document).ready(function () {
     $("#PaintCategoryId").change(function () {
         $.ajax({
@@ -18,30 +18,30 @@ $(document).ready(function () {
     });
     function typeAhead() {
 
-    /*----------- Type Ahead implementation start -----------------*/
-    var paintColours = new Bloodhound({
-        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
+        /*----------- Type Ahead implementation start -----------------*/
+        var paintColours = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('Colour'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-                remote: {
+            remote: {
                 url: '/Paints/GetPaintColourLookup?query=%QUERY',
-            wildcard: '%QUERY'
-        }
+                wildcard: '%QUERY'
+            }
         });
 
-    $('.color-type').typeahead(
+        $('.color-type').typeahead(
             {
-            minLength: 1,
+                minLength: 1,
                 highlight: true
-                    //limit: Infinity
-        },
-        {
-            name: 'paintColours',
-            display: 'Colour',
-            source: paintColours
-        }).on("typeahead:select", function (e, paintColour) {
-    paintColourId = paintColour.PaintColourId;
-    });
-/*---------- Type Ahead implementation end -----------------*/
+                //limit: Infinity
+            },
+            {
+                name: 'paintColours',
+                display: 'Colour',
+                source: paintColours
+            }).on("typeahead:select", function (e, paintColour) {
+                paintColourId = paintColour.PaintColourId;
+            });
+        /*---------- Type Ahead implementation end -----------------*/
 
     }
 
