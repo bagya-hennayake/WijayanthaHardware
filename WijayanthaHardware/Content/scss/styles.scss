@@ -9,7 +9,8 @@ select {
     display: none;
 }
 
-input[type=text] {
+input[type=text],
+input[type="date"]{
     width: 100%;
     border-radius: 5px;
     line-height: 38px;
@@ -764,18 +765,34 @@ input[type="number"] {
     }
 }
 .sales {
+    .same-btn {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-right: 5px;
+    }
+
     .sales-point {
         margin: 8% 0;
         padding-bottom: 20px;
-
-        .same-btn {
-        }
 
         .common-padding {
             padding: 20px 10px 45px;
             border-bottom: 2px solid #ccc;
             margin-bottom: 45px;
         }
+
+        #psales {
+            display: none;
+        }
+
+        #pwrsales {
+            display: none;
+        }
+
+        #othersales {
+            display: none;
+        }
+
 
         .paintsales {
         }
@@ -787,6 +804,10 @@ input[type="number"] {
             input {
                 margin: 20px 0;
             }
+        }
+
+        .active {
+            display: block !important;
         }
     }
 
@@ -831,6 +852,27 @@ input[type="number"] {
                 font-size: 30px;
                 color: $main-color;
             }
+        }
+    }
+}
+
+/*report*/
+.reports {
+    .form-content{
+        margin-top: 5%;
+        label{
+            margin-right:10px;
+            margin-left: 20px;
+        }
+        input[type="date"] {
+        width: unset;
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+        .same-btn{
+            padding: 8px 0;
+            margin-left: 15px;
         }
     }
 }
