@@ -50,5 +50,10 @@ namespace WijayanthaHardware.Controllers
             //};
             return View(SalesModel);
         }
+
+        public ActionResult Report()
+        {
+            return View();
+        }
     }
 }

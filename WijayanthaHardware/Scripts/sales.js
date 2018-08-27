@@ -95,39 +95,39 @@ function typeAhead() {
         });
     /*---------- Type Ahead implementation end -----------------*/
 
-    $("#col0").change(function () {
+    $("#PowerToolId").change(function () {
         $.ajax({
             type: "GET",
-            url: "/Paints/GetPaintColourLookup?query=" + $(this).val(),
+            url: "/PowerTools/GetPowerToolSubCategories?powerToolCategory=" + $(this).val(),
             success: function (data) {
-                $("#col0").empty();
-                $("#col0").append("<option>Select Tool</option>");
+                $("#PowerToolSubCategoryId").empty();
+                $("#PowerToolSubCategoryId").append("<option>Select Tool</option>");
                 $(data).each(function (i) {
-                    $("#col0").append("<option value='" + data[i].paintColour + "'>" + data[i].Value + "</option>")
+                    $("#PowerToolSubCategoryId").append("<option value='" + data[i].PowerToolSubCategoryId + "'>" + data[i].Value + "</option>")
                 });
-                $('#col0').niceSelect('update');
+                $('#PowerToolSubCategoryId').niceSelect('update');
             }
         });
     });
 
 
 
-    //$("#PaintSubCategoryId").change(function () {
+    $("#PowerToolSubCategoryId").change(function () {
 
-    //    $.ajax({
-    //        type: "GET",
-    //        url: "/Paint/PaintSubCategoryDetail?PaintSubCategoryId=" + $(this).val() + "&powerToolCategory=" + $("#PowerToolId").val(),
-    //        success: function (data) {
-    //            $('#item-details-Table').animate({ opacity: 1 }, 85);
-    //            $('#ToolName').text(data.ToolName);
-    //            $('#Paint sales').text(data.PaintPrice + " LKR");
-    //            $('#Details').text(data.Details);
-    //            $('#WarrantyPeriod').text(data.WarrantyPeriod);
-    //            $('#CostCode').text(data.CostCode);
-    //            $('#AvailableQuantity').text(data.AvailableQuantity);
-    //        }
-    //    });
-    //});
+        $.ajax({
+            type: "GET",
+            url: "/PowerTools/GetPowerToolSubCategoryDetail?powerToolSubCatId=" + $(this).val() + "&powerToolCategory=" + $("#PowerToolId").val(),
+            success: function (data) {
+                $('#item-details-Table').animate({ opacity: 1 }, 85);
+                $('#ToolName').text(data.ToolName);
+                $('#ToolPrice').text(data.ToolPrice + " LKR");
+                $('#Details').text(data.Details);
+                $('#WarrantyPeriod').text(data.WarrantyPeriod);
+                $('#CostCode').text(data.CostCode);
+                $('#AvailableQuantity').text(data.AvailableQuantity);
+            }
+        });
+    });
 
 
 }
@@ -159,7 +159,7 @@ $(document).ready(function () {
             success: function (data) {
                 $('#item-details-Table').animate({ opacity: 1 }, 85);
                 $('#ToolName').text(data.ToolName);
-                $('#ToolPrice').text(data.ToolPrice + " LKR");
+                $('#Power tools sales').text(data.ToolPrice + " LKR");
                 $('#Details').text(data.Details);
                 $('#WarrantyPeriod').text(data.WarrantyPeriod);
                 $('#CostCode').text(data.CostCode);
@@ -167,26 +167,23 @@ $(document).ready(function () {
             }
         });
     });
-
-    $("#PaintColourId").change(function () {
-        $('#item-details-Table').animate({ opacity: 0 }, 85);
-        $.ajax({
-            type: "GET",
-            url: "/Paint/GetPaintColourDetail?PaintColourId=" + $(this).val() + "&PaintCategory=" + $("#PaintId").val(),
-
-            
-            success: function (data) {
-                $('#item-details-Table').animate({ opacity: 1 }, 85);
-                $('#ToolName').text(data.ToolName);
-                $('#Price').text(data.Price + " LKR");
-                $('#Details').text(data.Details);
-                $('#WarrantyPeriod').text(data.WarrantyPeriod);
-                $('#CostCode').text(data.CostCode);
-                $('#AvailableQuantity').text(data.AvailableQuantity);
-            }
-        });
-
 });
 
+$(document).ready(function () {
+    $("#psales-btn").click(function () {
+        $("#pwrsales").removeClass("active");
+        $("#othersales").removeClass("active");
+        $("#psales").addClass("active");
+    })
+    
+    $("#pwrsales-btn").click(function () {
+        $("#othersales").removeClass("active");
+        $("#psales").removeClass("active");
+        $("#pwrsales").addClass("active");
+    })
+    $("#othersales-btn").click(function () {
+        $("#othersales").addClass("active");
+        $("#psales").removeClass("active");
+        $("#pwrsales").removeClass("active");
+    })
 });
-

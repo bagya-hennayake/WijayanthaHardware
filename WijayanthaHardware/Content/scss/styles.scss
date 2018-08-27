@@ -9,7 +9,8 @@ select {
     display: none;
 }
 
-input[type=text] {
+input[type=text],
+input[type="date"]{
     width: 100%;
     border-radius: 5px;
     line-height: 38px;
@@ -108,6 +109,12 @@ input[type="number"] {
     margin: 30px 0 10px;
     text-transform: uppercase;
     font-weight: 600;
+}
+.pieChart{
+    padding-top: 30px;
+}
+.highcharts-credits{
+    display: none;
 }
 /*Top menu*/
 .menu {
@@ -764,18 +771,34 @@ input[type="number"] {
     }
 }
 .sales {
+    .same-btn {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-right: 5px;
+    }
+
     .sales-point {
         margin: 8% 0;
         padding-bottom: 20px;
-
-        .same-btn {
-        }
 
         .common-padding {
             padding: 20px 10px 45px;
             border-bottom: 2px solid #ccc;
             margin-bottom: 45px;
         }
+
+        #psales {
+            display: none;
+        }
+
+        #pwrsales {
+            display: none;
+        }
+
+        #othersales {
+            display: none;
+        }
+
 
         .paintsales {
         }
@@ -787,6 +810,10 @@ input[type="number"] {
             input {
                 margin: 20px 0;
             }
+        }
+
+        .active {
+            display: block !important;
         }
     }
 
@@ -830,6 +857,70 @@ input[type="number"] {
             .total-text {
                 font-size: 30px;
                 color: $main-color;
+            }
+        }
+    }
+}
+
+/*report*/
+.reports {
+    .form-content {
+        margin-top: 5%;
+
+        label {
+            margin-right: 10px;
+            margin-left: 20px;
+        }
+
+        input[type="date"] {
+            width: unset;
+
+            &::-webkit-inner-spin-button {
+                display: none;
+            }
+        }
+
+        .same-btn {
+            padding: 8px 0;
+            margin-left: 15px;
+        }
+    }
+
+    .report-table {
+        .report-details {
+            width: 100%;
+            margin: 45px 0 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+
+            th {
+                padding: 10px 0;
+                font-size: 20px;
+                font-weight: 700;
+                background: #fff;
+                color: #797979;
+                border-bottom: 2px solid #ccc;
+                border-right: 2px solid #ccc;
+                text-align: center;
+            }
+
+            tr {
+                border-bottom: 1px solid #ccc;
+
+                td {
+                    padding: 5px 0;
+                    font-size: 15px;
+                    text-align: center;
+                }
+
+                &:nth-child(odd) {
+                    background: #e8e9ea;
+                    color: #000;
+                }
+
+                &:last-child {
+                    border: none;
+                }
             }
         }
     }

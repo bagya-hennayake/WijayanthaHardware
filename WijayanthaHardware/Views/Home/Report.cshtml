@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="reports">
+    <div class="container">
+        <form action="/" method="post">
+            <div class="form-content">
+                <label>Start date:</label>
+                <input type="date" value="" />
+
+                <label>End date:</label>
+                <input type="date" value="" />
+                <button type="submit" class="same-btn">run report</button>
+            </div>
+        </form>
+
+        <div class="report-table">
+            <div id="reportDetails">
+                <table class="report-details">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>name</th>
+                            <th>cost</th>
+                            <th>quantity</th>
+                            <th>total</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
