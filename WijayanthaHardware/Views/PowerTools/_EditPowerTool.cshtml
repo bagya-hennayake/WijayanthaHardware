@@ -1,0 +1,68 @@
+﻿@model WijayanthaHardware.Models.PowerToolsViewModel
+
+<div id="innerFormModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title small-heading">Edit Tools</h5>
+            </div>
+
+            @using (Ajax.BeginForm("EditPowerTool", "Paints", null, new AjaxOptions { HttpMethod = "POST" }, new { @id = "EditPowerTool", role = "form" }))
+            {
+                @Html.HiddenFor(x => x.PowerToolMasterId)
+                <div class="modal-body">
+                    <label class="form-label">Update Quantity</label><br />
+                    @Html.TextBoxFor(x => x.AvailableQuantity, null, new { type = "number", autocomplete = "off" })
+                    <label class="form-label">Update Price</label><br />
+                    @Html.TextBoxFor(x => x.ToolPrice, null, new { type = "number", autocomplete = "off" })
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="same-btn">Update</button>
+                    <button type="button" class="same-btn" data-dismiss="modal">Close</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    $("#EditPowerTool").submit(function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        showWaitBlock();
+
+        var action = $("#EditPowerTool").attr("action");
+        var dataString;
+        dataString = new FormData($("#EditPowerTool").get(0));
+        contentType = false;
+        processData = false;
+        $.ajax({
+            type: "POST",
+            url: "/PowerTools/EditPowerTool",
+            data: dataString,
+            dataType: "json",
+            contentType: contentType,
+            processData: processData,
+            success: function (result) {
+                hideWaitBlock();
+                $('#innerFormModal').modal('hide');
+                showToastr(result);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                hideWaitBlock();
+                toastr.error("Something went wrong, please try refreshing the page", "Failed");
+                return;
+            }
+        });
+    });
+
+    //$('#innerFormModal').on('hidden.bs.modal', function () {
+
+
+    //    $.get("/Powertools/GetListOfPowerToolsByDetails?PowerToolCategoryId=" + $('#PowerToolCategoryId').val() + '&PowerToolSubCategoryId=' + $('#PowerToolSubCategoryId').val() + '&Details=' + 0, function (data) {
+    //        PaintTable.clear();
+    //        PaintTable.rows.add(data);
+    //        PaintTable.draw();
+    //    });
+    
+
+</script>

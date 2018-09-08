@@ -31,6 +31,7 @@
                 $('#WarrantyPeriod').text(data.WarrantyPeriod);
                 $('#CostCode').text(data.CostCode);
                 $('#AvailableQuantity').text(data.AvailableQuantity);
+                $('#pt-edit-link').attr('href', "/PowerTools/EditPowerTool?PowerToolId=" + data.PowerToolMasterId);
             }
         });
     });

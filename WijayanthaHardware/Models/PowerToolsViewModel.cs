@@ -22,5 +22,6 @@ namespace WijayanthaHardware.Models
         public string CostCode { get; set; }
         public int AvailableQuantity { get; set; }
         public string Details { get; set; }
+        public int PowerToolMasterId { get; set; }
     }
 }

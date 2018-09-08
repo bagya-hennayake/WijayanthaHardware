@@ -10,7 +10,8 @@
     <div class="container">
         <h1 class="big-heading">power tools</h1>
         <div class="row">
-            <a href="#pwredit" data-toggle="modal" class="same-btn pull-right">Edit</a>
+            @*<a href="#pwredit" data-toggle="modal" class="same-btn pull-right">Edit</a>
+            <a class="btn-load-inner-form-modal-edit" href="@Url.Action("EditPowerTool", "PowerTools", new { PowerToolId = Model.PowerToolMasterId })">Hello</a>*@
         </div>
         <div class="row">
             <div class="col-xs-12 col-md-6">
@@ -49,7 +50,13 @@
                                 <td>Warranty Period</td>
                                 <td id="@Html.IdFor(x=>x.WarrantyPeriod)"></td>
                             </tr>
-                            
+                            <tr>
+                                <td></td>
+                                <td>
+                                    @*<a id="pt-edit-link" class="btn-load-inner-form-modal-edit" href="">Hello</a>*@
+                                    <a id="pt-edit-link" href="#pwredit" class="same-btn pull-right btn-load-inner-form-modal-edit">Edit</a>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                 </div>
@@ -66,35 +73,7 @@
     </div>
 </div>
 
-
-
-<div id="pwredit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title small-heading">Edit Tools</h5>
-            </div>
-            
-            
-            <form action="/" method="post">
-                <div class="modal-body">
-                    <label class="form-label">Update Quantity</label><br />
-                    <input type="text" name="name" value="" />
-                    <label class="form-label">Update Price</label><br />
-                    <input type="text" name="name" value="" />
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="same-btn">Update</button>
-                    <button type="button" class="same-btn" data-dismiss="modal">Close</button>
-                </div>
-            </form>
-                
-            
-        </div>
-    </div>
-</div>
-
-
+<div id="markup"></div>
 
 @section script
 {

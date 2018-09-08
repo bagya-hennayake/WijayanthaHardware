@@ -44,5 +44,19 @@ namespace WijayanthaHardware.Controllers
             var result = await _powerToolService.GetPowerToolSubCategoryDetailAsync(powerToolSubCatId, powerToolCategory);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
+        public async Task<PartialViewResult> EditPowerTool(int PowerToolId)
+        {
+            var result = await _powerToolService.EditPowerTool(PowerToolId);
+            return PartialView("_EditPowerTool", result);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> EditPowerTool(PowerToolsViewModel powerToolsViewModel)
+        {
+            await _powerToolService.UpdatePaintAsync(powerToolsViewModel);
+            return Json(new { status = TransactionStatusEnum.success.ToString(), title = "Success", message = "Paint details have been updated successfully" }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

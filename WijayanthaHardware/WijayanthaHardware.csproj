@@ -573,6 +573,7 @@
     <Content Include="Views\Home\_powerToolChart.cshtml" />
     <Content Include="Views\Home\_paintChart.cshtml" />
     <Content Include="Views\Home\Report.cshtml" />
+    <Content Include="Views\PowerTools\_EditPowerTool.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

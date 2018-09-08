@@ -18,7 +18,8 @@ namespace WijayanthaHardware.Mappers
                 CostCode = powerToolMaster.CostCode,
                 Details = powerToolMaster.PowerToolSubCatogery.Description,
                 WarrantyPeriod = powerToolMaster.WarrantyPeriod,
-                AvailableQuantity = powerToolMaster.Quantity
+                AvailableQuantity = powerToolMaster.Quantity,
+                PowerToolMasterId = powerToolMaster.PowerToolMasterId
             };
         }
     }
